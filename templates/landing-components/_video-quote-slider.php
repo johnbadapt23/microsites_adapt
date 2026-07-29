@@ -13,7 +13,7 @@
                                     <?php $company_logo = get_sub_field( 'company_logo' ); ?>
                                     <?php if ( $company_logo ) { ?>
                                         <span class="logo-container">
-                                            <img src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt']; ?>" />
+                                            <img src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt']; ?>" loading="lazy"/>
                                         </span>
                                     <?php } ?>                                                        
                                     <span class="quote text-white"><?php echo get_sub_field( 'quote' ); ?></span>
@@ -34,7 +34,7 @@
                     <div class="bg-container">
                         <?php $poster_image = get_sub_field( 'poster_image' ); ?>
                         <?php if ( $poster_image ) { ?>
-                            <img src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" />
+                            <img src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" loading="lazy"/>
                         <?php } ?>
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>
                             <span class="opacity-overlay"></span>

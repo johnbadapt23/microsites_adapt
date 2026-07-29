@@ -10,7 +10,7 @@
 						<span class="bg-container">
 							<?php $arrow_image = get_sub_field( 'arrow_image' ); ?>
 							<?php if ( $arrow_image ) { ?>
-								<img src="<?php echo $arrow_image['url']; ?>" alt="<?php echo $arrow_image['alt']; ?>" />
+								<img src="<?php echo $arrow_image['url']; ?>" alt="<?php echo $arrow_image['alt']; ?>" loading="lazy"/>
 							<?php } ?>
 						</span>
 					</span>
@@ -29,7 +29,7 @@
 									<span class="image-container">
 										<span class="bg-container">
 											<?php if ( $image ) { ?>
-												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
 											<?php } ?>
 										</span>
 										<span class="enlarge-image"></span>
@@ -56,7 +56,7 @@
 										<span class="image-container">
 											<span class="bg-container">
 												<?php if ( $image ) { ?>
-													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
 												<?php } ?>
 											</span>
 											<span class="enlarge-image"></span>

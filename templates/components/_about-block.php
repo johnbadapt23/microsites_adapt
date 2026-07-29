@@ -4,7 +4,7 @@
             <?php $top_corner_icon = get_sub_field( 'top_corner_icon' ); ?>
 			<?php if ( $top_corner_icon ) { ?>
                 <span class="top-corner-icon">
-	                <img src="<?php echo $top_corner_icon['url']; ?>" alt="<?php echo $top_corner_icon['alt']; ?>" />
+	                <img src="<?php echo $top_corner_icon['url']; ?>" alt="<?php echo $top_corner_icon['alt']; ?>" loading="lazy"/>
                 </span>
 			<?php } ?>
             <h2><?php echo get_sub_field( 'title' ); ?></h2>
@@ -28,7 +28,7 @@
     		<?php $rotating_icon = get_sub_field( 'rotating_icon' ); ?>
             <span class="rotating-image-container">
         		<?php if ( $rotating_icon ) { ?>
-        			<img id="rotatingImage" src="<?php echo $rotating_icon['url']; ?>" alt="<?php echo $rotating_icon['alt']; ?>" />
+        			<img id="rotatingImage" src="<?php echo $rotating_icon['url']; ?>" alt="<?php echo $rotating_icon['alt']; ?>" loading="lazy"/>
         		<?php } ?>
             </span>
         </div>

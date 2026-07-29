@@ -44,7 +44,7 @@
                                     <a class="popup-vimeo" href="https://vimeo.com/<?php echo $videoURL; ?>">
                                         <span class="image-container">
                                             <span class="bg-container">
-                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
                                             </span>
                                             <span class="video-button-icon"></span>
                                         </span>

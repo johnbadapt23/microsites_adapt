@@ -34,7 +34,7 @@
                 <span class="image-large">
                     <?php $column_one_image_one = get_sub_field( 'column_one_image' ); ?>
                     <?php if ( $column_one_image_one ) { ?>
-                    	<img src="<?php echo $column_one_image_one['url']; ?>" alt="<?php echo $column_one_image_one['alt']; ?>" />
+                    	<img src="<?php echo $column_one_image_one['url']; ?>" alt="<?php echo $column_one_image_one['alt']; ?>" loading="lazy"/>
                     <?php } ?>
                 </span>               
             </div>
@@ -42,13 +42,13 @@
                 <span class="image-one" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="800" data-aos-delay="400">
                     <?php $column_two_image = get_sub_field( 'column_two_image_one' ); ?>
                     <?php if ( $column_two_image ) { ?>
-                    	<img src="<?php echo $column_two_image['url']; ?>" alt="<?php echo $column_two_image['alt']; ?>" />
+                    	<img src="<?php echo $column_two_image['url']; ?>" alt="<?php echo $column_two_image['alt']; ?>" loading="lazy"/>
                     <?php } ?>
                 </span>
                  <span class="image-two" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
                     <?php $column_one_image_two = get_sub_field( 'column_two_image_two' ); ?>
                     <?php if ( $column_one_image_two ) { ?>
-                    	<img src="<?php echo $column_one_image_two['url']; ?>" alt="<?php echo $column_one_image_two['alt']; ?>" />
+                    	<img src="<?php echo $column_one_image_two['url']; ?>" alt="<?php echo $column_one_image_two['alt']; ?>" loading="lazy"/>
                     <?php } ?>
                 </span>
             </div>
@@ -56,7 +56,7 @@
                 <span class="image-large">
                     <?php $column_three_image = get_sub_field( 'column_three_image' ); ?>
                     <?php if ( $column_three_image ) { ?>
-                    	<img src="<?php echo $column_three_image['url']; ?>" alt="<?php echo $column_three_image['alt']; ?>" />
+                    	<img src="<?php echo $column_three_image['url']; ?>" alt="<?php echo $column_three_image['alt']; ?>" loading="lazy"/>
                     <?php } ?>
                 </span>
             </div>
@@ -76,7 +76,7 @@
                                         <span class="logo-container">
                                             <?php $logo = get_sub_field( 'logo' ); ?>
                                             <?php if ( $logo ) { ?>
-                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
                                             <?php } ?>
                                         </span>
                                         <span class="logo-text labelXSmall">
@@ -94,7 +94,7 @@
                                         <span class="logo-container">
                                             <?php $logo = get_sub_field( 'logo' ); ?>
                                             <?php if ( $logo ) { ?>
-                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
                                             <?php } ?>
                                         </span>
                                         <span class="logo-text labelXSmall">
@@ -112,7 +112,7 @@
                                         <span class="logo-container">
                                             <?php $logo = get_sub_field( 'logo' ); ?>
                                             <?php if ( $logo ) { ?>
-                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
                                             <?php } ?>
                                         </span>
                                         <span class="logo-text labelXSmall">

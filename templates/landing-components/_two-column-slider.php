@@ -19,7 +19,7 @@
                                             <span class="image-container">
                                                 <span class="bg-container">
                                                     <?php if ( $image ) { ?>
-                                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
                                                     <?php } ?>
                                                 </span>
                                             </span>

@@ -13,7 +13,7 @@
                     <div class="bg-container">
                         <?php $poster_image = get_sub_field( 'poster_image' ); ?>
                         <?php if ( $poster_image ) { ?>
-                            <img src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" />
+                            <img src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" loading="lazy"/>
                         <?php } ?>
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>
                             <span class="opacity-overlay"></span>

@@ -8,7 +8,7 @@
 					<span class="logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logoHeader">
 							<?php $imagedark = get_field( 'icon', 'options' ); ?>
-							<img class="dark" src="<?php echo $imagedark['url']; ?>" alt="<?php echo $imagedark['alt']; ?>" class="logo" alt="Adapt" width="<?php echo get_field('logo_width', 'options')?>" />
+							<img class="dark logo" src="<?php echo $imagedark['url']; ?>" alt="<?php echo $imagedark['alt'] ? esc_attr( $imagedark['alt'] ) : 'Adapt'; ?>" width="<?php echo get_field('logo_width', 'options')?>" loading="lazy"/>
 						</a>
 					</span>
 					<span class="powered-by">Powered by ADAPT ®</span>
@@ -22,7 +22,7 @@
 					<span class="logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logoHeader">
 							<?php $imagedark = get_field( 'icon', 'options' ); ?>
-							<img class="dark" src="<?php echo $imagedark['url']; ?>" alt="<?php echo $imagedark['alt']; ?>" class="logo" alt="Adapt" width="<?php echo get_field('logo_width', 'options')?>" />
+							<img class="dark logo" src="<?php echo $imagedark['url']; ?>" alt="<?php echo $imagedark['alt'] ? esc_attr( $imagedark['alt'] ) : 'Adapt'; ?>" width="<?php echo get_field('logo_width', 'options')?>" loading="lazy"/>
 						</a>
 					</span>
 					<span class="powered-by">Powered by ADAPT ®</span>
@@ -86,7 +86,7 @@
 						<div class="container">
 							<?php $footer_icon = get_field( 'footer_icon', 'options'  ); ?>
 							<?php if ( $footer_icon ) { ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo $footer_icon['url']; ?>" alt="<?php echo $footer_icon['alt']; ?>" /></a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo $footer_icon['url']; ?>" alt="<?php echo $footer_icon['alt']; ?>" loading="lazy"/></a>
 							<?php } ?>
 							<span class="link-container"><a class="site-link" href="https://adapt.com.au" target="_blank">adapt.com.au</a><a class="mail-link" href="mailto:<?php the_field( 'email', 'options' ); ?>" target="_blank"><?php the_field( 'email', 'options' ); ?></a><a class="phone-link" href="tel:<?php the_field( 'phone_number', 'options' ); ?>"><?php the_field( 'phone_number', 'options' ); ?></a></span>
 							<span class="social-links">

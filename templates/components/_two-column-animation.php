@@ -21,7 +21,7 @@
 										<span class="bg-container contained-image">
 											<?php $icon = get_sub_field( 'icon' ); ?>
 											<?php if ( $icon ) { ?>
-												<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+												<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
 											<?php } ?>
 										</span>
 									</span>

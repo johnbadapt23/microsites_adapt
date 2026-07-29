@@ -60,7 +60,7 @@
                             <a class="replay-button popup-vimeo mobile" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>">
                         <?php } ?>
                         <?php $image = get_sub_field('image'); ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>                            
                             <span class="play-button"></span>
                             </a>

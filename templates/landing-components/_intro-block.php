@@ -31,7 +31,7 @@
                     <span class="frame"></span>
                     <div class="bg-container">
                         <?php $image = get_sub_field('image'); ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
                     </div>
                 </div>                 
             </div>

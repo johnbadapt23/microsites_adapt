@@ -15,7 +15,7 @@ get_header();
             <?php $rotating_image = get_field( 'rotating_image', 'options' ); ?>
             <span class="rotating-image-container">
                 <?php if ( $rotating_image ) { ?>
-                    <img id="rotatingImage" src="<?php echo $rotating_image['url']; ?>" alt="<?php echo $rotating_image['alt']; ?>" />
+                    <img id="rotatingImage" src="<?php echo $rotating_image['url']; ?>" alt="<?php echo $rotating_image['alt']; ?>" loading="lazy"/>
                 <?php } ?>
             </span>
         </div>
@@ -34,12 +34,12 @@ get_header();
                                 <?php $speaker_image = get_field( 'speaker_image' ); ?>
                                 <span class="bg-container<?php if ( $speaker_image ) { ?><?php } else { ?> no-background<?php } ?>">
                                     <?php if ( $speaker_image ) { ?>
-                                        <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" />
+                                        <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" loading="lazy"/>
                                         <span class="speaker-opacity"></span>
                                     <?php } else { ?>
                                         <?php $generic_headshot = get_field( 'generic_headshot', 'options' ); ?>
                                         <?php if ( $generic_headshot ) { ?>
-                                            <img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" />
+                                            <img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" loading="lazy"/>
                                         <?php } ?>
                                     <?php } ?>
                                 </span>
@@ -62,11 +62,11 @@ get_header();
                                     <span class="bg-container">
                                         <?php $speaker_image = get_field( 'speaker_image' ); ?>
                                         <?php if ( $speaker_image ) { ?>
-                                            <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" />
+                                            <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" loading="lazy"/>
                                         <?php } else { ?>
                                             <?php $generic_headshot = get_field( 'generic_headshot', 'options' ); ?>
                                             <?php if ( $generic_headshot ) { ?>
-                                            	<img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" />
+                                            	<img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" loading="lazy"/>
                                             <?php } ?>
                                         <?php } ?>
                                     </span>
@@ -75,14 +75,14 @@ get_header();
                                 <h3 class="title">
                                     <?php the_title(); ?>
                                     <?php if ( get_field('linkedin')) { ?>
-                                        <a class="linkedin-link" href="<?php the_field('linkedin');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/round-linkedin.svg" width="20"/></a>
+                                        <a class="linkedin-link" href="<?php the_field('linkedin');?>" target="_blank" aria-label="LinkedIn profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/round-linkedin.svg" width="20" alt="" loading="lazy"/></a>
                                     <?php } ?>
                                 </h3>
                                 <p class="job-title"><?php echo get_field( 'job_title' ); ?></p>
                                 <?php $company_logo = get_field( 'company_logo' ); ?>
                                 <?php if ( $company_logo ) { ?>
                                     <span class="company-logo">
-                                       <img src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt']; ?>" />
+                                       <img src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt']; ?>" loading="lazy"/>
                                    </span>
                                 <?php } ?>
                             </div>

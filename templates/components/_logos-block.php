@@ -46,7 +46,7 @@
                             <?php } ?>
                                 <span class="slide">
                 					<?php if ( $logo ) { ?>
-                						<img class="logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                						<img class="logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
                 					<?php } ?>
                                 </span>
                             <?php if ( get_sub_field( 'link' )) { ?>

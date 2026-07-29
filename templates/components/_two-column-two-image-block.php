@@ -9,7 +9,7 @@
                         <span class="portrait-image-container mobile">
                             <span class="image-container">
                                 <span class="bg-container">
-    		                        <img src="<?php echo $portrait_image['url']; ?>" alt="<?php echo $portrait_image['alt']; ?>" />
+    		                        <img src="<?php echo $portrait_image['url']; ?>" alt="<?php echo $portrait_image['alt']; ?>" loading="lazy"/>
                                 </span>
                             </span>
                         </span>
@@ -26,7 +26,7 @@
                     <span class="portrait-image-container desktop">
                         <span class="image-container">
                             <span class="bg-container">
-		                        <img src="<?php echo $portrait_image['url']; ?>" alt="<?php echo $portrait_image['alt']; ?>" />
+		                        <img src="<?php echo $portrait_image['url']; ?>" alt="<?php echo $portrait_image['alt']; ?>" loading="lazy"/>
                             </span>
                         </span>
                     </span>
@@ -36,7 +36,7 @@
                     <span class="square-image-container">
                         <span class="image-container">
                             <span class="bg-container">
-		                        <img src="<?php echo $square_image['url']; ?>" alt="<?php echo $square_image['alt']; ?>" />
+		                        <img src="<?php echo $square_image['url']; ?>" alt="<?php echo $square_image['alt']; ?>" loading="lazy"/>
                             </span>
                         </span>
                     </span>

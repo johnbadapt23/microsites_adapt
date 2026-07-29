@@ -8,7 +8,7 @@
         <div class="video-container">
             <?php $poster_image = get_sub_field( 'poster_image' ); ?>
             <?php if ( $poster_image ) { ?>
-                <img class="video-poster" src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" />
+                <img class="video-poster" src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" loading="lazy"/>
             <?php } ?>
            <iframe 
                 src="https://player.vimeo.com/video/<?php echo get_sub_field('vimeo_code'); ?>?autoplay=1&muted=1&controls=0&loop=1"

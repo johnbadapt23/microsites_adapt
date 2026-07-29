@@ -6,7 +6,7 @@
             <?php $rotating_icon = get_sub_field( 'rotating_image' ); ?>
             <span class="rotating-image-container">
                 <?php if ( $rotating_icon ) { ?>
-                    <img id="rotatingImage" src="<?php echo $rotating_icon['url']; ?>" alt="<?php echo $rotating_icon['alt']; ?>" />
+                    <img id="rotatingImage" src="<?php echo $rotating_icon['url']; ?>" alt="<?php echo $rotating_icon['alt']; ?>" loading="lazy"/>
                 <?php } ?>
             </span>
         </span>
@@ -20,7 +20,7 @@
                                 <span class="image-container">
                                     <span class="bg-container">
                                         <?php if ( $icon ) { ?>
-                                            <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+                                            <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
                                         <?php } ?>
                                     </span>
                                 </span>

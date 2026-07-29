@@ -30,18 +30,18 @@
 											</video>
 											<span class="video-overlay"></span>
 											<span class="video-controls">
-												<a class="popup-vimeo" href="https://vimeo.com/<?php echo $vimeoPopup; ?>"><img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/expand.svg" width="64"/></a>
+												<a class="popup-vimeo" href="https://vimeo.com/<?php echo $vimeoPopup; ?>"><img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/expand.svg" width="64" alt="Play video" loading="lazy"/></a>
 												<a href="#" class="video-toggle-sound" aria-label="Toggle sound">
 													<span class="icon-sound-off">
-														<img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Muted.svg" width="64"/>
+														<img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Muted.svg" width="64" alt="" loading="lazy"/>
 													</span>
 													<span class="icon-sound-on" style="display:none;">
-														<img class="unmute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Unmuted.svg" width="64"/>
+														<img class="unmute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Unmuted.svg" width="64" alt="" loading="lazy"/>
 													</span>
 												</a>
 											</span>
 										<?php elseif ( $image ) : ?>
-											<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+											<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
 										<?php endif; ?>
 									</span>
 								</span>
@@ -78,18 +78,18 @@
 											</video>
 											<span class="video-overlay"></span>
 											<span class="video-controls">
-												<a class="popup-vimeo" href="https://vimeo.com/<?php echo $vimeoPopup; ?>"><img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/expand.svg" width="64"/></a>
+												<a class="popup-vimeo" href="https://vimeo.com/<?php echo $vimeoPopup; ?>"><img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/expand.svg" width="64" alt="Play video" loading="lazy"/></a>
 												<a href="#" class="video-toggle-sound-mobile" aria-label="Toggle sound">
 													<span class="icon-sound-off">
-														<img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Muted.svg" width="64"/>
+														<img class="mute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Muted.svg" width="64" alt="" loading="lazy"/>
 													</span>
 													<span class="icon-sound-on" style="display:none;">
-														<img class="unmute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Unmuted.svg" width="64"/>
+														<img class="unmute" src="<?php echo get_template_directory_uri(); ?>/assets/images/Unmuted.svg" width="64" alt="" loading="lazy"/>
 													</span>
 												</a>
 											</span>
 										<?php elseif ( $image ) : ?>
-											<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+											<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
 										<?php endif; ?>
                                     </span>
                                 </span>

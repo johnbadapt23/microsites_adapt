@@ -7,7 +7,7 @@
              <?php $top_corner_icon = get_sub_field( 'top_corner_icon' ); ?>
             <?php if ( $top_corner_icon ) { ?>
                 <span class="logo">
-                    <img src="<?php echo $top_corner_icon['url']; ?>" alt="<?php echo $top_corner_icon['alt']; ?>" width="140"/>
+                    <img src="<?php echo $top_corner_icon['url']; ?>" alt="<?php echo $top_corner_icon['alt']; ?>" width="140" loading="lazy"/>
                 </span>
             <?php } ?>   
             <div class="column-container">                             
@@ -30,7 +30,7 @@
     		<?php $rotating_icon = get_sub_field( 'rotating_icon' ); ?>
             <span class="rotating-image-container">
         		<?php if ( $rotating_icon ) { ?>
-        			<img id="rotatingImage" src="<?php echo $rotating_icon['url']; ?>" alt="<?php echo $rotating_icon['alt']; ?>" />
+        			<img id="rotatingImage" src="<?php echo $rotating_icon['url']; ?>" alt="<?php echo $rotating_icon['alt']; ?>" loading="lazy"/>
         		<?php } ?>
             </span>
         </div>

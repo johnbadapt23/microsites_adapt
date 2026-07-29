@@ -35,7 +35,7 @@ $accessLink = get_field( 'access_the_portal_link', 'options'  );
 					<?php $footer_icon = get_field( 'footer_icon', 'options'  ); ?>
 					<?php if ( $footer_icon ) { ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<img class="logo" src="<?php echo $footer_icon['url']; ?>" alt="<?php echo $footer_icon['alt']; ?>" />
+							<img class="logo" src="<?php echo $footer_icon['url']; ?>" alt="<?php echo $footer_icon['alt']; ?>" loading="lazy"/>
 						</a>
 					<?php } ?>
 					<a class="site-link" href="https://adapt.com.au" target="_blank">adapt.com.au</a>

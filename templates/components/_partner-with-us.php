@@ -41,7 +41,7 @@
     			<?php if ( $image ) { ?>
                     <span class="image-container">
                         <span class="bg-container">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
                         </span>
                     </span>
     			<?php } ?>

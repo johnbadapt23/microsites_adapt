@@ -30,7 +30,7 @@ get_header();
                         <a href="/">
                             <?php $header_logo = get_field( 'header_logo' ); ?>
                             <?php if ( $header_logo ) { ?>
-                                <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $header_logo['alt']; ?>" />
+                                <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $header_logo['alt']; ?>" loading="lazy"/>
                             <?php } ?>            
                         </a>
                     </span>                    
@@ -53,7 +53,7 @@ get_header();
                     <?php if(get_field( 'banner_logo' )) { ?>
                         <?php $bannerLogo = get_field('banner_logo'); ?>
                         <span class="banner-icon" <?php if( get_field( 'banner_logo_height' )){ ?>style="height: <?php echo get_field( 'banner_logo_height' ); ?>px;"<?php } ?>>
-                            <img src="<?php echo $bannerLogo['url']; ?>"/>
+                            <img src="<?php echo $bannerLogo['url']; ?>" alt="<?php echo $bannerLogo['alt'] ? esc_attr( $bannerLogo['alt'] ) : ''; ?>" loading="lazy"/>
                         </span>
                     <?php } ?>
                     <h1 class="text-white"><?php echo get_field( 'banner_title' ); ?></h1>
@@ -75,7 +75,7 @@ get_header();
                 <span class="register-container">
                     <span class="sticky-container">
                         <span class="upper-container">
-                            <img class="calendar-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.svg"/ width="26">
+                            <img class="calendar-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.svg" alt="" width="26" loading="lazy"/>
                             <span class="date-title small-text-grey">Date</span>
                             <span class="date text-black"><?php echo $date->format('l, j F, Y'); ?></span>
                             <span class="time-title small-text-grey">Time</span>
@@ -131,7 +131,7 @@ get_header();
                     <?php $registration_form_logo = get_field( 'registration_form_logo' ); ?>
                     <?php if ( $registration_form_logo ) { ?>
                         <span class="registration-form-logo">
-                            <img src="<?php echo $registration_form_logo['url']; ?>" alt="<?php echo $registration_form_logo['alt']; ?>" />
+                            <img src="<?php echo $registration_form_logo['url']; ?>" alt="<?php echo $registration_form_logo['alt']; ?>" loading="lazy"/>
                         </span>
                     <?php } ?>
                     <span class="webinar-subtitle"><?php echo get_field( 'registration_form_title' ); ?></span>
@@ -298,12 +298,12 @@ get_header();
                                                         <?php $speaker_image = get_field( 'speaker_image' ); ?>
                                                         <span class="bg-container<?php if ( $speaker_image ) { ?><?php } else { ?> no-background<?php } ?>">
                                                             <?php if ( $speaker_image ) { ?>
-                                                                <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" />
+                                                                <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" loading="lazy"/>
                                                                 <span class="speaker-opacity"></span>
                                                             <?php } else { ?>
                                                                 <?php $generic_headshot = get_field( 'generic_headshot', 'options' ); ?>
                                                                 <?php if ( $generic_headshot ) { ?>
-                                                                    <img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" />
+                                                                    <img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" loading="lazy"/>
                                                                 <?php } ?>
                                                             <?php } ?>
                                                         </span>
@@ -325,11 +325,11 @@ get_header();
                                                             <span class="bg-container">
                                                                 <?php $speaker_image = get_field( 'speaker_image' ); ?>
                                                                 <?php if ( $speaker_image ) { ?>
-                                                                    <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" />
+                                                                    <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" loading="lazy"/>
                                                                 <?php } else { ?>
                                                                     <?php $generic_headshot = get_field( 'generic_headshot', 'options' ); ?>
                                                                     <?php if ( $generic_headshot ) { ?>
-                                                                        <img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" />
+                                                                        <img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" loading="lazy"/>
                                                                     <?php } ?>
                                                                 <?php } ?>
                                                             </span>
@@ -338,14 +338,14 @@ get_header();
                                                         <h3 class="title">
                                                             <?php the_title(); ?>
                                                             <?php if ( get_field('linkedin')) { ?>
-                                                                <a class="linkedin-link" href="<?php the_field('linkedin');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/round-linkedin.svg" width="20"/></a>
+                                                                <a class="linkedin-link" href="<?php the_field('linkedin');?>" target="_blank" aria-label="LinkedIn profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/round-linkedin.svg" width="20" alt="" loading="lazy"/></a>
                                                             <?php } ?>
                                                         </h3>
                                                         <p class="job-title"><?php echo get_field( 'job_title' ); ?></p>
                                                         <?php $company_logo = get_field( 'company_logo' ); ?>
                                                         <?php if ( $company_logo ) { ?>
                                                             <span class="company-logo">
-                                                            <img src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt']; ?>" />
+                                                            <img src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt']; ?>" loading="lazy"/>
                                                         </span>
                                                         <?php } ?>
                                                     </div>

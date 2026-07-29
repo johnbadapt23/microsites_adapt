@@ -7,7 +7,7 @@
 					<?php if ( $logo ) { ?>
 						<span class="ticker-logo-container">
 							<span class="bg-container">
-								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
 							</span>
 						</span>
 					<?php } ?>
@@ -23,7 +23,7 @@
 					<?php if ( $logo ) { ?>
 						<span class="ticker-logo-container">
 							<span class="bg-container">
-								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
 							</span>
 						</span>
 					<?php } ?>
