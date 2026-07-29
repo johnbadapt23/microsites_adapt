@@ -1,0 +1,271 @@
+section.form-section {
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 0;
+
+    .container {
+        .form-inner {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            display: block;
+            padding: 35px 90px 30px;
+            -webkit-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.1);
+            -moz-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.1);
+            box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.1);
+
+            @include responsive(1023) {
+                padding: 35px 30px 30px;
+            }
+
+            h2 {
+                float: left;
+                font-size: 32px;
+                margin-bottom: 0px;
+                width: 100%;
+                text-align: center;
+                color: #000;
+
+                @include responsive(1023) {
+                    text-align: left;
+                }
+            }
+
+            .hbspt-form fieldset textarea {
+                height: 175px!important;
+            }
+
+            .hbspt-form .hs_submit.hs-submit, .hs-form .hs_submit.hs-submit {
+                margin-top: 0px;
+            }
+
+            .hbspt-form div.actions, .hs-form div.actions {
+                position: relative;
+                bottom: 0;
+
+                &:hover {
+                    bottom: 5px;
+                }
+            }
+
+            li.hs-form-radio {
+    			margin-right: 0px!important;
+    			width: 100%!important;
+            }
+
+            .hs-fieldtype-radio {
+                legend {
+                    padding-left: 7px;
+                }
+            }
+
+            .hs_dietary_requirements_ {
+                > label {
+                    left: 0;
+                    padding-left: 0px;
+                    top: 0px;
+                    margin-top: 20px;
+                    margin-bottom: 15px;
+
+                    span {
+                        width: 100%!important;
+            			color: #000!important;
+            			margin-bottom: 20px;
+            			margin-top: 0px;
+            			font-size: 16px;
+            			font-family: $font-base !important;
+            			font-weight: 600 !important;
+            			text-transform: none !important;
+            			background-color: transparent;
+            			top: auto;
+            			position: relative;
+            			padding: 0px;
+            			left: auto;
+            			z-index: 5;
+            			opacity: 1
+                    }
+                }
+
+                > legend {
+                    top: auto;
+                    position: relative;
+                    float: left;
+                    width: 100%!important;
+                    margin-bottom: 15px;
+                    padding-left: 7px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    &.registration-form-section {
+        padding-top: 80px;
+        background-color: transparent;
+
+        @include responsive(767) {
+            padding-top: 60px;
+        }
+
+        .container {
+            .form-inner {
+                position: relative;
+                padding: 35px 40px 35px;
+                background-color: #fff;
+
+                @include responsive(1023) {
+                    padding: 20px 30px 30px;
+                }
+
+                .icon-container {
+                    float: left;
+                    width: 100%;
+                    height: 45px;
+                    margin-bottom: 10px;
+
+                    @include responsive(1023) {
+                        height: 40px;
+                        margin-bottom: 40px;
+                    }
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+
+                h2 {
+                    @include responsive(1023) {
+                        text-align: center;
+                    }
+
+                    @include responsive(767) {
+                        font-size: 24px!important;
+                        line-height: 30px!important;
+                    }
+                }
+
+                .pre-title {
+                    float: left;
+                    width: 100%;
+                    text-align: center;
+                    font-family: $font-base;
+                    font-size: 24px;
+                    line-height: 30px;
+                    color: $color-red;
+                    margin-bottom: 10px;
+                }
+
+                .form-container {
+                    width: 100%;
+                    padding: 0 50px;
+
+                    @include responsive(1023) {
+                        padding: 0px;
+                    }
+
+                }
+
+                &:after {
+        			content: '';
+        			width: 54px;
+        			height: 54px;
+        			background-image: url('../images/overlay-element.svg');
+        			background-size: contain;
+        			background-repeat: no-repeat;
+        			position: absolute;
+        			top: 40px;
+        			right: 40px;
+        			display: block;
+
+                    @include responsive(1023) {
+                        top: 20px;
+                        right: 30px;
+                    }
+        		}
+
+                li.hs-form-radio {
+        			margin-right: 35px!important;
+        			width: auto!important;
+                }
+            }
+
+            .after-form-text {
+                float: left;
+                width: 100%;
+                text-align: center;
+                margin-top: 80px;
+                margin-bottom: 20px;
+
+                .text-inner {
+                    display: block;
+                    margin: 0 auto;
+                    width: 100%;
+                    max-width: 500px;
+
+                    h3 {
+                        color: #000;
+                        font-family: $font-base;
+                        float: left;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 24px;
+                        line-height: 30px;
+                        margin-bottom: 15px;
+                    }
+
+                    .text-container {
+                        float: left;
+                        width: 100%;
+                        text-align: center;
+
+                        p {
+                            color: #000;
+
+                            a {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.template-registration {
+    header {
+        display: none;
+    }
+
+    main {
+        margin-top: 0px;
+        background-color: #fff;
+    }
+
+    .register-header {
+        position: absolute;
+        float: left;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        height: 120px;
+        padding: 20px 0;
+
+        @include responsive(767) {
+            height: 75px;
+        }
+
+        .container {
+            text-align: center;
+
+            img.logo {
+                @include responsive(767) {
+                    width: 90px!important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline-color: transparent;
+	outline-style: none;
+}
+
+::selection {
+	//background: $selection-bg;
+	color: inherit;
+	text-shadow: none;
+}
+
+::-webkit-selection {
+	//background: $selection-bg;
+	color: $selection-color;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	//background: $selection-bg;
+	color: $selection-color;
+	text-shadow: none;
+}
+
+html {
+	font-family: $font-main;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+	font-family: $font-main;
+	width: 100%;
+	min-height: 100%;
+	min-width: $site-min-width;
+	@media (max-width: 767px) {
+		overflow-x: hidden;
+	}
+}
+
+html.fixed {
+	overflow: hidden;
+
+	body {
+		overflow: hidden;
+	}
+}
+
+body {
+	overflow-x: hidden;
+
+	&.fixed {
+		overflow: hidden;
+	}
+
+	 > main,
+	 > nav,
+	 > section,
+	> footer {
+		//display: none;
+	}
+}
+
+main {
+	margin-bottom: 0;
+	margin-top: 70px;
+	float:left;
+	width:100%;
+	position: relative;
+	opacity: 0;
+	@include transition(all, 500ms, ease);
+
+	@media (max-width:767px) {
+		margin-top: 60px;
+	}
+
+	&.loaded {
+		opacity: 1;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: $site-max-width;
+	min-width: $site-min-width;
+	margin: 0 auto;
+	padding: 0 $site-padding-desktop;
+
+	.inner {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+}
+
+article,
+footer,
+header,
+section {
+	position: relative;
+	width: 100%;
+}
+
+img {
+	display: inline;
+	vertical-align: middle;
+	max-width: 100%;
+	border: none;
+}
+
+a {
+	border: none;
+	@include transition(all, 200ms, ease);
+}
+
+.imageContainer {
+	width: 100%;
+	float: left;
+	position: relative;
+
+	.image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-size: cover;
+	}
+}
