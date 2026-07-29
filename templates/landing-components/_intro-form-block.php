@@ -4,7 +4,7 @@
             <div class="column one-half text-column">
                 <div class="text-content-inner">
                     <span class="pre-title inter-semi-bold text-red"><?php echo get_sub_field( 'sub_title' ); ?></span>
-                    <h2 class="title"><?php echo get_sub_field( 'title' ); ?></h2>
+                    <h1 class="title"><?php echo get_sub_field( 'title' ); ?></h1>
                     <span class="text p-large"><?php echo get_sub_field( 'text' ); ?></span>
                     <span class="links-container desktop">
                         <?php if ( have_rows( 'button' ) ) : ?>
