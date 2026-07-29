@@ -38,8 +38,13 @@ jobs:
         # _build:ci skips build:images for the same reason - see gulpfile.js
         run: npx gulp _build:ci
 
-      - name: Remove dev-only files before deploy
-        run: rm -rf node_modules .git .github
+      - name: Remove build-only files before deploy
+        # WordPress only ever loads: assets/, templates/, includes/,
+        # functions.php, header.php, footer.php, index.php, style.css. Every
+        # thing else here exists only to produce assets/ during the build
+        # step above, or is repo/CI plumbing - none of it needs to reach the
+        # live theme directory.
+        run: rm -rf node_modules .git .github source gulpfile.js package.json package-lock.json .gitignore .DS_Store README.md faviconData.json
 
       - name: Deploy over SFTP
         # Switched from wlixcc/SFTP-Deploy-Action: it actually shells out to

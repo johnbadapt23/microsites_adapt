@@ -99,7 +99,25 @@ export default {
         favicon: 'source/images/favicon.png'
     },
     deploy: {
-        files: ['**/*', '!node_modules/**', '!node_modules', '!.git/**', '!.git'],
+        // Only what WordPress actually loads at runtime: assets/, templates/,
+        // includes/, functions.php, header.php, footer.php, index.php,
+        // style.css. Everything else (node_modules, .git*, source/, the
+        // build tooling itself, README, faviconData.json) only exists to
+        // produce assets/ and never needs to reach the live theme directory.
+        files: [
+            '**/*',
+            '!node_modules/**', '!node_modules',
+            '!.git/**', '!.git',
+            '!.github/**', '!.github',
+            '!source/**', '!source',
+            '!gulpfile.js',
+            '!package.json',
+            '!package-lock.json',
+            '!.gitignore',
+            '!.DS_Store',
+            '!README.md',
+            '!faviconData.json'
+        ],
         folder: './',
         archive: 'ADAPT-MICROSITE.zip',
         repository: 'https://github.com/johnbadapt23/microsites_adapt.git',
