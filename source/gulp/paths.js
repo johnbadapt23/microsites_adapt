@@ -99,10 +99,14 @@ export default {
         favicon: 'source/images/favicon.png'
     },
     deploy: {
-        files: '**/*',
+        files: ['**/*', '!node_modules/**', '!node_modules', '!.git/**', '!.git'],
         folder: './',
-        archive: 'CARERSNT.zip',
-        repository: 'https://github.com/shop12dev/carersnt.git'
+        archive: 'ADAPT-MICROSITE.zip',
+        repository: 'https://github.com/johnbadapt23/microsites_adapt.git',
+        // gulp-deploy-git options (see source/gulp/tasks/deploy/git.js):
+        // pushes to this branch instead of its 'master' default.
+        remoteBranch: 'dev',
+        branches: ['dev']
     }
 };
 
