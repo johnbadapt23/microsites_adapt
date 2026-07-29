@@ -26,10 +26,17 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        # --ignore-scripts: gulp-image's native image-optimizer binaries
+        # (gifsicle/pngquant/mozjpeg/etc.) try to download a prebuilt binary
+        # and fall back to compiling from source on failure, which needs
+        # system libs this runner doesn't have (see build:images note below).
+        # Skipping install scripts avoids that entirely - nothing else in
+        # this dependency tree relies on a postinstall step to function.
+        run: npm install --no-audit --no-fund --ignore-scripts
 
       - name: Build theme
-        run: npx gulp _build
+        # _build:ci skips build:images for the same reason - see gulpfile.js
+        run: npx gulp _build:ci
 
       - name: Remove dev-only files before deploy
         run: rm -rf node_modules .git
