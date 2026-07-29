@@ -1,0 +1,138 @@
+ /*
+ 	WordPress Adapt Microsite
+  Author: Adapt
+ 	Theme Name: Adapt Microsite
+ 	Version: 1.0
+*/
+
+
+
+
+
+/* GLOBAL TEMP FIX WHILE SOURCE FILES ARE NOT PROVIDED */
+/* TEMP FIX */
+section.community-block.landing-community .container .community-logo-ticker .community-logo-ticker-container .band-container-backwards .moving-text {
+    animation: move-text 30s linear infinite;
+	display: flex;
+    width: max-content;
+}
+
+section.community-block.landing-community .container .community-logo-ticker .community-logo-ticker-container .band-container-backwards .moving-text .ticker-logo-container {
+	width: auto;
+    max-width: 250px;
+    flex-shrink: 0;
+}
+section.community-block.landing-community .container .community-logo-ticker .community-logo-ticker-container .band-container-backwards .moving-text .ticker-logo-container .logo-text,
+section.community-block.landing-community .container .community-logo-ticker .community-logo-ticker-container .band-container-backwards .moving-text .ticker-logo-container .logo-container{
+	float: none;
+	width: auto;
+	display: block;
+}
+
+section.agenda-item .container .roundtable-container .content-container .company-container .company *,
+section.agenda-item .content-container .company-container span.company * {
+    color: inherit;
+}
+
+
+section.agenda-item .container .roundtable-container .content-container .company-container .company a,
+section.agenda-item .content-container .company-container span.company a {
+    color: #e7534f !important;
+}
+
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text li,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text li {
+    font-size: 14px;
+}
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text ul,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.agenda-description div:empty {
+    min-height: 15px;
+}
+
+
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text {
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+
+  /* Chrome, Edge, Safari */
+  overflow-y: auto;
+}
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar {
+  width: 5px;
+}
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar-track,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar-thumb,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar-thumb:hover,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.mfp-wrap.mfp-gallery .mfp-content .speaker-popup-container .column.about-column .about .about-text p,
+.mfp-wrap.mfp-speakers .mfp-content .speaker-popup-container .column.about-column .about .about-text p{
+  float: none;
+}
+
+
+.agenda-subtext {
+    color: #000;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    float: left;
+    width: 100%;
+    position: relative;
+    margin-top: -30px;
+}
+
+.agenda-subtext * {
+    color: inherit;
+    font-size: inherit;
+}
+
+.mfp-content .webinar-register-form span.registration-form-logo {
+    margin-left: auto;
+    float: none !important;
+    clear: both;
+    display: table;
+    margin-right: auto;
+}
+
+
+@media (max-width: 1024px){
+  .agenda-subtext{
+    margin-top: -20px;
+  }
+}
+
+@keyframes move-text {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50%));
+  }
+}
