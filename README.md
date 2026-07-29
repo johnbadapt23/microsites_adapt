@@ -131,6 +131,59 @@ is actually named):
 No other setup needed — push to `dev` and the workflow does the rest.
 Check the **Actions** tab on GitHub to watch a deploy or debug a failure.
 
+## WP Rocket compatibility
+
+This theme assumes WP Rocket (or a similar caching/optimization plugin) may
+be active. The build already does most of Rocket's job itself (minified,
+concatenated CSS/JS, `font-display: swap`, native lazy-loading, deferred
+scripts), so a few Rocket settings need to be configured to avoid the two
+optimizers fighting each other:
+
+- **LazyLoad for images** — the theme already outputs native
+  `loading="lazy"` on ~125 below-the-fold images, and the four hero/banner
+  background images (`class="desktop"`) are marked `skip-lazy` on purpose
+  (they're above the fold / LCP candidates). If Rocket's own LazyLoad
+  module is enabled, it generally respects images that already carry
+  `loading="lazy"` or the `skip-lazy` class, but if you ever see an image
+  double-processed or a background image incorrectly lazy-loaded, either
+  disable Rocket's LazyLoad module entirely (native attributes already
+  cover this) or add `.skip-lazy` to Rocket's **Excluded images or
+  iframes** field under File Optimization.
+
+- **Delay JavaScript Execution** — do **not** delay `main.min.js`, jQuery,
+  or jQuery Migrate. `main.min.js` binds sliders (Slick), AOS scroll
+  animations, the mobile menu, and popups on page load — delaying it until
+  first user interaction breaks all of that above the fold. Enable Rocket's
+  "Safe Mode" for this feature (auto-excludes jQuery/jQuery Migrate and
+  everything under `/wp-content/` and `/wp-includes/`), or manually add
+  `main.min.js` and `jquery` to the **Excluded JavaScript Files** field.
+  Third-party trackers (HubSpot, GTM) are good candidates *for* delaying —
+  just not the theme's own script.
+
+- **Minify/Combine CSS & JS** — `assets/css/main.min.css` and
+  `assets/js/main.min.js` are already minified and concatenated by the
+  build. Add `/wp-content/themes/<this-theme>/assets/(.*).css` and
+  `/wp-content/themes/<this-theme>/assets/(.*).js` to Rocket's **Excluded
+  CSS/JS Files** fields so it doesn't waste time re-processing (or risk
+  mangling) files that are already optimized.
+
+- **Remove Unused CSS** — AOS and Slick add their animation/active classes
+  via JavaScript after the page loads (`.aos-animate`, `.slick-dots`,
+  `.slick-active`, etc.), which Rocket's headless render pass can miss and
+  strip as "unused." If animations or slider controls look unstyled after
+  enabling this feature, add those class names to Rocket's **CSS Safelist**
+  under File Optimization.
+
+- **Preconnect / DNS Prefetch** — `header.php` already emits
+  `<link rel="preconnect">` for Google Fonts, unpkg, HubSpot, and GTM. It's
+  safe (harmless, just redundant) if you also add these in Rocket's
+  Prefetch DNS Requests field — browsers dedupe identical hints.
+
+- **Font-display / canonical / meta tags** — no Rocket conflict here;
+  `font-display: swap` is baked into the compiled CSS and the canonical
+  URL / meta description / OG tags are emitted by `includes/_seo.php`
+  independently of caching.
+
 ## Deploying manually
 
 If you'd rather not wait for CI:

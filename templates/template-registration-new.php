@@ -42,7 +42,7 @@ get_header();
         <div class="imageSizeContainer">
             <div class="bgContainer">
                 <?php $banner_image = get_field( 'banner_background_image' ); ?>
-                <img class="desktop" src="<?php echo $banner_image['url']; ?>" alt="<?php echo $banner_image['alt']; ?>"/>
+                <img class="desktop skip-lazy" src="<?php echo $banner_image['url']; ?>" alt="<?php echo $banner_image['alt']; ?>"/>
                 <?php if( get_field('banner_opacity_overlay') == 'no-overlay'){ ?>
                 <?php } else { ?>
                     <span class="opacity-overlay"></span>

@@ -20,7 +20,7 @@
             <div class="bgContainer">
                 <?php if ( get_sub_field( 'image_or_video_background' ) == 'image') { ?>
                     <?php $image = get_sub_field('image'); ?>
-                    <img class="desktop" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    <img class="desktop skip-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                 <?php } else { ?>
                     <video width="100%" muted="muted" autoplay="autoplay" playsinline="playsinline" loop="loop">
                         <source type="video/mp4" src="<?php echo get_sub_field( 'video_url' ); ?>" />

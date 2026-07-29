@@ -19,7 +19,7 @@
                     <div class="image-container">
                         <div class="bg-container">
                             <?php $image = get_sub_field('poster_image'); ?>
-                            <img class="desktop" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img class="desktop skip-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                             <?php if( get_sub_field( 'vimeo_code' )) { ?>
                                 <span class="opacity-overlay"></span>
                                 <a class="popup-vimeo" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>"></a>
