@@ -28,7 +28,9 @@ remove_action('wp_head', 			'start_post_rel_link', 10, 0);
 remove_action('wp_head', 			'adjacent_posts_rel_link', 10, 0);
 remove_action('wp_head', 			'wp_generator');
 remove_action('wp_head', 			'adjacent_posts_rel_link_wp_head', 10, 0);
-remove_action('wp_head', 			'rel_canonical');
+// rel_canonical was removed here - restored: without it, WordPress never
+// outputs a canonical <link>, which leaves duplicate-content/URL-variant
+// ranking signals unresolved for every page on the site.
 remove_action('wp_head', 			'wp_shortlink_wp_head', 10, 0);
 
 // filters

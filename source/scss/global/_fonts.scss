@@ -4,6 +4,7 @@
     url('../fonts/Inter-Semibold.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,7 +13,10 @@
     url('../HelveticaNeue-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: block;
+  // block hides text until the font loads (or times out) - swap shows the
+  // fallback font immediately and swaps in once the custom font is ready,
+  // which is what avoids a flash of invisible text.
+  font-display: swap;
 }
 
 @font-face {
@@ -21,7 +25,10 @@
     url('../fonts/HelveticaNeue-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
-  font-display: block;
+  // block hides text until the font loads (or times out) - swap shows the
+  // fallback font immediately and swaps in once the custom font is ready,
+  // which is what avoids a flash of invisible text.
+  font-display: swap;
 }
 
 @font-face {
@@ -30,7 +37,10 @@
     url('../HelveticaNeue.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  // block hides text until the font loads (or times out) - swap shows the
+  // fallback font immediately and swaps in once the custom font is ready,
+  // which is what avoids a flash of invisible text.
+  font-display: swap;
 }
 
 
@@ -43,6 +53,7 @@
          url('../fonts/Henry-Jones.svg#Henry-Jones') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 [class*='icon-']:before{
 	display: inline-block;

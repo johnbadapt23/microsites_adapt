@@ -6,7 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
-<title><?php wp_title(); ?></title>
+<?php // <title> is now rendered by WordPress core via add_theme_support('title-tag')
+      // in includes/_setup.php, hooked into wp_head() below - gives proper
+      // "Page Title – Site Name" formatting instead of the bare page title
+      // the old wp_title() call produced. ?>
+<?php adapt_seo_head_tags(); ?>
+<?php adapt_seo_json_ld(); ?>
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.min.css?ver=1.11">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/skelet-icons-master/style.css">
@@ -21,9 +26,18 @@
      loading an unpinned, decade-old copy (2.1.4) from Google's hosted
      libraries CDN, which Google has also deprecated. -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://js.hs-scripts.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@1.6.2/dist/lottie-interactivity.min.js"></script>
+<?php // defer (not async): lottie-interactivity depends on lottie-player being
+      // defined first, and defer preserves execution order while letting the
+      // browser keep parsing the page instead of blocking on these downloads.
+      // Safe here because custom elements (<lottie-player>) auto-upgrade once
+      // defined, even if that happens after the tag already exists in the DOM. ?>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js" defer></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@1.6.2/dist/lottie-interactivity.min.js" defer></script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss6XUuPFsJgunJJ6dZZjzuR9d39WtjRU"></script> -->
 
 <?php get_template_part( 'templates/partials/_icons' ); ?>
