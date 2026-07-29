@@ -1,0 +1,60 @@
+name: Deploy to Staging (SFTP)
+
+# Auto-deploys the built theme to staging every time dev is pushed.
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    # NOTE: STAGING_HOST/PORT/REMOTE_PATH (variables) and STAGING_USERNAME/PASS
+    # (secrets) are scoped to a GitHub Environment in this repo's settings.
+    # Update the name below if that environment isn't literally called "staging".
+    environment: staging
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        # --ignore-scripts: gulp-image's native image-optimizer binaries
+        # (gifsicle/pngquant/mozjpeg/etc.) try to download a prebuilt binary
+        # and fall back to compiling from source on failure, which needs
+        # system libs this runner doesn't have (see build:images note below).
+        # Skipping install scripts avoids that entirely - nothing else in
+        # this dependency tree relies on a postinstall step to function.
+        run: npm install --no-audit --no-fund --ignore-scripts
+
+      - name: Build theme
+        # _build:ci skips build:images for the same reason - see gulpfile.js
+        run: npx gulp _build:ci
+
+      - name: Remove dev-only files before deploy
+        run: rm -rf node_modules .git .github
+
+      - name: Deploy over SFTP
+        # Switched from wlixcc/SFTP-Deploy-Action: it actually shells out to
+        # rsync over SSH under the hood, which needs remote shell/command
+        # execution. Your staging account is SFTP-only (shell access
+        # disabled, which is normal/more secure for shared hosting), so that
+        # action fails there no matter how it's configured. This action
+        # speaks the SFTP protocol directly (file operations only, including
+        # directory creation - that's part of the SFTP subsystem itself, not
+        # a shell command), so it works under an SFTP-only account.
+        uses: wangyucode/sftp-upload-action@v3
+        with:
+          host: ${{ vars.STAGING_HOST }}
+          port: ${{ vars.STAGING_PORT }}
+          username: ${{ secrets.STAGING_USERNAME }}
+          password: ${{ secrets.STAGING_PASS }}
+          localDir: '.'
+          remoteDir: ${{ vars.STAGING_REMOTE_PATH }}

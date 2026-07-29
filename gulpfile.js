@@ -43,4 +43,19 @@ gulp.task('_build', gulp.parallel(
     'build:php'
 ));
 
+// CI-only variant: skips build:images. gulp-image's native binaries
+// (gifsicle, pngquant, mozjpeg, advpng, zopflipng) try to download a
+// prebuilt binary and fall back to compiling from source when that fails -
+// which needs system libs (libimagequant.h etc.) that hosted CI runners
+// don't have. assets/images/ is already committed and pre-optimized, so CI
+// deploys just skip re-optimizing it; run `gulp build:images` locally
+// instead when images actually change.
+gulp.task('_build:ci', gulp.parallel(
+    'build:fonts',
+    'build:icons',
+    'build:scripts',
+    'build:styles',
+    'build:php'
+));
+
 export default gulp;
