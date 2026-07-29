@@ -6,6 +6,9 @@ import path from '../../paths.js';
 gulp.task('deploy:git', function () {
     return gulp.src('**/*')
         .pipe(deploy({
-            repository: path.deploy.repository
+            repository: path.deploy.repository,
+            remoteBranch: path.deploy.remoteBranch,
+            branches: path.deploy.branches,
+            message: 'Deploy: ' + new Date().toISOString()
         }));
 });
