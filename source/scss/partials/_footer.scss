@@ -107,8 +107,7 @@ footer {
                     }
                 }
 
-                &.details-column {
-                    padding-left: calc(25% - 130px);
+                &.details-column {                    
                     text-align: left;
 
                     img.logo {
@@ -122,6 +121,7 @@ footer {
                     a.phone-link {
                         color: #fff;
                         float: left;
+                        width: 100%;
                         font-size: 14px;
                         line-height: 24px;
                         margin-bottom: 0px;

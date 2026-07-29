@@ -26,10 +26,11 @@ export default {
             'node_modules/jquery.scrollbar/jquery.scrollbar.min.js',
             'node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js',
             'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js',
+            'node_modules/aos/dist/aos.js', // main.js now calls AOS.init() directly
             'source/js/main.js',
         ],
         styles: [
-            // 'node_modules/aos/dist/aos.css',
+            'node_modules/aos/dist/aos.css',
             'node_modules/magnific-popup/dist/magnific-popup.css',
             'node_modules/select2/dist/css/select2.css',
             'node_modules/perfect-scrollbar/css/perfect-scrollbar.css',
