@@ -105,13 +105,40 @@ Promote `dev` to `main` the normal way (PR/merge on GitHub, or locally via
 
 `.github/workflows/deploy-staging.yml` runs on every push to `dev`:
 
-1. Checks out the repo
+1. Checks out the repo with full git history (`fetch-depth: 0` — delta sync
+   needs to diff the previous commit against the current one)
 2. `npm install --ignore-scripts` (skips native binary builds — see above)
 3. `npx gulp _build:ci` (same as `_build`, minus `build:images`, for the same reason)
-4. Strips `node_modules`, `.git`, `.github` from the tree
-5. Uploads everything else to the staging server over real SFTP (not
-   rsync-over-SSH — the staging account is SFTP-only with shell access
-   disabled, so the deploy step must speak the SFTP protocol directly)
+4. **Verifies the rebuild matches what's committed** — fails the job if
+   `assets/` differs from a fresh build, instead of silently deploying
+   stale CSS/JS. This means `assets/` is expected to be committed
+   alongside any `source/` change: run `npx gulp _build` locally and
+   commit the result before pushing, or this step fails the build. (The
+   icon font build used to be non-reproducible — see the `icons.js` fix —
+   which would have made this check permanently red; that's fixed now.)
+5. Deploys via [`milanmk/actions-file-deployer`](https://github.com/milanmk/actions-file-deployer)
+   over SFTP (not rsync-over-SSH — the staging account is SFTP-only with
+   shell access disabled, so the deploy step must speak the SFTP protocol
+   directly), in **delta** mode: it diffs the previous and current commit
+   with `git diff` and uploads only what actually changed, instead of the
+   whole theme on every push. `sync-delta-excludes` keeps `source/`,
+   `node_modules`, `gulpfile.js`, `package*.json`, `README.md`,
+   `faviconData.json`, and `.github` out of every deploy.
+
+To force a one-time full re-sync (recommended the first time this runs
+against a given server, or any time the remote and repo might have
+drifted apart), trigger the workflow manually from the **Actions** tab and
+choose `full` for the sync input — every push after that stays on the fast
+delta path automatically.
+
+> **YAML gotcha if you ever edit this workflow:** `sync-delta-excludes` and
+> `ftp-mirror-options` must use a folded scalar (`>-`), never a literal
+> block (`|`). The action inlines those values as literal text into a
+> single-line `git diff ...` command inside its composite script, before
+> bash ever parses it. A literal block preserves real newlines, which land
+> mid-command and silently split it into separate broken commands. A
+> folded scalar collapses line breaks into spaces first, keeping it one
+> valid line.
 
 ### Required GitHub configuration
 
