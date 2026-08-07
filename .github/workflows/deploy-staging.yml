@@ -1,14 +1,31 @@
 name: Deploy to Staging (SFTP)
 
-# Auto-deploys the built theme to staging every time dev is pushed.
+# Auto-deploys to staging on every push to dev, using delta sync (only
+# transfers files that actually changed since the previous commit, instead
+# of re-uploading the whole theme every time).
 on:
   push:
     branches:
       - dev
+  # Lets you force a one-time "full" sync from the Actions tab - use this
+  # the first time this workflow runs against a server, or any time the
+  # remote and the repo may have drifted apart. Every push after that stays
+  # on the fast delta path automatically.
+  workflow_dispatch:
+    inputs:
+      sync:
+        description: "File synchronization"
+        required: true
+        default: "delta"
+        type: choice
+        options:
+          - delta
+          - full
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     # NOTE: STAGING_HOST/PORT/REMOTE_PATH (variables) and STAGING_USERNAME/PASS
     # (secrets) are scoped to a GitHub Environment in this repo's settings.
@@ -18,6 +35,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Delta sync diffs the previous commit against this one, so it
+          # needs real history - a shallow checkout would only ever see one
+          # commit and delta sync would have nothing to compare against.
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -38,28 +60,64 @@ jobs:
         # _build:ci skips build:images for the same reason - see gulpfile.js
         run: npx gulp _build:ci
 
-      - name: Remove build-only files before deploy
-        # WordPress only ever loads: assets/, templates/, includes/,
-        # functions.php, header.php, footer.php, index.php, style.css. Every
-        # thing else here exists only to produce assets/ during the build
-        # step above, or is repo/CI plumbing - none of it needs to reach the
-        # live theme directory.
-        run: rm -rf node_modules .git .github source gulpfile.js package.json package-lock.json .gitignore .DS_Store README.md faviconData.json
+      - name: Verify built assets match what's committed
+        # assets/ is committed to git (it's what actually gets deployed), so
+        # the delta-sync step below trusts "git diff" to know what changed.
+        # That only works if whoever last touched source/ also ran the build
+        # and committed the result. This rebuilds from the same source and
+        # fails the job - loudly, before anything gets deployed - if the
+        # committed assets/ don't match what source/ actually produces,
+        # instead of silently deploying stale CSS/JS.
+        run: |
+          if ! git diff --quiet -- assets/; then
+            echo "::error::Built assets/ don't match what's committed. Run 'npx gulp _build' locally and commit the result before pushing."
+            git status --porcelain -- assets/
+            exit 1
+          fi
+          echo "assets/ matches source - safe to deploy."
 
-      - name: Deploy over SFTP
-        # Switched from wlixcc/SFTP-Deploy-Action: it actually shells out to
-        # rsync over SSH under the hood, which needs remote shell/command
-        # execution. Your staging account is SFTP-only (shell access
-        # disabled, which is normal/more secure for shared hosting), so that
-        # action fails there no matter how it's configured. This action
-        # speaks the SFTP protocol directly (file operations only, including
-        # directory creation - that's part of the SFTP subsystem itself, not
-        # a shell command), so it works under an SFTP-only account.
-        uses: wangyucode/sftp-upload-action@v3
+      - name: Deploy over SFTP (delta sync)
+        # milanmk/actions-file-deployer speaks SFTP directly (no shell/rsync
+        # requirement - matters because the staging account has shell access
+        # disabled) and, in delta mode, uploads only files that changed
+        # between the previous and current commit instead of the whole
+        # theme every time. sync-delta-excludes keeps build tooling
+        # (source/, node_modules, gulpfile.js, package*.json, etc.) out of
+        # the diff entirely, same exclusions as before, just enforced via
+        # git pathspec instead of a pre-deploy rm -rf.
+        uses: milanmk/actions-file-deployer@master
         with:
-          host: ${{ vars.STAGING_HOST }}
-          port: ${{ vars.STAGING_PORT }}
-          username: ${{ secrets.STAGING_USERNAME }}
-          password: ${{ secrets.STAGING_PASS }}
-          localDir: '.'
-          remoteDir: ${{ vars.STAGING_REMOTE_PATH }}
+          remote-protocol: sftp
+          remote-host: ${{ vars.STAGING_HOST }}
+          remote-port: ${{ vars.STAGING_PORT }}
+          remote-user: ${{ secrets.STAGING_USERNAME }}
+          remote-password: ${{ secrets.STAGING_PASS }}
+          local-path: .
+          remote-path: ${{ vars.STAGING_REMOTE_PATH }}
+          sync: ${{ github.event_name == 'workflow_dispatch' && inputs.sync || 'delta' }}
+          # NOTE: this MUST be a folded scalar (">-"), not a literal block
+          # ("|"). The action inlines this value as literal text into a
+          # single "git diff ... ${{ inputs.sync-delta-excludes }} > ..."
+          # line inside its composite script, before bash ever parses it -
+          # a literal block preserves real newlines, which land mid-command
+          # and split it into separate broken "commands". A folded scalar
+          # collapses line breaks into spaces, keeping it one valid line.
+          sync-delta-excludes: >-
+            ':!source' ':!source/*'
+            ':!node_modules' ':!node_modules/*'
+            ':!gulpfile.js' ':!package.json' ':!package-lock.json'
+            ':!.gitignore' ':!.github' ':!.github/*'
+            ':!README.md' ':!faviconData.json'
+          # Only used when sync is "full" (manual dispatch) - mirror ignores
+          # git history entirely and copies whatever's on disk, so it needs
+          # its own excludes to keep node_modules/source/etc. off the server.
+          ftp-mirror-options: >-
+            --exclude-glob=node_modules/*
+            --exclude-glob=source/*
+            --exclude-glob=.github/*
+            --exclude-glob=gulpfile.js
+            --exclude-glob=package.json
+            --exclude-glob=package-lock.json
+            --exclude-glob=README.md
+            --exclude-glob=faviconData.json
+          artifacts: true
