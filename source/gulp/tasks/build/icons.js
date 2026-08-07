@@ -5,7 +5,14 @@ import iconfontCss from 'gulp-iconfont-css';
 
 import path from '../../paths.js';
 
-const timestamp = Math.round(Date.now() / 1000);
+// Fixed, not Date.now(): gulp-iconfont embeds this in the generated font's
+// metadata, so a wall-clock timestamp makes the output non-deterministic -
+// rebuilding from byte-identical source/icons/*.svg produced a different
+// icons.{eot,ttf,woff,woff2,svg} every time, which defeats any "does the
+// build match what's committed" check (CI would always show a diff, even
+// with zero real changes). The exact value is arbitrary - it's just font
+// metadata - so any fixed epoch works.
+const timestamp = 1700000000;
 
 gulp.task('build:icons', function (done) {
     // Two dependent streams: the second reads the icons.css the first one
