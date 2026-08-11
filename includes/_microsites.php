@@ -14,11 +14,16 @@
  * switch_to_blog(), not get_blog_details()'s cached copy - so renaming a
  * site's title is reflected here without any extra step.
  *
- * Result is cached in a transient so a plain footer render doesn't run a
- * network-wide site query (plus a switch_to_blog() per site) on every
- * single page load. The cache is cleared automatically whenever a site is
- * added, deleted, archived/unarchived, or its details change, so editors
- * don't have to wait out the cache lifetime to see updates.
+ * The (name, url) list is cached ONCE for the whole network via a site
+ * transient, not per-site - every site's footer reads the same shared
+ * cache. This matters: renaming Site A's title only fires WordPress hooks
+ * in Site A's own request context, so a per-site cache on Site B would
+ * never get told to refresh and would keep serving Site A's old name
+ * indefinitely. A single shared cache means one flush (from wherever the
+ * change happened) fixes it everywhere. "Which one is the current site"
+ * is deliberately NOT part of the cached data - it's computed fresh on
+ * every call from get_current_blog_id(), which is free and always
+ * correct regardless of cache age.
  */
 
 /**
@@ -31,50 +36,56 @@ function adapt_get_network_microsites() {
 		return array();
 	}
 
-	$cached = get_transient( 'adapt_network_microsites' );
-	if ( false !== $cached ) {
-		return $cached;
-	}
+	$microsites = get_site_transient( 'adapt_network_microsites' );
 
-	$sites = get_sites( array(
-		'public'   => 1,
-		'archived' => 0,
-		'deleted'  => 0,
-		'spam'     => 0,
-		'number'   => 0, // no limit - return every matching site
-	) );
+	if ( false === $microsites ) {
+		$sites = get_sites( array(
+			'public'   => 1,
+			'archived' => 0,
+			'deleted'  => 0,
+			'spam'     => 0,
+			'number'   => 0, // no limit - return every matching site
+		) );
 
-	$current_blog_id = get_current_blog_id();
-	$microsites       = array();
+		$microsites = array();
 
-	foreach ( $sites as $site ) {
-		// Explicitly switch and read the 'blogname' option (Settings >
-		// General > Site Title for that site) rather than trusting
-		// get_blog_details()'s cache, which can lag behind if a persistent
-		// object cache is in play - this always reflects the live title.
-		switch_to_blog( $site->blog_id );
-		$site_title = get_option( 'blogname' );
-		$site_url   = get_option( 'siteurl' );
-		restore_current_blog();
+		foreach ( $sites as $site ) {
+			// Explicitly switch and read the 'blogname' option (Settings >
+			// General > Site Title for that site) rather than trusting
+			// get_blog_details()'s cache, which can lag behind if a
+			// persistent object cache is in play - this always reflects
+			// the live title.
+			switch_to_blog( $site->blog_id );
+			$site_title = get_option( 'blogname' );
+			$site_url   = get_option( 'siteurl' );
+			restore_current_blog();
 
-		if ( '' === trim( (string) $site_title ) ) {
-			continue;
+			if ( '' === trim( (string) $site_title ) ) {
+				continue;
+			}
+
+			$microsites[] = array(
+				'id'   => (int) $site->blog_id,
+				'name' => $site_title,
+				'url'  => $site_url,
+			);
 		}
 
-		$microsites[] = array(
-			'id'         => (int) $site->blog_id,
-			'name'       => $site_title,
-			'url'        => $site_url,
-			'is_current' => ( (int) $site->blog_id === $current_blog_id ),
-		);
+		// Alphabetical, so the list doesn't just reflect network creation order.
+		usort( $microsites, function ( $a, $b ) {
+			return strcasecmp( $a['name'], $b['name'] );
+		} );
+
+		set_site_transient( 'adapt_network_microsites', $microsites, 12 * HOUR_IN_SECONDS );
 	}
 
-	// Alphabetical, so the list doesn't just reflect network creation order.
-	usort( $microsites, function ( $a, $b ) {
-		return strcasecmp( $a['name'], $b['name'] );
-	} );
-
-	set_transient( 'adapt_network_microsites', $microsites, 12 * HOUR_IN_SECONDS );
+	// Computed per-request, not cached: correct regardless of which site
+	// built (or last refreshed) the shared cache above.
+	$current_blog_id = get_current_blog_id();
+	foreach ( $microsites as &$site ) {
+		$site['is_current'] = ( $site['id'] === $current_blog_id );
+	}
+	unset( $site );
 
 	return $microsites;
 }
@@ -82,11 +93,12 @@ function adapt_get_network_microsites() {
 /**
  * Keep the cached list honest - clear it on anything that could change
  * network membership or a site's name/URL, rather than waiting 12 hours.
+ * Uses delete_site_transient() (network-wide) to match the network-wide
+ * cache above - a change on any one site correctly busts the single
+ * shared cache every site's footer reads from.
  */
 function adapt_flush_network_microsites_cache() {
-	// delete_transient() is a no-op (and safe) on a site where it wasn't
-	// set, so this doesn't need an is_multisite() guard.
-	delete_transient( 'adapt_network_microsites' );
+	delete_site_transient( 'adapt_network_microsites' );
 }
 add_action( 'wp_initialize_site', 'adapt_flush_network_microsites_cache' );
 add_action( 'wp_delete_site', 'adapt_flush_network_microsites_cache' );
