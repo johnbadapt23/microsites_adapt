@@ -24,6 +24,10 @@
  * is deliberately NOT part of the cached data - it's computed fresh on
  * every call from get_current_blog_id(), which is free and always
  * correct regardless of cache age.
+ *
+ * The network's main site (the Network Admin site) is excluded entirely -
+ * it's not a public-facing microsite, so it shouldn't be reachable from a
+ * footer link.
  */
 
 /**
@@ -50,6 +54,13 @@ function adapt_get_network_microsites() {
 		$microsites = array();
 
 		foreach ( $sites as $site ) {
+			// Skip the network's main site - that's the Network Admin
+			// site, not a public-facing microsite, and visitors shouldn't
+			// be able to land on it from a footer link.
+			if ( is_main_site( $site->blog_id ) ) {
+				continue;
+			}
+
 			// Explicitly switch and read the 'blogname' option (Settings >
 			// General > Site Title for that site) rather than trusting
 			// get_blog_details()'s cache, which can lag behind if a
