@@ -5,6 +5,7 @@ require('includes/_hooks.php');
 require('includes/_setup.php');
 require('includes/_head.php');
 require('includes/_seo.php');
+require('includes/_microsites.php');
 require('includes/_menu.php');
 require('includes/_widgets.php');
 require('includes/_shortcodes.php');

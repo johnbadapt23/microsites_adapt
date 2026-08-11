@@ -85,6 +85,23 @@ $accessLink = get_field( 'access_the_portal_link', 'options'  );
 					
 				</div>
 			</div>
+			<?php $microsites = function_exists( 'adapt_get_network_microsites' ) ? adapt_get_network_microsites() : array(); ?>
+			<?php if ( ! empty( $microsites ) ) : ?>
+				<div class="footer-microsites">
+					<span class="footer-microsites-title">Our Microsites</span>
+					<ul class="footer-microsites-list">
+						<?php foreach ( $microsites as $microsite ) : ?>
+							<li class="footer-microsite<?php echo $microsite['is_current'] ? ' current' : ''; ?>">
+								<?php if ( $microsite['is_current'] ) : ?>
+									<span class="footer-microsite-link current"><?php echo esc_html( $microsite['name'] ); ?></span>
+								<?php else : ?>
+									<a class="footer-microsite-link" href="<?php echo esc_url( $microsite['url'] ); ?>"><?php echo esc_html( $microsite['name'] ); ?></a>
+								<?php endif; ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			<?php endif; ?>
 			<div class="footer-bottom">
 				<div>
 					<span class="left">
