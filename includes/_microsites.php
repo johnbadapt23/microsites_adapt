@@ -31,6 +31,18 @@
  */
 
 /**
+ * Cache key, versioned on purpose. Deploying a code change to *how* this
+ * list is built (e.g. excluding the main site) doesn't by itself
+ * invalidate whatever's already cached under the old key - only the
+ * flush hooks below do that, and none of them fire just because new code
+ * shipped. Bumping this suffix forces every site to rebuild once,
+ * immediately on deploy, without waiting on an unrelated event or the
+ * 12h expiry. Bump it again next time the shape or filtering logic
+ * changes.
+ */
+define( 'ADAPT_NETWORK_MICROSITES_CACHE_KEY', 'adapt_network_microsites_v2' );
+
+/**
  * All public, non-archived, non-spam, non-deleted sites in the network.
  *
  * @return array<int, array{id:int, name:string, url:string, is_current:bool}>
@@ -40,7 +52,7 @@ function adapt_get_network_microsites() {
 		return array();
 	}
 
-	$microsites = get_site_transient( 'adapt_network_microsites' );
+	$microsites = get_site_transient( ADAPT_NETWORK_MICROSITES_CACHE_KEY );
 
 	if ( false === $microsites ) {
 		$sites = get_sites( array(
@@ -87,7 +99,7 @@ function adapt_get_network_microsites() {
 			return strcasecmp( $a['name'], $b['name'] );
 		} );
 
-		set_site_transient( 'adapt_network_microsites', $microsites, 12 * HOUR_IN_SECONDS );
+		set_site_transient( ADAPT_NETWORK_MICROSITES_CACHE_KEY, $microsites, 12 * HOUR_IN_SECONDS );
 	}
 
 	// Computed per-request, not cached: correct regardless of which site
@@ -109,7 +121,7 @@ function adapt_get_network_microsites() {
  * shared cache every site's footer reads from.
  */
 function adapt_flush_network_microsites_cache() {
-	delete_site_transient( 'adapt_network_microsites' );
+	delete_site_transient( ADAPT_NETWORK_MICROSITES_CACHE_KEY );
 }
 add_action( 'wp_initialize_site', 'adapt_flush_network_microsites_cache' );
 add_action( 'wp_delete_site', 'adapt_flush_network_microsites_cache' );
