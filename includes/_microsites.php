@@ -9,11 +9,16 @@
  * the full list via get_sites() - nothing here needed to talk to an
  * external source, it just wasn't being used on the front end yet.
  *
+ * Each site's display name comes straight from its own Site Title
+ * (Settings > General > Site Title, the 'blogname' option) via
+ * switch_to_blog(), not get_blog_details()'s cached copy - so renaming a
+ * site's title is reflected here without any extra step.
+ *
  * Result is cached in a transient so a plain footer render doesn't run a
- * network-wide site query (plus one get_blog_details() call per site) on
- * every single page load. The cache is cleared automatically whenever a
- * site is added, deleted, archived/unarchived, or its details change, so
- * editors don't have to wait out the cache lifetime to see updates.
+ * network-wide site query (plus a switch_to_blog() per site) on every
+ * single page load. The cache is cleared automatically whenever a site is
+ * added, deleted, archived/unarchived, or its details change, so editors
+ * don't have to wait out the cache lifetime to see updates.
  */
 
 /**
@@ -43,15 +48,23 @@ function adapt_get_network_microsites() {
 	$microsites       = array();
 
 	foreach ( $sites as $site ) {
-		$details = get_blog_details( $site->blog_id );
-		if ( ! $details || '' === trim( $details->blogname ) ) {
+		// Explicitly switch and read the 'blogname' option (Settings >
+		// General > Site Title for that site) rather than trusting
+		// get_blog_details()'s cache, which can lag behind if a persistent
+		// object cache is in play - this always reflects the live title.
+		switch_to_blog( $site->blog_id );
+		$site_title = get_option( 'blogname' );
+		$site_url   = get_option( 'siteurl' );
+		restore_current_blog();
+
+		if ( '' === trim( (string) $site_title ) ) {
 			continue;
 		}
 
 		$microsites[] = array(
 			'id'         => (int) $site->blog_id,
-			'name'       => $details->blogname,
-			'url'        => $details->siteurl,
+			'name'       => $site_title,
+			'url'        => $site_url,
 			'is_current' => ( (int) $site->blog_id === $current_blog_id ),
 		);
 	}
@@ -82,3 +95,7 @@ add_action( 'make_ham_blog', 'adapt_flush_network_microsites_cache' );
 add_action( 'archive_blog', 'adapt_flush_network_microsites_cache' );
 add_action( 'unarchive_blog', 'adapt_flush_network_microsites_cache' );
 add_action( 'update_blog_details', 'adapt_flush_network_microsites_cache' );
+// update_blog_details() covers the wp_blogs row itself (domain/path/etc.)
+// but not a site's own 'blogname' option - that's a per-site option update,
+// so it needs its own hook, fired on whichever site the rename happens on.
+add_action( 'update_option_blogname', 'adapt_flush_network_microsites_cache' );
