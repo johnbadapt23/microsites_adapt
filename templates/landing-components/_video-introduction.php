@@ -8,10 +8,10 @@
         <div class="video-container">
             <?php $poster_image = get_sub_field( 'poster_image' ); ?>
             <?php if ( $poster_image ) { ?>
-                <img class="video-poster" src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" loading="lazy"/>
+                <img class="video-poster" src="<?php echo esc_attr( $poster_image['url'] ); ?>" alt="<?php echo esc_attr( $poster_image['alt'] ); ?>" loading="lazy"/>
             <?php } ?>
            <iframe 
-                src="https://player.vimeo.com/video/<?php echo get_sub_field('vimeo_code'); ?>?autoplay=1&muted=1&controls=0&loop=1"
+                src="https://player.vimeo.com/video/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>?autoplay=1&muted=1&controls=0&loop=1"
                 frameborder="0"
                 allow="autoplay; fullscreen"
                 allowfullscreen

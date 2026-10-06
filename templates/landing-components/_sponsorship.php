@@ -42,26 +42,26 @@
                                 </span> 
                             </div>
                             <div class="column diamond-column">
-                                <span class="table-item <?php echo get_sub_field( 'diamond' ); ?>">
-                                    <span class="table-icon <?php echo get_sub_field( 'diamond' ); ?>"></span>
+                                <span class="table-item <?php echo esc_attr( get_sub_field( 'diamond' ) ); ?>">
+                                    <span class="table-icon <?php echo esc_attr( get_sub_field( 'diamond' ) ); ?>"></span>
                                     <span class="table-text"><?php echo get_sub_field( 'diamond_text' ); ?></span>
                                 </span>
                             </div>
                             <div class="column platinum-column">
-                                <span class="table-item <?php echo get_sub_field( 'platinum' ); ?>">
-                                    <span class="table-icon <?php echo get_sub_field( 'platinum' ); ?>"></span>
+                                <span class="table-item <?php echo esc_attr( get_sub_field( 'platinum' ) ); ?>">
+                                    <span class="table-icon <?php echo esc_attr( get_sub_field( 'platinum' ) ); ?>"></span>
                                     <span class="table-text"><?php echo get_sub_field( 'platinum_text' ); ?></span>
                                 </span>
                             </div>
                             <div class="column gold-column">
-                                <span class="table-item <?php echo get_sub_field( 'gold' ); ?>">
-                                    <span class="table-icon <?php echo get_sub_field( 'gold' ); ?>"></span>
+                                <span class="table-item <?php echo esc_attr( get_sub_field( 'gold' ) ); ?>">
+                                    <span class="table-icon <?php echo esc_attr( get_sub_field( 'gold' ) ); ?>"></span>
                                     <span class="table-text"><?php echo get_sub_field( 'gold_text' ); ?></span>
                                 </span>
                             </div>
                             <div class="column silver-column">
-                                <span class="table-item <?php echo get_sub_field( 'silver' ); ?>">
-                                    <span class="table-icon <?php echo get_sub_field( 'silver' ); ?>"></span>
+                                <span class="table-item <?php echo esc_attr( get_sub_field( 'silver' ) ); ?>">
+                                    <span class="table-icon <?php echo esc_attr( get_sub_field( 'silver' ) ); ?>"></span>
                                     <span class="table-text"><?php echo get_sub_field( 'silver_text' ); ?></span>
                                 </span>
                             </div> 
@@ -101,8 +101,8 @@
                                             </span> 
                                         </div>
                                         <div class="answer-column diamond-column">
-                                            <span class="table-item <?php echo get_sub_field( 'diamond' ); ?>">
-                                                <span class="table-icon <?php echo get_sub_field( 'diamond' ); ?>"></span>
+                                            <span class="table-item <?php echo esc_attr( get_sub_field( 'diamond' ) ); ?>">
+                                                <span class="table-icon <?php echo esc_attr( get_sub_field( 'diamond' ) ); ?>"></span>
                                                 <span class="table-text">
                                                     <?php $value = get_sub_field( 'diamond_text' );;
                                                         echo strtok($value, " ");
@@ -140,8 +140,8 @@
                                             </span> 
                                         </div>                               
                                         <div class="answer-column platinum-column">
-                                            <span class="table-item <?php echo get_sub_field( 'platinum' ); ?>">
-                                                <span class="table-icon <?php echo get_sub_field( 'platinum' ); ?>"></span>
+                                            <span class="table-item <?php echo esc_attr( get_sub_field( 'platinum' ) ); ?>">
+                                                <span class="table-icon <?php echo esc_attr( get_sub_field( 'platinum' ) ); ?>"></span>
                                                 <span class="table-text">
                                                     <?php $value = get_sub_field( 'platinum_text' );;
                                                         echo strtok($value, " ");
@@ -179,8 +179,8 @@
                                             </span> 
                                         </div>
                                         <div class="answer-column gold-column">
-                                            <span class="table-item <?php echo get_sub_field( 'gold' ); ?>">
-                                                <span class="table-icon <?php echo get_sub_field( 'gold' ); ?>"></span>
+                                            <span class="table-item <?php echo esc_attr( get_sub_field( 'gold' ) ); ?>">
+                                                <span class="table-icon <?php echo esc_attr( get_sub_field( 'gold' ) ); ?>"></span>
                                                 <span class="table-text">
                                                     <?php $value = get_sub_field( 'gold_text' );;
                                                         echo strtok($value, " ");
@@ -218,8 +218,8 @@
                                             </span> 
                                         </div>                                
                                         <div class="answer-column silver-column">
-                                            <span class="table-item <?php echo get_sub_field( 'silver' ); ?>">
-                                                <span class="table-icon <?php echo get_sub_field( 'silver' ); ?>"></span>
+                                            <span class="table-item <?php echo esc_attr( get_sub_field( 'silver' ) ); ?>">
+                                                <span class="table-icon <?php echo esc_attr( get_sub_field( 'silver' ) ); ?>"></span>
                                                 <span class="table-text">
                                                     <?php $value = get_sub_field( 'silver_text' );;
                                                         echo strtok($value, " ");
@@ -243,9 +243,9 @@
                 <span class="button-container">
                     <?php while ( have_rows( 'button' ) ) : the_row(); ?>
                         <?php if(get_sub_field( 'link_type' ) == 'scrollto') { ?>
-                            <a class="scroll-to-button std-button  red-button" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                            <a class="scroll-to-button std-button  red-button" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                         <?php } else { ?>
-                            <a class="link std-button red-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                            <a class="link std-button red-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                         <?php } ?>
                     <?php endwhile; ?>
                 </span>

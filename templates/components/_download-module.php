@@ -7,7 +7,7 @@
                         <div class="bg-container">
                             <?php $image = get_sub_field( 'image' ); ?>
                             <?php if ( $image ) { ?>
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                                <img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                             <?php } ?>
                         </div>
                     </div>
@@ -18,7 +18,7 @@
             <span class="title-container"><?php echo get_sub_field( 'title' ); ?></span>
             <span class="text"><?php echo get_sub_field( 'text' ); ?></span>
             <span class="button-container">
-                <a class="site-button download-link-button" href="<?php echo get_sub_field( 'download_link' ); ?>" target="_blank">Download</a>
+                <a class="site-button download-link-button" href="<?php echo esc_attr( get_sub_field( 'download_link' ) ); ?>" target="_blank">Download</a>
             </span>
         </div>
     </div>

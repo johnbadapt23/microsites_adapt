@@ -15,10 +15,10 @@
                 <div class="image-container">
                     <div class="bg-container">
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>
-                            <a class="replay-button popup-vimeo mobile" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>">
+                            <a class="replay-button popup-vimeo mobile" href="https://vimeo.com/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>">
                         <?php } ?>
                         <?php $image = get_sub_field('image'); ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                        <img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>                            
                             <span class="play-button"></span>
                             </a>

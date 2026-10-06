@@ -11,7 +11,7 @@
                             <span class="logo-column">
                                 <span class="image-container">
                                     <span class="bg-container">
-                            			<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
+                            			<img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>" loading="lazy"/>
                                     </span>
                                 </span>
                             </span>
@@ -26,7 +26,7 @@
                     <span class="icon-container">
                         <?php $icon = get_sub_field( 'icon' ); ?>
             			<?php if ( $icon ) { ?>
-            				<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
+            				<img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" loading="lazy"/>
             			<?php } ?>
                     </span>
                     <span class="text">

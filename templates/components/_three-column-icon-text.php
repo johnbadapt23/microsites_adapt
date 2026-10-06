@@ -4,13 +4,13 @@
     <?php $textColour = 'text-black'; ?>
 <?php }?>
 
-<section class="three-column-icon-services <?php echo get_sub_field( 'background_colour' ); ?>">
+<section class="three-column-icon-services <?php echo esc_attr( get_sub_field( 'background_colour' ) ); ?>">
     <div class="container">
         <span class="title-container">
             <span class="title-inner">
-                <h2 class="<?php echo $textColour; ?>"><?php echo get_sub_field( 'title' ); ?></h2>
+                <h2 class="<?php echo esc_attr( $textColour ); ?>"><?php echo get_sub_field( 'title' ); ?></h2>
                 <?php if (get_sub_field( 'text' )) { ?>
-                    <span class="text <?php echo $textColour; ?>"><?php echo get_sub_field( 'text' ); ?></span>
+                    <span class="text <?php echo esc_attr( $textColour ); ?>"><?php echo get_sub_field( 'text' ); ?></span>
                 <?php } ?>
             </span>
         </span>
@@ -21,12 +21,12 @@
                         <span class="icon-container">
                             <?php $icon = get_sub_field( 'icon' ); ?>
                     		<?php if ( $icon ) { ?>
-                    			<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
+                    			<img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" loading="lazy"/>
                     		<?php } ?>
                         </span>
                         <span class="text-container">
-                            <span class="icon-text-title <?php echo $textColour; ?>"><?php echo get_sub_field( 'title' ); ?></span>
-                            <span class="icon-text <?php echo $textColour; ?>"><?php echo get_sub_field( 'text' ); ?></span>
+                            <span class="icon-text-title <?php echo esc_attr( $textColour ); ?>"><?php echo get_sub_field( 'title' ); ?></span>
+                            <span class="icon-text <?php echo esc_attr( $textColour ); ?>"><?php echo get_sub_field( 'text' ); ?></span>
                         </span>
                     </div>
             	<?php endwhile; ?>
@@ -41,7 +41,7 @@
                             <span class="button-container">
                                 <?php if ( have_rows( 'button' ) ) : ?>
             						<?php while ( have_rows( 'button' ) ) : the_row(); ?>
-            							<a class="std-button small-button red-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+            							<a class="std-button small-button red-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
             						<?php endwhile; ?>
             					<?php else : ?>
             						<?php // no rows found ?>

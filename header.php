@@ -3,7 +3,6 @@
 <head>
 
 <meta charset="<?php bloginfo('charset'); ?>">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
 <?php // <title> is now rendered by WordPress core via add_theme_support('title-tag')
@@ -13,31 +12,19 @@
 <?php adapt_seo_head_tags(); ?>
 <?php adapt_seo_json_ld(); ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.min.css?ver=1.11">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/skelet-icons-master/style.css">
-<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon-16x16.png">
-<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/site.webmanifest">
-<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+<?php // Theme stylesheets and scripts are enqueued in includes/_head.php. ?>
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/favicon-16x16.png">
+<link rel="manifest" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/site.webmanifest">
+<link rel="mask-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="theme-color" content="#000000">
-<!-- jQuery is now bundled into main.min.js (source/gulp/paths.js) instead of
-     loading an unpinned, decade-old copy (2.1.4) from Google's hosted
-     libraries CDN, which Google has also deprecated. -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="preconnect" href="https://js.hs-scripts.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
-<?php // defer (not async): lottie-interactivity depends on lottie-player being
-      // defined first, and defer preserves execution order while letting the
-      // browser keep parsing the page instead of blocking on these downloads.
-      // Safe here because custom elements (<lottie-player>) auto-upgrade once
-      // defined, even if that happens after the tag already exists in the DOM. ?>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js" defer></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@1.6.2/dist/lottie-interactivity.min.js" defer></script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss6XUuPFsJgunJJ6dZZjzuR9d39WtjRU"></script> -->
 
 <?php get_template_part( 'templates/partials/_icons' ); ?>
@@ -58,10 +45,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'AW-769682308');
 </script>
-<?php
-    global $post;
-    $post_slug=$post->post_name;
-?>
 <?php if( get_field( 'site_schema_code', 'options' )) { ?>
     <?php echo get_field( 'site_schema_code', 'options' ); ?>
 <?php } ?>

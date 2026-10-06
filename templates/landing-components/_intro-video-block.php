@@ -10,9 +10,9 @@
                         <?php if ( have_rows( 'button' ) ) : ?>
                             <?php while ( have_rows( 'button' ) ) : the_row(); ?>
                                 <?php if(get_sub_field( 'link_type' ) == 'scrollto') { ?>
-                                    <a class="scroll-to-button std-button  red-button" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                                    <a class="scroll-to-button std-button  red-button" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                                 <?php } else { ?>
-                                    <a class="link std-button red-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                                    <a class="link std-button red-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                                 <?php } ?>
                             <?php endwhile; ?>
                         <?php else : ?>
@@ -21,7 +21,7 @@
                         <?php if (get_sub_field( 'text_link_type' ) == 'scroll-to') { ?> 
                             <?php if ( have_rows( 'text_link' ) ) : ?>
                                 <?php while ( have_rows( 'text_link' ) ) : the_row(); ?>
-                                    <a class="text-link scroll-to-button red-text red-underline-link" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
+                                    <a class="text-link scroll-to-button red-text red-underline-link" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
                                 <?php endwhile; ?>
                             <?php else : ?>
                                 <?php // no rows found ?>
@@ -29,13 +29,13 @@
                         <?php } else if (get_sub_field( 'text_link_type' ) == 'link') { ?> 
                             <?php if ( have_rows( 'text_link' ) ) : ?>
                                 <?php while ( have_rows( 'text_link' ) ) : the_row(); ?>
-                                    <a class="text-link red-text red-underline-link" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
+                                    <a class="text-link red-text red-underline-link" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
                                 <?php endwhile; ?>
                             <?php else : ?>
                                 <?php // no rows found ?>
                             <?php endif; ?>
                         <?php } else { ?> 
-                            <a class="text-link video-popup popup-vimeo video-link red-text red-underline-link" href="https://vimeo.com/<?php echo get_sub_field( 'vimeo_code' ); ?>"><?php echo get_sub_field( 'video_play_text' ); ?></a>
+                            <a class="text-link video-popup popup-vimeo video-link red-text red-underline-link" href="https://vimeo.com/<?php echo esc_attr( get_sub_field( 'vimeo_code' ) ); ?>"><?php echo get_sub_field( 'video_play_text' ); ?></a>
                         <?php }?>
                     </span>
                 </div>
@@ -45,12 +45,12 @@
                     <span class="frame"></span>
                     <div class="bg-container">
                         <?php $image = get_sub_field('poster_image'); ?>
-                        <video width="100%" autoplay loop muted playsinline poster="<?php echo $image['url']; ?>">
-                            <source type="video/mp4" src="<?php echo get_sub_field( 'auto_play_video' ); ?>" />
+                        <video width="100%" autoplay loop muted playsinline poster="<?php echo esc_attr( $image['url'] ); ?>">
+                            <source type="video/mp4" src="<?php echo esc_attr( get_sub_field( 'auto_play_video' ) ); ?>" />
                         </video>
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>
                             <span class="opacity-overlay"></span>
-                            <a class="popup-vimeo" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>"></a>
+                            <a class="popup-vimeo" href="https://vimeo.com/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>"></a>
                         <?php } ?>
                     </div>
                 </div> 
@@ -58,15 +58,15 @@
                     <?php if ( have_rows( 'button' ) ) : ?>
                         <?php while ( have_rows( 'button' ) ) : the_row(); ?>
                             <?php if(get_sub_field( 'link_type' ) == 'scrollto') { ?>
-                                <a class="scroll-to-button std-button  red-button" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                                <a class="scroll-to-button std-button  red-button" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                             <?php } else { ?>
-                                <a class="link std-button red-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                                <a class="link std-button red-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                             <?php } ?>
                         <?php endwhile; ?>
                     <?php else : ?>
                         <?php // no rows found ?>
                     <?php endif; ?>
-                    <a class="std-button video-popup popup-vimeo video-link red-outline-button red-outline-video" href="https://vimeo.com/<?php echo get_sub_field( 'vimeo_code' ); ?>"><?php echo get_sub_field( 'video_play_text' ); ?></a>                           
+                    <a class="std-button video-popup popup-vimeo video-link red-outline-button red-outline-video" href="https://vimeo.com/<?php echo esc_attr( get_sub_field( 'vimeo_code' ) ); ?>"><?php echo get_sub_field( 'video_play_text' ); ?></a>                           
                 </div>
             </div>
         </div>

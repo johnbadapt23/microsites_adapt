@@ -43,7 +43,7 @@ get_header();
                     <span class="button-container" style="display: flex; width: 100%; justify-content: flex-start">
                         <?php while ( have_rows( 'button' ) ) : the_row(); ?>
                             <?php if ( get_sub_field( 'button_type' ) == 'scroll-to') { ?> 
-                                <a class="std-button red-button no-before no-margin scroll-to-button" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
+                                <a class="std-button red-button no-before no-margin scroll-to-button" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
                             <?php } else if(get_sub_field( 'button_type' ) == 'form-popup') { ?> 
                                 <span class="form-popup-button-container std-button red-button no-before no-margin"><?php echo get_sub_field( 'form_button' ); ?></span>
                                 <span class="popup-form-container"><?php echo get_sub_field( 'form_embed' ); ?></span>
@@ -55,7 +55,7 @@ get_header();
                                     </div>
                                 </div>
                             <?php } else { ?>
-                                <a class="std-button red-button no-before no-margin" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
+                                <a class="std-button red-button no-before no-margin" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
                             <?php } ?>                                                                                                                                        
                         <?php endwhile; ?>
                     </span>
@@ -93,7 +93,7 @@ get_header();
                                         $date_string = get_sub_field( 'date');
                                         $date = DateTime::createFromFormat('Ymd', $date_string);
                                     ?>
-                                    <a class="agenda-days-switcher<?php if ($dayCounter == 1){ ?> active<?php } ?>" href="#<?php echo get_sub_field( 'date');?>"><?php echo $date->format('l, j F Y'); ?></a>
+                                    <a class="agenda-days-switcher<?php if ($dayCounter == 1){ ?> active<?php } ?>" href="#<?php echo esc_attr( get_sub_field( 'date') );?>"><?php echo $date->format('l, j F Y'); ?></a>
                                     <?php $dayCounter++; ?>
                                 <?php endwhile; ?>
                             </div>
@@ -107,7 +107,7 @@ get_header();
         <?php if ( have_rows( 'agenda_day' ) ) : ?>
             <?php $dayMainCounter = 1; ?>
         	<?php while ( have_rows( 'agenda_day' ) ) : the_row(); ?>
-                <div class="agenda-day<?php if ($dayMainCounter == 1){ ?> active<?php } ?>" id="<?php echo get_sub_field( 'date');?>">
+                <div class="agenda-day<?php if ($dayMainCounter == 1){ ?> active<?php } ?>" id="<?php echo esc_attr( get_sub_field( 'date') );?>">
             		<?php if ( have_rows( 'agenda_content' ) ): ?>
             			<?php while ( have_rows( 'agenda_content' ) ) : the_row(); ?>
             				<?php if ( get_row_layout() == 'agenda_item_house_keeping' ) : ?>

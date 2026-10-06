@@ -1,5 +1,5 @@
 
-<section class="delegate-block" id="<?php echo get_sub_field( 'id' ); ?>">
+<section class="delegate-block" id="<?php echo esc_attr( get_sub_field( 'id' ) ); ?>">
     <div class="container">
         <div class="top-container">
             <div class="title-column">
@@ -16,7 +16,7 @@
                                     <?php echo get_sub_field('formcrafts_code'); ?>
                                 </span>                               
                             <?php } else { ?>
-                                <a class="std-button red-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
+                                <a class="std-button red-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
                             <?php } ?>
                         <?php endwhile; ?>
                     </span>
@@ -36,7 +36,7 @@
                                         <span class="logo-container">
                                             <?php $logo = get_sub_field( 'logo' ); ?>
                                             <?php if ( $logo ) { ?>
-                                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
+                                                <img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>" loading="lazy"/>
                                             <?php } ?>
                                         </span>
                                         <span class="text-container">

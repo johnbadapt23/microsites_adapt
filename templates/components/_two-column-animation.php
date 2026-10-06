@@ -21,7 +21,7 @@
 										<span class="bg-container contained-image">
 											<?php $icon = get_sub_field( 'icon' ); ?>
 											<?php if ( $icon ) { ?>
-												<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
+												<img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" loading="lazy"/>
 											<?php } ?>
 										</span>
 									</span>
@@ -45,7 +45,7 @@
 	                        <div class="v-box">
 								<span class="animation-container">
 									<span class="animator-player">
-										<lottie-player speed="1" id="<?php echo $animation_id; ?>" src="<?php echo $animation_json['url']; ?>" background="transparent" style="width: 100%; height: auto"></lottie-player>
+										<lottie-player speed="1" id="<?php echo esc_attr( $animation_id ); ?>" src="<?php echo esc_attr( $animation_json['url'] ); ?>" background="transparent" style="width: 100%; height: auto"></lottie-player>
 									</span>
 								</span>
 								<script>

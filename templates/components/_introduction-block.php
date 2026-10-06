@@ -33,7 +33,7 @@
                                     </div>
                                 </span>
                             <?php } else { ?>
-                                <a class="text-link red-text large-link-text red-underline-link" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?><a/>
+                                <a class="text-link red-text large-link-text red-underline-link" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?><a/>
                             <?php } ?>
                         <?php endwhile; ?>
                     <?php else : ?>
@@ -45,7 +45,7 @@
                         <?php while ( have_rows( 'tertiary_link' ) ) : the_row(); ?>
                             <span class="text arrow-icon white-text"><?php echo get_sub_field( 'pre_link_text' ); ?></span>
                             <span class="text-link-container">
-                                <a class="text-link red-text large-link-text red-underline-link" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                                <a class="text-link red-text large-link-text red-underline-link" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                             </span>
                         <?php endwhile; ?>
                     </span>
@@ -57,10 +57,10 @@
                 <div class="image-container">
                     <div class="bg-container">
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>
-                            <a class="replay-button popup-vimeo mobile" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>">
+                            <a class="replay-button popup-vimeo mobile" href="https://vimeo.com/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>">
                         <?php } ?>
                         <?php $image = get_sub_field('image'); ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                        <img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>                            
                             <span class="play-button"></span>
                             </a>

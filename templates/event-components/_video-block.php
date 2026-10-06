@@ -1,4 +1,4 @@
-<section class="video-module <?php if (get_sub_field( 'background_colour' )){ ?><?php echo get_sub_field( 'background_colour' ); ?><?php } else { ?>background-black<?php } ?>">
+<section class="video-module <?php if (get_sub_field( 'background_colour' )){ ?><?php echo esc_attr( get_sub_field( 'background_colour' ) ); ?><?php } else { ?>background-black<?php } ?>">
 	<div class="container">
 		<div class="image-video-container">
             <div class="video-image-inner">
@@ -6,12 +6,12 @@
                     <div class="video-container">
                         <div class="bg-container">
                             <?php $image = get_sub_field('poster_image'); ?>
-                            <video width="100%" autoplay loop muted playsinline poster="<?php echo $image['url']; ?>">
-                                <source type="video/mp4" src="<?php echo get_sub_field( 'auto_play_video' ); ?>" />
+                            <video width="100%" autoplay loop muted playsinline poster="<?php echo esc_attr( $image['url'] ); ?>">
+                                <source type="video/mp4" src="<?php echo esc_attr( get_sub_field( 'auto_play_video' ) ); ?>" />
                             </video>
                             <?php if( get_sub_field( 'vimeo_code' )) { ?>
                                 <span class="opacity-overlay"></span>
-                                <a class="popup-vimeo" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>"></a>
+                                <a class="popup-vimeo" href="https://vimeo.com/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>"></a>
                             <?php } ?>
                         </div>
                     </div>
@@ -19,10 +19,10 @@
                     <div class="image-container">
                         <div class="bg-container">
                             <?php $image = get_sub_field('poster_image'); ?>
-                            <img class="desktop skip-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img class="desktop skip-lazy" src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
                             <?php if( get_sub_field( 'vimeo_code' )) { ?>
                                 <span class="opacity-overlay"></span>
-                                <a class="popup-vimeo" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>"></a>
+                                <a class="popup-vimeo" href="https://vimeo.com/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>"></a>
                             <?php } ?>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-<section class="partner-form" id="<?php echo get_sub_field( 'id' ); ?>">
+<section class="partner-form" id="<?php echo esc_attr( get_sub_field( 'id' ) ); ?>">
     <div class="container">
         <div class="form-text-container background-pink">
             <div class="column text-content-column one-half">
@@ -9,7 +9,7 @@
                          <span class="bg-container">
                              <?php $image = get_sub_field( 'image' ); ?>
                  			<?php if ( $image ) { ?>
-                 				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                 				<img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                  			<?php } ?>
                          </span>
                          <span class="arrow-container">
@@ -17,7 +17,7 @@
                                  <span class="bg-container">
                                      <?php $arrow_image = get_sub_field( 'arrow_image' ); ?>
                          			<?php if ( $arrow_image ) { ?>
-                         				<img src="<?php echo $arrow_image['url']; ?>" alt="<?php echo $arrow_image['alt']; ?>" loading="lazy"/>
+                         				<img src="<?php echo esc_attr( $arrow_image['url'] ); ?>" alt="<?php echo esc_attr( $arrow_image['alt'] ); ?>" loading="lazy"/>
                          			<?php } ?>
                                 </span>
                             </span>

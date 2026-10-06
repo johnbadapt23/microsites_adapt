@@ -10,7 +10,7 @@
 						<span class="bg-container">
 							<?php $arrow_image = get_sub_field( 'arrow_image' ); ?>
 							<?php if ( $arrow_image ) { ?>
-								<img src="<?php echo $arrow_image['url']; ?>" alt="<?php echo $arrow_image['alt']; ?>" loading="lazy"/>
+								<img src="<?php echo esc_attr( $arrow_image['url'] ); ?>" alt="<?php echo esc_attr( $arrow_image['alt'] ); ?>" loading="lazy"/>
 							<?php } ?>
 						</span>
 					</span>
@@ -25,11 +25,11 @@
 						<?php while ( have_rows( 'research' ) ) : the_row(); ?>
 							<span class="sneak-image<?php if($imagecounter == 1){ ?> active<?php } ?>">
 								<?php $image = get_sub_field( 'image' ); ?>
-								<a class="image-popup" href="<?php echo $image['url']; ?>">
+								<a class="image-popup" href="<?php echo esc_attr( $image['url'] ); ?>">
 									<span class="image-container">
 										<span class="bg-container">
 											<?php if ( $image ) { ?>
-												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+												<img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
 											<?php } ?>
 										</span>
 										<span class="enlarge-image"></span>
@@ -52,11 +52,11 @@
 							<span class="text-black sneak-peak-text" <?php if($counter == 1){ ?>style="display: block;"<?php } ?>>
 								<span class="sneak-image-mobile">
 									<?php $image = get_sub_field( 'image' ); ?>
-									<a class="image-popup" href="<?php echo $image['url']; ?>">
+									<a class="image-popup" href="<?php echo esc_attr( $image['url'] ); ?>">
 										<span class="image-container">
 											<span class="bg-container">
 												<?php if ( $image ) { ?>
-													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+													<img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
 												<?php } ?>
 											</span>
 											<span class="enlarge-image"></span>

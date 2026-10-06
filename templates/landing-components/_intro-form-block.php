@@ -10,7 +10,7 @@
                         <?php if ( have_rows( 'button' ) ) : ?>
                             <?php while ( have_rows( 'button' ) ) : the_row(); ?>
                                 <?php if(get_sub_field( 'link_type' ) == 'scrollto') { ?>
-                                    <a class="scroll-to-button std-button  red-button" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                                    <a class="scroll-to-button std-button  red-button" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                                 <?php } else if(get_sub_field('link_type') == 'hubspot-popup') { ?>
                                     <a class="formPopupHubspot std-button red-button" href="#formPopup"><?php echo get_sub_field( 'link_text' ); ?></a>
                                     <div style="display: none;">         
@@ -19,7 +19,7 @@
                                         </div>
                                     </div>
                                 <?php } else { ?>
-                                    <a class="link std-button red-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+                                    <a class="link std-button red-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
                                 <?php } ?>
                             <?php endwhile; ?>
                         <?php else : ?>
@@ -28,7 +28,7 @@
                         <?php if (get_sub_field( 'text_link_type' ) == 'scroll-to') { ?> 
                             <?php if ( have_rows( 'text_link' ) ) : ?>
                                 <?php while ( have_rows( 'text_link' ) ) : the_row(); ?>
-                                    <a class="text-link scroll-to-button red-text red-underline-link" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
+                                    <a class="text-link scroll-to-button red-text red-underline-link" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
                                 <?php endwhile; ?>
                             <?php else : ?>
                                 <?php // no rows found ?>
@@ -36,7 +36,7 @@
                         <?php } else if (get_sub_field( 'text_link_type' ) == 'link') { ?> 
                             <?php if ( have_rows( 'text_link' ) ) : ?>
                                 <?php while ( have_rows( 'text_link' ) ) : the_row(); ?>
-                                    <a class="text-link red-text red-underline-link" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
+                                    <a class="text-link red-text red-underline-link" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                 
                                 <?php endwhile; ?>
                             <?php else : ?>
                                 <?php // no rows found ?>

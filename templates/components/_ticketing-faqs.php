@@ -22,7 +22,7 @@
                             <?php endif; ?>
                             <?php if ( have_rows( 'bottom_link' ) ) : ?>
                                 <?php while ( have_rows( 'bottom_link' ) ) : the_row(); ?>
-                                    <a class="text-link red-text red-underline-link large-text-link  scroll-to external-link" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                    
+                                    <a class="text-link red-text red-underline-link large-text-link  scroll-to external-link" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>                                    
                                 <?php endwhile; ?>
                             <?php else : ?>
                                 <?php // no rows found ?>

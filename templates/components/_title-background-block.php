@@ -10,7 +10,7 @@
                     <span class="sub-title red-text"><?php echo get_sub_field( 'sub_title' ); ?></span>
                     <span class="button-container">
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>
-                            <span class="replay-button popup-vimeo" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>"><?php echo get_sub_field( 'video_button_text' ); ?></span>
+                            <span class="replay-button popup-vimeo" href="https://vimeo.com/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>"><?php echo get_sub_field( 'video_button_text' ); ?></span>
                         <?php } ?>
                     </span>
                 </div>
@@ -20,10 +20,10 @@
             <div class="bgContainer">
                 <?php if ( get_sub_field( 'image_or_video_background' ) == 'image') { ?>
                     <?php $image = get_sub_field('image'); ?>
-                    <img class="desktop skip-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    <img class="desktop skip-lazy" src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
                 <?php } else { ?>
                     <video width="100%" muted="muted" autoplay="autoplay" playsinline="playsinline" loop="loop">
-                        <source type="video/mp4" src="<?php echo get_sub_field( 'video_url' ); ?>" />
+                        <source type="video/mp4" src="<?php echo esc_attr( get_sub_field( 'video_url' ) ); ?>" />
                     </video>
                 <?php }?>
             </div>

@@ -4,7 +4,7 @@
             <span class="button-container" style="display: flex; width: 100%; justify-content: center;">
                 <?php while ( have_rows( 'button' ) ) : the_row(); ?>
                     <?php if ( get_sub_field( 'button_type' ) == 'scroll-to') { ?> 
-                        <a class="std-button red-button no-before no-margin scroll-to-button" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
+                        <a class="std-button red-button no-before no-margin scroll-to-button" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
                     <?php } else if(get_sub_field( 'button_type' ) == 'form-popup') { ?> 
                         <span class="form-popup-button-container std-button red-button no-before no-margin"><?php echo get_sub_field( 'form_button' ); ?></span>
                         <span class="popup-form-container"><?php echo get_sub_field( 'form_embed' ); ?></span>
@@ -16,7 +16,7 @@
                             </div>
                         </div>
                     <?php } else { ?>
-                        <a class="std-button red-button no-before no-margin" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
+                        <a class="std-button red-button no-before no-margin" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a> 
                     <?php } ?>                                                                                                                                        
                 <?php endwhile; ?>
             </span>

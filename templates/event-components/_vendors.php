@@ -11,7 +11,7 @@
                             <span class="bg-container contained-image">
             					<?php $logo = get_sub_field( 'logo' ); ?>
             					<?php if ( $logo ) { ?>
-            						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
+            						<img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>" loading="lazy"/>
             					<?php } ?>
                             </span>
                         </span>

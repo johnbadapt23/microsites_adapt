@@ -23,12 +23,12 @@
 				<?php // no rows found ?>
 			<?php endif; ?>
 		</div>
-		<span class="progress-container <?php echo $slideAmount; ?>">
+		<span class="progress-container <?php echo esc_attr( $slideAmount ); ?>">
 			<span class="progress-bar">
 				<?php if ( have_rows( 'slides' ) ) : ?>
 					<?php $counter = 0; ?>
 					<?php while ( have_rows( 'slides' ) ) : the_row(); ?>
-						<span class="progress-inner <?php if($counter == 0){ ?> animate<?php } ?>" data-count="<?php echo $counter;?>" class="progress-bar-inner"></span>
+						<span class="progress-inner <?php if($counter == 0){ ?> animate<?php } ?>" data-count="<?php echo esc_attr( $counter );?>" class="progress-bar-inner"></span>
 						<?php $counter++; ?>
 					<?php endwhile; ?>
 				<?php else : ?>
@@ -37,14 +37,14 @@
 			</span>
 			<span class="active-bar"></span>
 		</span>
-		<div class="quote-slider-thumbnails <?php echo $slideAmount; ?>">
+		<div class="quote-slider-thumbnails <?php echo esc_attr( $slideAmount ); ?>">
 			<?php if ( have_rows( 'slides' ) ) : ?>
 				<?php while ( have_rows( 'slides' ) ) : the_row(); ?>
 					<div class="quote-thumbnail">
 						<div class="thumbnail-container">
 							<?php $logo = get_sub_field( 'logo' ); ?>
 							<?php if ( $logo ) { ?>
-								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
+								<img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>" loading="lazy"/>
 							<?php } ?>
 						</div>
 					</div>

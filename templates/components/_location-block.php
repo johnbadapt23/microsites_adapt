@@ -5,9 +5,9 @@
     			<h2><?php echo get_sub_field( 'title' ); ?></h2>
     			<span class="location-title"><?php echo get_sub_field( 'location_title' ); ?></span>
     			<p class="address"><?php echo get_sub_field( 'address' ); ?></p>
-    			<a class="web-link" href="<?php echo get_sub_field( 'link' ); ?>" target="_blank"><?php echo get_sub_field( 'link_text' ); ?></a>
-    			<a class="phone-number" href="tel:<?php echo get_sub_field( 'phone_number' ); ?>"><?php echo get_sub_field( 'phone_number' ); ?></a>
-    			<a class="directions-link" href="<?php echo get_sub_field( 'directions_link' ); ?>" target="_blank">Get Directions</a>
+    			<a class="web-link" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="_blank"><?php echo get_sub_field( 'link_text' ); ?></a>
+    			<a class="phone-number" href="tel:<?php echo esc_attr( get_sub_field( 'phone_number' ) ); ?>"><?php echo get_sub_field( 'phone_number' ); ?></a>
+    			<a class="directions-link" href="<?php echo esc_attr( get_sub_field( 'directions_link' ) ); ?>" target="_blank">Get Directions</a>
             </span>
         </div>
         <div class="column one-half image-column">
@@ -16,7 +16,7 @@
                 <span class="portrait-image-container">
                     <span class="image-container">
                         <span class="bg-container">
-                            <img src="<?php echo $portrait_image['url']; ?>" alt="<?php echo $portrait_image['alt']; ?>" loading="lazy"/>
+                            <img src="<?php echo esc_attr( $portrait_image['url'] ); ?>" alt="<?php echo esc_attr( $portrait_image['alt'] ); ?>" loading="lazy"/>
                         </span>
                     </span>
                 </span>
@@ -26,7 +26,7 @@
                 <span class="square-image-container">
                     <span class="image-container">
                         <span class="bg-container">
-                            <img src="<?php echo $square_image['url']; ?>" alt="<?php echo $square_image['alt']; ?>" loading="lazy"/>
+                            <img src="<?php echo esc_attr( $square_image['url'] ); ?>" alt="<?php echo esc_attr( $square_image['alt'] ); ?>" loading="lazy"/>
                         </span>
                     </span>
                 </span>

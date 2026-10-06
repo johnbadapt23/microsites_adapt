@@ -1,4 +1,4 @@
-<section class="partners-cards-module background-white" <?php if(get_sub_field('id')){ ?> id="<?php echo get_sub_field('id');?>"<?php } ?>>
+<section class="partners-cards-module background-white" <?php if(get_sub_field('id')){ ?> id="<?php echo esc_attr( get_sub_field('id') );?>"<?php } ?>>
 	<div class="container">
 		<div class="top-content">
 			<h2 class="text-black"><?php echo get_sub_field( 'title' ); ?></h2>
@@ -12,13 +12,13 @@
 								<span class="bg-container first-bg">
 									<?php $icon = get_sub_field( 'icon' ); ?>
 									<?php if ( $icon ) { ?>
-										<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
+										<img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" loading="lazy"/>
 									<?php } ?>
 								</span>
 								<span class="bg-container hover-bg">
 									<?php $hover_icon = get_sub_field( 'hover_icon' ); ?>
 									<?php if ( $hover_icon ) { ?>
-										<img src="<?php echo $hover_icon['url']; ?>" alt="<?php echo $hover_icon['alt']; ?>" loading="lazy"/>
+										<img src="<?php echo esc_attr( $hover_icon['url'] ); ?>" alt="<?php echo esc_attr( $hover_icon['alt'] ); ?>" loading="lazy"/>
 									<?php } ?>
 								</span>
 							</span>
@@ -39,9 +39,9 @@
 			<div class="button-container">
 				<?php while ( have_rows( 'button' ) ) : the_row(); ?>
 				 <?php if(get_sub_field( 'link_type' ) == 'scrollto') { ?>
-					<a class="scroll-to-button std-button  red-button" href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+					<a class="scroll-to-button std-button  red-button" href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
 				<?php } else { ?>
-					<a class="link std-button red-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+					<a class="link std-button red-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
 				<?php } ?>
 				<?php endwhile; ?>
 			</div>

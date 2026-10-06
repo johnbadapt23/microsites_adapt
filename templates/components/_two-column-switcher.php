@@ -35,13 +35,13 @@
 								<div class="mobile-image">
 									<?php $image = get_sub_field( 'image' ); ?>
 									<?php if ( $image ) { ?>
-										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+										<img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
 									<?php } ?>
 								</div>								
 								<?php if ( have_rows( 'button' ) ) : ?>
 									<span class="button-container">
 										<?php while ( have_rows( 'button' ) ) : the_row(); ?>
-											<a class="std-button switch-module-button red-outline-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+											<a class="std-button switch-module-button red-outline-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
 										<?php endwhile; ?>
 									</span>
 								<?php else : ?>
@@ -51,7 +51,7 @@
 							<div class="column image-column">
 								<?php $image = get_sub_field( 'image' ); ?>
 								<?php if ( $image ) { ?>
-									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+									<img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
 								<?php } ?>
 							</div>
 						</div>

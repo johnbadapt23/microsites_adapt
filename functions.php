@@ -23,11 +23,7 @@ return $mimes;
 
 add_filter('upload_mimes', 'cc_mime_types');
 
-function my_acf_init() {
-	acf_update_setting('google_api_key', 'AIzaSyCLcDOYGHRZ4Z09tMisM0g8lSSCAywnMPc');
-}
-
-add_action('acf/init', 'my_acf_init');
+// ACF Google Maps API key is set once, in custom_acf_init() (includes/_customisations.php).
 
 /**
  * Join posts and postmeta tables
@@ -51,7 +47,7 @@ add_filter('posts_join', 'cf_search_join' );
  * http://codex.wordpress.org/Plugin_API/Filter_Reference/posts_where
  */
 function cf_search_where( $where ) {
-    global $pagenow, $wpdb;
+    global $wpdb;
 
     if ( is_search() ) {
         $where = preg_replace(

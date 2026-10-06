@@ -9,12 +9,12 @@
                         <span class="partners-logo-container">
         					<?php while ( have_rows( 'partner' ) ) : the_row(); ?>
                                 <?php if ( get_sub_field( 'partner_link' )) { ?>
-                                    <a href="<?php echo get_sub_field( 'partner_link' ); ?>" target="_blank">
+                                    <a href="<?php echo esc_attr( get_sub_field( 'partner_link' ) ); ?>" target="_blank">
                                 <?php } ?>
                                     <span class="partners-logo">
                                         <?php $logo = get_sub_field( 'partner_logo' ); ?>
                     					<?php if ( $logo ) { ?>
-                    						<img class="logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" loading="lazy"/>
+                    						<img class="logo" src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>" loading="lazy"/>
                     					<?php } ?>
                                     </span>
                                 <?php if ( get_sub_field( 'partner_link' )) { ?>

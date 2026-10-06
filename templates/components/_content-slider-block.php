@@ -7,7 +7,7 @@
             <div class="column one-half">
                 <?php if ( have_rows( 'button' ) ) : ?>
                 	<?php while ( have_rows( 'button' ) ) : the_row(); ?>
-                        <a class="white-ouline-button std-button" href="<?php echo get_sub_field( 'button_link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
+                        <a class="white-ouline-button std-button" href="<?php echo esc_attr( get_sub_field( 'button_link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
                 	<?php endwhile; ?>
                 <?php else : ?>
                 	<?php // no rows found ?>
@@ -37,7 +37,7 @@
             <?php endif; ?>
             <?php $slideCount = $counter - 1; ?>
             <?php $slidePercent = 100 / $slideCount; ?>
-            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="<?php echo $slidePercent;?>" style="background-size:<?php echo $slidePercent;?>%">
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="<?php echo esc_attr( $slidePercent );?>" style="background-size:<?php echo esc_attr( $slidePercent );?>%">
                 <span class="slider__label sr-only">
             </div>
             <span class="pagingInfo"></span>

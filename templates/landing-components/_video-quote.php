@@ -5,7 +5,7 @@
             <div class="column one-half text-column">
                 <h4 class="quote text-white"><?php echo get_sub_field( 'quote' ); ?></h4>
                 <span class="quoter text-white"><?php echo get_sub_field( 'name_and_title' ); ?></span>
-                <a class="text-link video-popup popup-vimeo video-link red-text red-underline-link" href="https://vimeo.com/<?php echo get_sub_field( 'vimeo_code' ); ?>"><?php echo get_sub_field( 'play_text' ); ?></a>
+                <a class="text-link video-popup popup-vimeo video-link red-text red-underline-link" href="https://vimeo.com/<?php echo esc_attr( get_sub_field( 'vimeo_code' ) ); ?>"><?php echo get_sub_field( 'play_text' ); ?></a>
             </div>
             <div class="column one-half video-column">
                 <div class="video-container image-container">
@@ -13,11 +13,11 @@
                     <div class="bg-container">
                         <?php $poster_image = get_sub_field( 'poster_image' ); ?>
                         <?php if ( $poster_image ) { ?>
-                            <img src="<?php echo $poster_image['url']; ?>" alt="<?php echo $poster_image['alt']; ?>" loading="lazy"/>
+                            <img src="<?php echo esc_attr( $poster_image['url'] ); ?>" alt="<?php echo esc_attr( $poster_image['alt'] ); ?>" loading="lazy"/>
                         <?php } ?>
                         <?php if( get_sub_field( 'vimeo_code' )) { ?>
                             <span class="opacity-overlay"></span>
-                            <a class="popup-vimeo" href="https://vimeo.com/<?php echo get_sub_field('vimeo_code'); ?>"></a>
+                            <a class="popup-vimeo" href="https://vimeo.com/<?php echo esc_attr( get_sub_field('vimeo_code') ); ?>"></a>
                         <?php } ?>
                     </div>
                 </div>                            

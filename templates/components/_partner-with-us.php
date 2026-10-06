@@ -1,4 +1,4 @@
-<section class="partner-with-us-block" <?php if (get_sub_field('id')) { ?>id="<?php echo get_sub_field('id');?>"<?php } ?>>
+<section class="partner-with-us-block" <?php if (get_sub_field('id')) { ?>id="<?php echo esc_attr( get_sub_field('id') );?>"<?php } ?>>
     <div class="block-container">
         <div class="container">
             <div class="column one-half text-column">
@@ -27,7 +27,7 @@
                                     <span class="form-popup-button-container std-button white-button"><?php echo get_sub_field( 'formcrafts_button' ); ?></span>
                                     <span class="form-popup-embed"><?php echo get_sub_field( 'form_embed_formcrafts' ); ?></span>
                                 <?php } else { ?>
-                                    <a class="std-button white-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
+                                    <a class="std-button white-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
                                 <?php } ?>
                             </span>
                         <?php endwhile; ?>
@@ -41,7 +41,7 @@
     			<?php if ( $image ) { ?>
                     <span class="image-container">
                         <span class="bg-container">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                            <img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                         </span>
                     </span>
     			<?php } ?>

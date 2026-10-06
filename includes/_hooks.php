@@ -2,20 +2,19 @@
 
 // actions
 add_action('after_setup_theme', 	'theme_setup' );
-add_action('init', 					'theme_scripts');
-add_action('wp_enqueue_scripts', 	'theme_styles');
+add_action('wp_enqueue_scripts', 	'theme_styles', 1);
+add_action('wp_footer', 			'theme_scripts', 19);
 add_action('init', 					'theme_menus');
 add_action('widgets_init', 			'theme_widgets' );
-add_action('init', 					'custom_theme_pagination');
+// custom_theme_pagination() was hooked to 'init', where it can never output anything
+// (no query has run yet). Unhooked; call it from a template if pagination is needed.
 add_action('init',                  'custom_disable_wp_emojicons');
 add_action('init',                  'custom_disable_embeds', 9999);
 add_action('admin_menu',            'custom_remove_menus');
 add_action('login_head',            'custom_wp_login_logo');
 add_action('admin_menu',            'custom_remove_footer');
 add_action('init', 					'custom_remove_jquery');
-add_action('after_setup_theme', 	'custom_disable_json_api');
-add_action('after_setup_theme', 	'custom_remove_json_api');
-add_action('acf/init',              'custom_acf_init');
+// custom_disable_json_api, custom_remove_json_api and custom_acf_init are hooked in includes/_customisations.php.
 //add_action('init', 				'custom_start_session', 1);
 
 remove_action('wp_head', 			'feed_links_extra', 3);
@@ -51,7 +50,7 @@ add_filter('nav_menu_item_id', 		'custom_nav_id_filter', 10, 2 );
 add_filter('body_class', 			'custom_body_classs');
 add_filter('query_vars', 			'custom_add_query_vars_filter' );
 add_filter('login_headerurl',       'custom_wp_login_url');
-add_filter('login_headertitle',     'custom_wp_login_title');
+add_filter('login_headertext',      'custom_wp_login_title'); // login_headertitle deprecated in WP 5.2
 add_filter('admin_footer_text',     'custom_footer_admin');
 // add_filter('wp_default_scripts', 	'custom_remove_jquery_migrate' );
 add_filter('gform_confirmation_anchor',     '__return_false' );

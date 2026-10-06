@@ -16,14 +16,14 @@ $accessLink = get_field( 'access_the_portal_link', 'options'  );
 								<?php if ( have_rows( 'link' ) ) : ?>
 									<?php while ( have_rows( 'link' ) ) : the_row(); ?>
 										<span class="footer-link-container">
-											<a class="footer-link" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
+											<a class="footer-link" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'link_text' ); ?></a>
 										</span>
 									<?php endwhile; ?>
 								<?php else : ?>
 									<?php // no rows found ?>
 								<?php endif; ?>
 								<?php if ($counter == 2){ ?>
-									<span class="registered">Registered already?</br><a class="portal" href="<?php echo $accessLink; ?>" target="_blank">Access the portal</a></span>
+									<span class="registered">Registered already?</br><a class="portal" href="<?php echo esc_attr( $accessLink ); ?>" target="_blank">Access the portal</a></span>
 								<?php } ?>
 							</div>
 							<?php $counter++; ?>
@@ -35,15 +35,15 @@ $accessLink = get_field( 'access_the_portal_link', 'options'  );
 					<?php $footer_icon = get_field( 'footer_icon', 'options'  ); ?>
 					<?php if ( $footer_icon ) { ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<img class="logo" src="<?php echo $footer_icon['url']; ?>" alt="<?php echo $footer_icon['alt']; ?>" loading="lazy"/>
+							<img class="logo" src="<?php echo esc_attr( $footer_icon['url'] ); ?>" alt="<?php echo esc_attr( $footer_icon['alt'] ); ?>" loading="lazy"/>
 						</a>
 					<?php } ?>
 					<a class="site-link" href="https://adapt.com.au" target="_blank">adapt.com.au</a>
-					<a class="mail-link" href="mailto:<?php the_field( 'email', 'options' ); ?>" target="_blank"><?php the_field( 'email', 'options' ); ?></a>
-					<a class="phone-link" href="tel:<?php the_field( 'phone_number', 'options' ); ?>"><?php the_field( 'phone_number', 'options' ); ?></a>
+					<a class="mail-link" href="mailto:<?php echo esc_attr( get_field( 'email', 'options' ) ); ?>" target="_blank"><?php the_field( 'email', 'options' ); ?></a>
+					<a class="phone-link" href="tel:<?php echo esc_attr( get_field( 'phone_number', 'options' ) ); ?>"><?php the_field( 'phone_number', 'options' ); ?></a>
 					<span class="social-links">
 						<?php if ($linkedInLink) {?>
-							<a class="social-link linkedin" href="<?php echo $linkedInLink;?>">
+							<a class="social-link linkedin" href="<?php echo esc_attr( $linkedInLink );?>">
 								<svg version="1.1" id="Group_193" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								viewBox="0 0 14.9 15" style="enable-background:new 0 0 14.9 15;" xml:space="preserve">
 								<style type="text/css">
@@ -67,7 +67,7 @@ $accessLink = get_field( 'access_the_portal_link', 'options'  );
 							</a>
 						<?php } ?>
 						<?php if ($youtubeLink) {?>
-						<a class="social-link linkedin" href="<?php echo $youtubeLink;?>">
+						<a class="social-link linkedin" href="<?php echo esc_attr( $youtubeLink );?>">
 							<svg version="1.1" id="Group_194" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							viewBox="0 0 16.6 11.8" style="enable-background:new 0 0 16.6 11.8;" xml:space="preserve">
 							<style type="text/css">
@@ -91,7 +91,7 @@ $accessLink = get_field( 'access_the_portal_link', 'options'  );
 					<span class="footer-microsites-title">Our Microsites</span>
 					<ul class="footer-microsites-list">
 						<?php foreach ( $microsites as $microsite ) : ?>
-							<li class="footer-microsite<?php echo $microsite['is_current'] ? ' current' : ''; ?>">
+							<li class="footer-microsite<?php echo esc_attr( $microsite['is_current'] ? ' current' : '' ); ?>">
 								<?php if ( $microsite['is_current'] ) : ?>
 									<span class="footer-microsite-link current"><?php echo esc_html( $microsite['name'] ); ?></span>
 								<?php else : ?>

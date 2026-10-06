@@ -39,7 +39,7 @@ function is_paginated() {
 
 // create slug
 function slugify ($string) {
-    $string = utf8_encode($string);
+    $string = mb_convert_encoding($string, 'UTF-8', 'ISO-8859-1');
     $string = iconv('UTF-8', 'ASCII//TRANSLIT', $string);
     $string = preg_replace('/[^a-z0-9- ]/i', '', $string);
     $string = str_replace(' ', '-', $string);

@@ -9,7 +9,7 @@
                             <span class="image-container">
                                 <span class="bg-container">
                                     <?php if ( $icon ) { ?>
-                                        <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
+                                        <img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" loading="lazy"/>
                                     <?php } ?>
                                 </span>
                             </span>

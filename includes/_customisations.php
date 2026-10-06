@@ -190,12 +190,12 @@ function custom_remove_menus(){
 // menu account links
 function custom_account_links( $items, $args ) {
    if (is_user_logged_in() && $args->theme_location == 'main-menu') {
-	   $items .= '<li id="my-account"><a href="'. get_permalink( woocommerce_get_page_id( 'myaccount' ) ) .'">My Account</a></li>';
-       $items .= '<li id="cart"><a href="'. get_permalink( woocommerce_get_page_id( 'checkout' ) ) .'">Cart</a></li>';
-       $items .= '<li id="logout"><a href="'. get_permalink( woocommerce_get_page_id( 'logout' ) ) .'">Log Out</a></li>';
+	   $items .= '<li id="my-account"><a href="'. get_permalink( wc_get_page_id( 'myaccount' ) ) .'">My Account</a></li>';
+       $items .= '<li id="cart"><a href="'. get_permalink( wc_get_page_id( 'checkout' ) ) .'">Cart</a></li>';
+       $items .= '<li id="logout"><a href="'. get_permalink( wc_get_page_id( 'logout' ) ) .'">Log Out</a></li>';
    } else {
-       $items .= '<li id="login"><a href="' . get_permalink( woocommerce_get_page_id( 'myaccount' ) ) . '">Log In</a></li>';
-       $items .= '<li id="register"><a href="' . get_permalink( woocommerce_get_page_id( 'myaccount' ) ) . '">Register</a></li>';
+       $items .= '<li id="login"><a href="' . get_permalink( wc_get_page_id( 'myaccount' ) ) . '">Log In</a></li>';
+       $items .= '<li id="register"><a href="' . get_permalink( wc_get_page_id( 'myaccount' ) ) . '">Register</a></li>';
    }
    return $items;
 }
@@ -208,7 +208,7 @@ function custom_form_error_message( $message, $form ) {
 
 // change logo on wp login
 function custom_wp_login_logo() {
-    echo '<style  type="text/css"> h1 a { display:block !important; width: 100% !important; height: 108px !important; background-size: 90% !important; background-image:url(' . get_bloginfo('template_directory') . '/assets/images/logo-admin.png)  !important; } </style>';
+    echo '<style  type="text/css"> h1 a { display:block !important; width: 100% !important; height: 108px !important; background-size: 90% !important; background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/logo-admin.png)  !important; } </style>';
 }
 
 // change url on wp login
@@ -251,12 +251,9 @@ function custom_remove_jquery() {
 // disable json api
 function custom_disable_json_api () {
 
-  // Filters for WP-API version 1.x
-  add_filter('json_enabled', '__return_false');
-  add_filter('json_jsonp_enabled', '__return_false');
-
-  // Filters for WP-API version 2.x
-  add_filter('rest_enabled', '__return_false');
+  // 'json_enabled' / 'json_jsonp_enabled' (WP-API v1 plugin) and 'rest_enabled'
+  // (ignored by core since WP 4.7) were removed: none of them had any effect.
+  // JSONP support is still disabled:
   add_filter('rest_jsonp_enabled', '__return_false');
 
 }

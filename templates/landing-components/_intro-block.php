@@ -10,11 +10,11 @@
                             <?php $counter = 1;?>
                             <?php while ( have_rows( 'buttons' ) ) : the_row(); ?>
                                 <?php if(get_sub_field( 'button_type' ) == 'scroll-to') { ?>
-                                    <a href="#<?php echo get_sub_field( 'scroll_to_id' ); ?>" class="scroll-to-button std-button<?php if($counter == 1){ ?> red-button<?php } else { ?> red-outline-button<?php } ?>">
+                                    <a href="#<?php echo esc_attr( get_sub_field( 'scroll_to_id' ) ); ?>" class="scroll-to-button std-button<?php if($counter == 1){ ?> red-button<?php } else { ?> red-outline-button<?php } ?>">
                                         <?php echo get_sub_field( 'button_text' ); ?>
                                     </a>
                                 <?php } else { ?>
-                                    <a href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>" class="std-button<?php if($counter == 1){ ?> red-button<?php } else { ?> red-outline-button<?php } ?>">
+                                    <a href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>" class="std-button<?php if($counter == 1){ ?> red-button<?php } else { ?> red-outline-button<?php } ?>">
                                         <?php echo get_sub_field( 'button_text' ); ?>
                                     </a>
                                 <?php } ?>
@@ -31,7 +31,7 @@
                     <span class="frame"></span>
                     <div class="bg-container">
                         <?php $image = get_sub_field('image'); ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                        <img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                     </div>
                 </div>                 
             </div>

@@ -15,7 +15,7 @@ get_header();
                     <span class="logo-container">
                         <?php $header_logo = get_field( 'header_logo' ); ?>
                         <?php if ( $header_logo ) { ?>
-                            <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $header_logo['alt']; ?>" loading="lazy"/>
+                            <img src="<?php echo esc_attr( $header_logo['url'] ); ?>" alt="<?php echo esc_attr( $header_logo['alt'] ); ?>" loading="lazy"/>
                         <?php } ?>            
                     </span>
                     <span class="text-container-right">

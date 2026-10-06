@@ -14,7 +14,7 @@ get_header();
             <?php $footer_icon = get_field( 'footer_icon', 'options'  ); ?>
             <?php if ( $footer_icon ) { ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <img class="logo" src="<?php echo $footer_icon['url']; ?>" alt="<?php echo $footer_icon['alt']; ?>" width="115" loading="lazy"/>
+                    <img class="logo" src="<?php echo esc_attr( $footer_icon['url'] ); ?>" alt="<?php echo esc_attr( $footer_icon['alt'] ); ?>" width="115" loading="lazy"/>
                 </a>
             <?php } ?>
         </div>
@@ -25,7 +25,7 @@ get_header();
                 <span class="icon-container">
                     <?php $icon = get_field( 'icon' ); ?>
                     <?php if ( $icon ) { ?>
-                    	<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" loading="lazy"/>
+                    	<img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" loading="lazy"/>
                     <?php } ?>
                 </span>
                 <span class="pre-title text-red"><?php echo get_field( 'registration_form_pre_title' ); ?></span>

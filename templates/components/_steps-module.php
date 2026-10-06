@@ -1,9 +1,9 @@
-<section class="steps-module <?php echo get_sub_field( 'background_colour' ); ?> <?php echo get_sub_field( 'overlay_pattern' ); ?><?php if (get_sub_field( 'title' )) { ?> title-padding<?php } ?> ">
+<section class="steps-module <?php echo esc_attr( get_sub_field( 'background_colour' ) ); ?> <?php echo esc_attr( get_sub_field( 'overlay_pattern' ) ); ?><?php if (get_sub_field( 'title' )) { ?> title-padding<?php } ?> ">
     <div class="container">
         <?php if (get_sub_field( 'title' )) { ?>
             <h2 class="module-title"><?php echo get_sub_field( 'title' ); ?></h2>
         <?php } ?>
-        <div class="column-container <?php echo get_sub_field( 'image_orientation' ); ?>">
+        <div class="column-container <?php echo esc_attr( get_sub_field( 'image_orientation' ) ); ?>">
             <?php if ( get_sub_field( 'image_orientation' ) == 'no-image') { ?>
                 <div class="single-column column">
                     <div class="text-column-inner text-column">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             <?php } else { ?>
-                <div class="column one-half image-column <?php echo get_sub_field( 'image_orientation' ); ?> desktop-column">
+                <div class="column one-half image-column <?php echo esc_attr( get_sub_field( 'image_orientation' ) ); ?> desktop-column">
                     <?php $pre_image_image = get_sub_field( 'pre_image_image' ); ?>
                     <div class="v-wrap">
                         <div class="v-box">
@@ -31,26 +31,26 @@
                                     <?php if ( $pre_image_image ) { ?>
                                         <span class="pre-image-container">
                                             <span class="pre-image-inner">
-                                                <img class="pre-image" src="<?php echo $pre_image_image['url']; ?>" alt="<?php echo $pre_image_image['alt']; ?>" loading="lazy"/>
+                                                <img class="pre-image" src="<?php echo esc_attr( $pre_image_image['url'] ); ?>" alt="<?php echo esc_attr( $pre_image_image['alt'] ); ?>" loading="lazy"/>
                                             </span>
                                         </span>
                                     <?php } ?>
                                     <div class="bg-container">
                                         <?php $image = get_sub_field( 'image' ); ?>
                                         <?php if ( $image ) { ?>
-                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                                            <img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                                         <?php } ?>
                                     </div>
                                     <?php $post_image_image = get_sub_field( 'post_image_image' ); ?>
                         			<?php if ( $post_image_image ) { ?>
-                        				<img class="post-image" src="<?php echo $post_image_image['url']; ?>" alt="<?php echo $post_image_image['alt']; ?>" loading="lazy"/>
+                        				<img class="post-image" src="<?php echo esc_attr( $post_image_image['url'] ); ?>" alt="<?php echo esc_attr( $post_image_image['alt'] ); ?>" loading="lazy"/>
                         			<?php } ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column one-half text-column <?php echo get_sub_field( 'image_orientation' ); ?>">
+                <div class="column one-half text-column <?php echo esc_attr( get_sub_field( 'image_orientation' ) ); ?>">
                     <?php if ( have_rows( 'content_column' ) ) : ?>
                         <?php while ( have_rows( 'content_column' ) ) : the_row(); ?>
                             <span class="step-number"><?php echo get_sub_field( 'step_number' ); ?></span>
@@ -61,15 +61,15 @@
                                     <?php if ( $pre_image_image ) { ?>
                                         <span class="pre-image-container">
                                             <span class="pre-image-inner">
-                                                <img class="pre-image" src="<?php echo $pre_image_image['url']; ?>" alt="<?php echo $pre_image_image['alt']; ?>" loading="lazy"/>
+                                                <img class="pre-image" src="<?php echo esc_attr( $pre_image_image['url'] ); ?>" alt="<?php echo esc_attr( $pre_image_image['alt'] ); ?>" loading="lazy"/>
                                             </span>
                                         </span>
                                     <?php } ?>
                                     <?php if ( $image ) { ?>
-                                        <img class="main-image<?php if ( $pre_image_image ) { ?> full-width-image<?php } ?>" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                                        <img class="main-image<?php if ( $pre_image_image ) { ?> full-width-image<?php } ?>" src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                                     <?php } ?>
                                     <?php if ( $post_image_image ) { ?>
-                        				<img class="post-image" src="<?php echo $post_image_image['url']; ?>" alt="<?php echo $post_image_image['alt']; ?>" loading="lazy"/>
+                        				<img class="post-image" src="<?php echo esc_attr( $post_image_image['url'] ); ?>" alt="<?php echo esc_attr( $post_image_image['alt'] ); ?>" loading="lazy"/>
                         			<?php } ?>
                                 </div>
                                 <span class="text"><?php echo get_sub_field( 'text' ); ?></span>

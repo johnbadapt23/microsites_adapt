@@ -15,7 +15,7 @@ get_header();
             <?php $rotating_image = get_field( 'rotating_image', 'options' ); ?>
             <span class="rotating-image-container">
                 <?php if ( $rotating_image ) { ?>
-                    <img id="rotatingImage" src="<?php echo $rotating_image['url']; ?>" alt="<?php echo $rotating_image['alt']; ?>" loading="lazy"/>
+                    <img id="rotatingImage" src="<?php echo esc_attr( $rotating_image['url'] ); ?>" alt="<?php echo esc_attr( $rotating_image['alt'] ); ?>" loading="lazy"/>
                 <?php } ?>
             </span>
         </div>
@@ -28,18 +28,18 @@ get_header();
                 <?php $counter = 1; ?>
             	<?php foreach ( $speakers as $post ):  ?>
             		<?php setup_postdata ( $post ); ?>
-                    <a class="speaker-popup" href="#speakerPopup-<?php echo $counter;?>">
+                    <a class="speaker-popup" href="#speakerPopup-<?php echo esc_attr( $counter );?>">
                         <span class="speaker one-quarter">
                             <span class="image-container">
                                 <?php $speaker_image = get_field( 'speaker_image' ); ?>
                                 <span class="bg-container<?php if ( $speaker_image ) { ?><?php } else { ?> no-background<?php } ?>">
                                     <?php if ( $speaker_image ) { ?>
-                                        <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" loading="lazy"/>
+                                        <img src="<?php echo esc_attr( $speaker_image['url'] ); ?>" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>" loading="lazy"/>
                                         <span class="speaker-opacity"></span>
                                     <?php } else { ?>
                                         <?php $generic_headshot = get_field( 'generic_headshot', 'options' ); ?>
                                         <?php if ( $generic_headshot ) { ?>
-                                            <img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" loading="lazy"/>
+                                            <img src="<?php echo esc_attr( $generic_headshot['url'] ); ?>" alt="<?php echo esc_attr( $generic_headshot['alt'] ); ?>" loading="lazy"/>
                                         <?php } ?>
                                     <?php } ?>
                                 </span>
@@ -55,18 +55,18 @@ get_header();
                     </a>
                     <?php if( get_field('about') ) : ?>
                     <div style="display: none;">
-                        <div class="speaker-popup-container" id="speakerPopup-<?php echo $counter;?>">
+                        <div class="speaker-popup-container" id="speakerPopup-<?php echo esc_attr( $counter );?>">
                             <div class="column white-bg image-column">
                                 <?php $speaker_image = get_field( 'speaker_image' ); ?>
                                 <span class="image-container">
                                     <span class="bg-container">
                                         <?php $speaker_image = get_field( 'speaker_image' ); ?>
                                         <?php if ( $speaker_image ) { ?>
-                                            <img src="<?php echo $speaker_image['url']; ?>" alt="<?php echo $speaker_image['alt']; ?>" loading="lazy"/>
+                                            <img src="<?php echo esc_attr( $speaker_image['url'] ); ?>" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>" loading="lazy"/>
                                         <?php } else { ?>
                                             <?php $generic_headshot = get_field( 'generic_headshot', 'options' ); ?>
                                             <?php if ( $generic_headshot ) { ?>
-                                            	<img src="<?php echo $generic_headshot['url']; ?>" alt="<?php echo $generic_headshot['alt']; ?>" loading="lazy"/>
+                                            	<img src="<?php echo esc_attr( $generic_headshot['url'] ); ?>" alt="<?php echo esc_attr( $generic_headshot['alt'] ); ?>" loading="lazy"/>
                                             <?php } ?>
                                         <?php } ?>
                                     </span>
@@ -75,14 +75,14 @@ get_header();
                                 <h3 class="title">
                                     <?php the_title(); ?>
                                     <?php if ( get_field('linkedin')) { ?>
-                                        <a class="linkedin-link" href="<?php the_field('linkedin');?>" target="_blank" aria-label="LinkedIn profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/round-linkedin.svg" width="20" alt="" loading="lazy"/></a>
+                                        <a class="linkedin-link" href="<?php echo esc_attr( get_field( 'linkedin' ) );?>" target="_blank" aria-label="LinkedIn profile"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/round-linkedin.svg" width="20" alt="" loading="lazy"/></a>
                                     <?php } ?>
                                 </h3>
                                 <p class="job-title"><?php echo get_field( 'job_title' ); ?></p>
                                 <?php $company_logo = get_field( 'company_logo' ); ?>
                                 <?php if ( $company_logo ) { ?>
                                     <span class="company-logo">
-                                       <img src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt']; ?>" loading="lazy"/>
+                                       <img src="<?php echo esc_attr( $company_logo['url'] ); ?>" alt="<?php echo esc_attr( $company_logo['alt'] ); ?>" loading="lazy"/>
                                    </span>
                                 <?php } ?>
                             </div>
@@ -91,7 +91,7 @@ get_header();
                                     <div class="agenda-items">
                                         <span class="agenda-content-title">Speaking</span>
                                         <?php while ( have_rows( 'agenda_items' ) ) : the_row(); ?>
-                                            <a class="agenda-item" href="<?php echo esc_url( home_url( '/' ) ); ?>agenda#<?php echo get_sub_field( 'agenda_link_id' ); ?>" targt="_self">
+                                            <a class="agenda-item" href="<?php echo esc_url( home_url( '/' ) ); ?>agenda#<?php echo esc_attr( get_sub_field( 'agenda_link_id' ) ); ?>" targt="_self">
                                                 <span class="time"><?php echo get_sub_field( 'time' ); ?></span>
                                                 <span class="agenda-title"><?php echo get_sub_field( 'title' ); ?></span>
                                             </a>

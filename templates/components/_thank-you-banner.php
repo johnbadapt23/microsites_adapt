@@ -10,12 +10,12 @@
         <div class="column one-half image-column desktop-column">
             <div class="v-wrap">
                 <div class="v-box left-align">
-                    <a class="popup-vimeo" href="https://vimeo.com/<?php echo $videoURL; ?>">
+                    <a class="popup-vimeo" href="https://vimeo.com/<?php echo esc_attr( $videoURL ); ?>">
                         <div class="image-container">
                             <div class="bgContainer">
                                 <?php $image = get_sub_field( 'image' ); ?>
-                                <video width="100%" muted="muted" autoplay="autoplay" playsinline="playsinline" loop="loop" poster="<?php echo $image['url']; ?>">
-                                    <source type="video/mp4" src="<?php echo get_sub_field( 'video_url' ); ?>" />
+                                <video width="100%" muted="muted" autoplay="autoplay" playsinline="playsinline" loop="loop" poster="<?php echo esc_attr( $image['url'] ); ?>">
+                                    <source type="video/mp4" src="<?php echo esc_attr( get_sub_field( 'video_url' ) ); ?>" />
                                 </video>
                             </div>
                         </div>
@@ -41,10 +41,10 @@
                             <span class="text-details">
                                 <?php echo get_sub_field( 'text' ); ?>
                                 <span class="mobile-video-container">
-                                    <a class="popup-vimeo" href="https://vimeo.com/<?php echo $videoURL; ?>">
+                                    <a class="popup-vimeo" href="https://vimeo.com/<?php echo esc_attr( $videoURL ); ?>">
                                         <span class="image-container">
                                             <span class="bg-container">
-                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" loading="lazy"/>
+                                                <img src="<?php echo esc_attr( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy"/>
                                             </span>
                                             <span class="video-button-icon"></span>
                                         </span>
@@ -61,13 +61,13 @@
                             <span class="button-container">
                     			<?php while ( have_rows( 'button' ) ) : the_row(); ?>
                                     <?php if( get_sub_field( 'download_link_or_video' ) == 'download') { ?>
-                                        <a class="site-button download-link-button" href="<?php echo get_sub_field( 'link' ); ?>" target="_blank"><?php echo get_sub_field( 'button_text' ); ?></a>
+                                        <a class="site-button download-link-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="_blank"><?php echo get_sub_field( 'button_text' ); ?></a>
                                     <?php } ?>
                                     <?php if( get_sub_field( 'download_link_or_video' ) == 'link') { ?>
-                                        <a class="site-button" href="<?php echo get_sub_field( 'link' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
+                                        <a class="site-button" href="<?php echo esc_attr( get_sub_field( 'link' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
                                     <?php }?>
                                     <?php if( get_sub_field( 'download_link_or_video' ) == 'video') { ?>
-                                        <a class="site-button popup-vimeo video-button black-outline mobile-hide" href="https://vimeo.com/<?php echo get_sub_field( 'vimeo_code' ); ?>" target="<?php echo get_sub_field( 'link_target' ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
+                                        <a class="site-button popup-vimeo video-button black-outline mobile-hide" href="https://vimeo.com/<?php echo esc_attr( get_sub_field( 'vimeo_code' ) ); ?>" target="<?php echo esc_attr( get_sub_field( 'link_target' ) ); ?>"><?php echo get_sub_field( 'button_text' ); ?></a>
                                     <?php }?>
                     			<?php endwhile; ?>
                             </span>
