@@ -46,9 +46,11 @@
                 </div>
             </div>
             <div class="column one-half form-column">
+                <?php if( get_sub_field( 'form_embed' ) ) : ?>
                 <div class="form-container">
                     <?php echo get_sub_field( 'form_embed' ); ?>
-                </div>           
+                </div> 
+                <?php endif; ?>             
             </div>
         </div>
     </div>
