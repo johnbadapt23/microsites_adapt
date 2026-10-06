@@ -436,7 +436,7 @@ function center_map( map ) {
 // global var
 var map = null;
 
-$(document).ready(function(){
+$(function(){
 
 	$('.googleMap').each(function(){
 
@@ -449,7 +449,7 @@ $(document).ready(function(){
 });
 
 
-$(window).resize(function() {
+$(window).on('resize', function() {
 
 	$('.google-map').each(function(){
 

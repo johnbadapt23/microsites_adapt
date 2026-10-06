@@ -1,5 +1,5 @@
 (function($){
-	$(document).ready(function (){
+	$(function (){
 
 		// perfect-scrollbar v1+ dropped its jQuery plugin wrapper in favour of
 		// a plain JS class (`new PerfectScrollbar(el)` / `.destroy()`); this
