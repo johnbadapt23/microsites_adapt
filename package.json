@@ -16,21 +16,14 @@
   "homepage": "https://github.com/shop12dev/adapt",
   "dependencies": {
     "aos": "^2.3.4",
-    "flexslider": "^2.7.2",
-    "fullpage.js": "2.9.7",
     "hover.css": "^2.3.2",
-    "isotope-layout": "^3.0.6",
     "jquery": "^3.7.1",
     "jquery-match-height": "^0.7.2",
-    "jquery-viewport-checker": "^1.8.8",
     "jquery.localscroll": "^2.0.0",
     "jquery.scrollbar": "^0.2.11",
     "jquery.scrollto": "^2.1.3",
     "js-cookie": "^3.0.8",
-    "lightbox2": "^2.12.0",
-    "macy": "^2.5.1",
     "magnific-popup": "^1.2.0",
-    "owl.carousel": "^2.3.4",
     "perfect-scrollbar": "^1.5.6",
     "select2": "^4.1.0",
     "slick-carousel": "^1.8.1"
@@ -55,7 +48,7 @@
     "gulp-terser": "^2.1.0",
     "gulp-zip": "^6.1.0",
     "pump": "^3.0.4",
-    "sass": "^1.102.0",
+    "sass": "^1.105.1",
     "vinyl-ftp": "^0.6.1"
   },
   "overrides": {
