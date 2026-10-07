@@ -107,7 +107,6 @@ body {
 }
 
 [data-aos="fade-up"] {
-	-webkit-transform: translateY(40px);
 transform: translateY(40px);
 }
 
@@ -1269,20 +1268,6 @@ header {
 	background-color: #fff !important;
 }
 
-@-webkit-keyframes bounce_smooth {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0)
-    }
-    50% {
-        -webkit-transform: translate3d(0, 10px, 0);
-        transform: translate3d(0, 10px, 0)
-    }
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0)
-    }
-}
 @keyframes bounce_smooth {
     0% {
         -webkit-transform: translate3d(0, 0, 0);
@@ -1330,7 +1315,6 @@ input[type=submit] {
 	border-radius: 3px;
 	-webkit-appearance: none;
 	box-shadow: 2px 3px 9px 0 rgba(0, 0, 0, 0.1);
-	-webkit-box-shadow: 2px 3px 9px 0 rgba(0, 0, 0, 0.1);
 	border:0px !important;
 	height:50px;
 	font-size: 12px !important;
@@ -2629,22 +2613,6 @@ input.hs-input {
 	height: 80vh;
 }
 
-@-webkit-keyframes bounce_smooth {
-	0% {
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0)
-	}
-
-	50% {
-		-webkit-transform: translate3d(0, 10px, 0);
-		transform: translate3d(0, 10px, 0)
-	}
-
-	0% {
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0)
-	}
-}
 
 @keyframes bounce_smooth {
 	0% {
@@ -2665,40 +2633,25 @@ input.hs-input {
 
 @keyframes move-text-fowards {
 	0% {
-		-webkit-transform: translate3d(-100%, 0, 0);
 		transform: translate3d(-100%, 0, 0);
 	}
 
 	to {
-		-webkit-transform: translateZ(0);
 		transform: translateZ(0);
 	}
 }
 
 @keyframes move-text-fowards {
 	0% {
-		-webkit-transform: translate3d(-100%, 0, 0);
 		transform: translate3d(-100%, 0, 0);
 	}
 
 	to {
-		-webkit-transform: translateZ(0);
 		transform: translateZ(0);
 	}
 }
 
 
-@-webkit-keyframes move-text {
-	0% {
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0)
-	}
-
-	to {
-		-webkit-transform: translate3d(-100%, 0, 0);
-		transform: translate3d(-100%, 0, 0)
-	}
-}
 
 @keyframes move-text {
 	0% {

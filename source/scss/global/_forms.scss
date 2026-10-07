@@ -396,7 +396,6 @@ li.nf-previous-item {
 
 		&:after {
 		    opacity: 0;
-		    -webkit-transform: scale(0);
 		    transform: scale(0);
 			content: '';
 		    width: 9px;
@@ -406,14 +405,12 @@ li.nf-previous-item {
 		    top: 5px;
 		    left: 5px;
 		    border-radius: 100%;
-		    -webkit-transition: all 0.2s ease;
 		    transition: all 0.2s ease;
 		}
 
 		&.nf-checked-label {
 			&:after {
 			    opacity: 1;
-			    -webkit-transform: scale(1);
 			    transform: scale(1);
 			}
 		}
@@ -460,17 +457,14 @@ li.nf-previous-item {
 	    top: 5px;
 	    left: 5px;
 	    border-radius: 100%;
-	    -webkit-transition: all 0.2s ease;
 	    transition: all 0.2s ease;
 	}
 	[type="radio"]:not(:checked) + label:after {
 	    opacity: 0;
-	    -webkit-transform: scale(0);
 	    transform: scale(0);
 	}
 	[type="radio"]:checked + label:after {
 	    opacity: 1;
-	    -webkit-transform: scale(1);
 	    transform: scale(1);
 	}
 }
@@ -1760,7 +1754,6 @@ input.hs-input {
 								font-weight: 500 !important;
 								text-transform: none;
 								position: relative;
-								-webkit-transition: all 0.3s ease;
 								transition: all 0.3s ease;
 								overflow: visible;
 

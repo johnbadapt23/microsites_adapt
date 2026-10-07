@@ -50,10 +50,6 @@
 
 
 @mixin transition($on: all, $duration: 300ms, $method: ease) {
-	-webkit-transition: $on $duration $method;
-	-moz-transition: $on $duration $method;
-	-ms-transition: $on $duration $method;
-	-o-transition: $on $duration $method;
 	transition: $on $duration $method;
 }// @include transition(all, 300ms, ease);
 
@@ -69,15 +65,11 @@
 
 
 @mixin rotate($amount: 90deg) {
-	-webkit-transform: rotate($amount);
-	-moz-transform: rotate($amount);
 	transform: rotate($amount);
 }// @include rotate(180deg);
 
 
 @mixin scale($ratio: 1.1) {
-	-webkit-transform: scale($ratio);
-	-moz-transform: scale($ratio);
 	transform: scale($ratio);
 }
 
@@ -86,7 +78,6 @@
 		content: '';
 		display: block;
 	    clear: both;
-	    *zoom: 1;
 	}
 }// @include clear;
 
@@ -95,23 +86,16 @@
 		content: '';
 		display: block;
 	    clear: both;
-	    *zoom: 1;
 	}
 }// @include clear;
 
 @mixin box-shadow($left:0, $top:2px, $blur:2px, $color:#000, $inset:"") {
-	-webkit-box-shadow:$left $top $blur $color #{$inset};
-	-moz-box-shadow:$left $top $blur $color #{$inset};
 	box-shadow:$left $top $blur $color #{$inset};
 }// @include box-shadow;
 
 
 @mixin columns($count:2, $gap:20px) {
-	  -webkit-columns: $count;
-	     -moz-columns: $count;
 	          columns: $count;
-	  -webkit-column-gap: $gap;
-	     -moz-column-gap: $gap;
 	          column-gap: $gap;
 }// @include columns;
 
@@ -146,9 +130,6 @@
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
           border-radius: $radius;
 }
 
@@ -159,16 +140,10 @@
 
 @mixin bounce($duration: 800ms, $infinite: true) {
 	@if $infinite {
-	    -webkit-animation:bounceIt $duration infinite;
-	    -moz-animation:bounceIt $duration infinite;
 	    animation:bounceIt $duration infinite;
 	}
 	@else {
-	    -webkit-animation:bounceIt $duration;
-	    -moz-animation:bounceIt $duration;
 	    animation:bounceIt $duration;
 	}
 }// @include bounce(1s);
-@-webkit-keyframes bounceIt { 0% { transform: translate(0, -40%); } 50% { transform: translate(0.3vw, -40%); } 100% { transform: translate(0, -40%); } }
-@-moz-keyframes bounceIt { 0% { transform: translate(0, -40%); } 50% { transform: translate(0.3vw, -40%); } 100% { transform: translate(0, -40%); } }
 @keyframes bounceIt { 0% { transform: translate(0, -40%); } 50% { transform: translate(0.3vw, -40%); } 100% { transform: translate(0, -40%); } }
