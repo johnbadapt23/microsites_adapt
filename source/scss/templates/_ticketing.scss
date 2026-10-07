@@ -12,13 +12,12 @@ section.customer-events-faqs {
     .container {
         text-align: center;
 
-        .faq-container {
+        .faq-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
 
 
             .faq-column {
-                float: left;
                 width: 100%;
                 display: flex;
                 gap: 32px;
@@ -43,7 +42,7 @@ section.customer-events-faqs {
                     margin: 0px auto;
                     text-align: left;
 
-                    .faq-item {
+                    .faq-item { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         float: left;
                         width: 100%;
                         position: relative;
@@ -56,7 +55,6 @@ section.customer-events-faqs {
                         }
 
                         .accordion-title {
-                            float: left;
                             width: 100%;
                             position: relative;
                             color: #fff;
@@ -98,7 +96,6 @@ section.customer-events-faqs {
                         }
 
                         .accordion-content {
-                            float: left;
                             width: 100%;
                             padding-top: 32px;
                             color: #9a9a9a;
@@ -152,7 +149,7 @@ section.infinite-images {
         // height: 300px;
 
         .infinite-image {
-            display: inline-block;
+            display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             width: 30vw;
             padding: 0 15px;
             flex: none;
@@ -168,7 +165,6 @@ section.infinite-images {
             }
 
             .image-container {
-                float: left;
                 width: 100%;
                 padding-top: 56.25%;
             }
@@ -243,7 +239,7 @@ section.ticketing {
     }
 
     .container {
-        .title-container {
+        .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             margin-bottom: 60px;
@@ -257,14 +253,12 @@ section.ticketing {
             }
 
             h1 {
-                float: left;
                 width: 100%;
                 margin-bottom: 10px;
                 color: #000;                
             }
 
             p {
-                float: left;
                 width: 100%;
                 margin-bottom: 0px;   
                 color: #000;
@@ -650,13 +644,12 @@ section.ticketing-two-column-icon {
     .container {
         text-align: center;
 
-        .title-container {
+        .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             text-align: center;
     
             h2 {
-                float: left;
                 width: 100%;
                 text-align: center;
                 color: #fff;
@@ -679,7 +672,7 @@ section.ticketing-two-column-icon {
                 gap: 20px;
             }
 
-            .column {
+            .column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: calc(50% - 16px);                
                 text-align: left;
                 background-color: #121212;
@@ -690,7 +683,6 @@ section.ticketing-two-column-icon {
                 }
 
                 .icon-container-outer {
-                    float: left;
                     width: 100%;
                     margin-bottom: 40px;
 
@@ -708,7 +700,6 @@ section.ticketing-two-column-icon {
                 }
 
                 h3 {
-                    float: left;
                     width: 100%;
                     color: #fff;
                     margin-bottom: 8px;
@@ -716,7 +707,6 @@ section.ticketing-two-column-icon {
 
                 .text {
                     color: #9a9a9a;
-                    float: left;
                     width: 100%;
                     margin-bottom: 0px;
                 }

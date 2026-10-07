@@ -7,7 +7,6 @@ body.template-registration-new {
 }
 
 div.event-registration-header {
-    float: left;
     width: 100%;
     z-index: 1;
     height: 100px;
@@ -219,7 +218,6 @@ section.webinarBanner {
         }
 
         h1 {
-            float: left;
             width: 100%;
             text-align: left;
             font-family: $font-base;
@@ -238,7 +236,6 @@ section.webinarBanner {
         }
 
         p {
-            float: left;
             width: 100%;
             font-family: $font-base;
             font-weight: 700;
@@ -695,13 +692,12 @@ section.centred-text-module {
         align-items: center;
 
         .inner {
-            display: inline-block;
+            display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             margin: 0 auto;
             width: 100%;
             max-width: 800px;
 
             .content {
-                float: left;
                 width: 100%;
                 text-align: center;
                 color: #000;
@@ -1848,7 +1844,7 @@ section.webinar-article {
 
 section.topicBanner.webinarBanner {
     .container {
-        .column {
+        .column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             .roundtable {
                 float: left;
                 line-height: 22px;
@@ -1862,15 +1858,13 @@ section.topicBanner.webinarBanner {
                 font-weight: 600;
             }
 
-            .banner-icon {
-                float: left;
+            .banner-icon { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 100%;
                 height: 50px;
                 margin-top: 30px;
                 margin-bottom: 30px;
 
                 img {
-                    float: left;
                     height: 100%;
                     width: auto;
                     position: relative;
@@ -2435,7 +2429,7 @@ section.location-block {
                     }
                 }
 
-                .portrait-image-container {
+                .portrait-image-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     float: left;
                     width: 50%;
                     position: relative;
@@ -2447,7 +2441,6 @@ section.location-block {
                     }
 
                     .image-container {
-                        float: left;
                         width: 100%;
                         padding-top: 125%;
                         height: 100%;

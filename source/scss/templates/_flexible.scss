@@ -54,8 +54,7 @@ section.introduction-block {
                 }
             }
 
-            .text-container {
-                float: left;
+            .text-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 50%;
                 padding-top: 0px; 
                 padding-right: 60px;                               
@@ -67,15 +66,13 @@ section.introduction-block {
                     margin-left: 0px;
                 }
         
-                span.information {
-                    float: left;
+                span.information { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     text-align: left;
                     margin-bottom: 25px;        
         
                     .date,
                     .location {
-                        float: left;
                         width: auto;
                         font-weight: bold;
                         font-size: 12px;
@@ -88,7 +85,6 @@ section.introduction-block {
                 }
         
                 h1 {
-                    float: left;
                     width: 100%;
                     font-family: $font-base;
                     font-weight: normal;
@@ -102,7 +98,6 @@ section.introduction-block {
                 }
         
                 span.text {
-                    float: left;
                     width: 100%;
                     color: #fff;
                     margin-bottom: 45px;
@@ -119,7 +114,6 @@ section.introduction-block {
                 }
         
                 .button-container {
-                    float: left;
                     width: 100%;
                     display: flex;
                     align-items: center;
@@ -211,8 +205,7 @@ section.introduction-block {
                     }
                 }
         
-                .bottom-text {
-                    float: left;
+                .bottom-text { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     padding-left: 0px;
                     margin-top: 56px;
@@ -222,7 +215,6 @@ section.introduction-block {
                     }
         
                     .text {
-                        float: left;
                         width: 100%;
                         position: relative;
                         margin-bottom: 8px;
@@ -234,12 +226,10 @@ section.introduction-block {
                         }    
                     }
         
-                    .text-link-container {
-                        float: left;
+                    .text-link-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
         
                         .text-link {
-                            float: left;
                             font-size: 16px;
                             line-height: 20px;
                             // text-decoration: underline;
@@ -248,8 +238,7 @@ section.introduction-block {
                 }
             }
 
-            .image-column {
-                float: left;
+            .image-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 50%;
                 padding-left: 16px;
 
@@ -260,7 +249,6 @@ section.introduction-block {
                 }
 
                 .image-container {
-                    float: left;
                     width: 100%;
                     padding-top: 56.25%;
                     position: relative;
@@ -310,8 +298,7 @@ section.half-text-half-image {
                 flex-direction: column;
             }
 
-            .text-container {
-                float: left;
+            .text-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 50%;
                 padding-top: 140px;
                 padding-bottom: 140px;
@@ -326,7 +313,6 @@ section.half-text-half-image {
                 }
 
                 span.h2-style {
-                    float: left;
                     width: 100%;
                     font-family: $font-base;
                     font-weight: normal;
@@ -344,7 +330,6 @@ section.half-text-half-image {
                 }
 
                 span.sub-title {
-                    float: left;
                     width: 100%;
                     color: $color-red;
                     margin-bottom: 40px;
@@ -360,14 +345,12 @@ section.half-text-half-image {
                     }
                 }
 
-                span.text {
-                    float: left;
+                span.text { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     color: #000;
                     margin-bottom: 40px;
 
                     p {
-                        float: left;
                         width: 100%;
                         color: #000;
                     }
@@ -379,8 +362,7 @@ section.half-text-half-image {
                 }
             }
 
-            .image-column {
-                float: left;
+            .image-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 50%;
                 padding-left: 16px;
 
@@ -391,7 +373,6 @@ section.half-text-half-image {
                 }
 
                 .image-container {
-                    float: left;
                     width: 100%;
                     padding-top: 64%;
                     position: relative;
@@ -598,7 +579,7 @@ section.speakers-block {
     }
 
     .container {
-        .speakers-top {
+        .speakers-top { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             position: relative;
@@ -610,7 +591,6 @@ section.speakers-block {
 
             h2 {
                 width: 100%;
-                float: left;
                 position: relative;
                 padding-bottom: 12px;
                 margin-bottom: 20px;
@@ -634,7 +614,6 @@ section.speakers-block {
 
             p {
                 width: 100%;
-                float: left;
                 max-width: 535px;
 
                 @media (max-width:1023px) {
@@ -664,7 +643,7 @@ section.speakers-block {
             float: left;
             width: 100%;
 
-            .speaker.one-quarter {
+            .speaker.one-quarter { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 float: left;
                 width: calc(25% - 24px);
                 margin-right: 32px;
@@ -681,7 +660,6 @@ section.speakers-block {
                 }
 
                 .image-container {
-                    float: left;
                     width: 100%;
                     padding-top: 125%;
                     position: relative;
@@ -745,7 +723,6 @@ section.speakers-block {
                 }
 
                 .job-title {
-                    float: left;
                     width: 100%;
                     padding: 20px;
                     font-size: 14px;
@@ -1166,9 +1143,8 @@ section.logos-block {
                 padding-bottom: 20px;
         	}
 
-            .column {
+            .column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 .title {
-                    float: left;
                     width: 100%;
 
                     p {
@@ -1201,7 +1177,6 @@ section.logos-block {
                 }
 
                 .text {
-                    float: left;
                     width: 100%;
 
                     p {
@@ -1211,7 +1186,7 @@ section.logos-block {
             }
         }
 
-        .logos-block {
+        .logos-block { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             background-color: #fff;
@@ -1222,7 +1197,6 @@ section.logos-block {
             }
 
             .logos-slider {
-                float: left;
                 width: 100%;
 
                 .slide {
@@ -1300,14 +1274,13 @@ section.logos-block {
     }
 }
 
-section.two-column-two-image-block {
+section.two-column-two-image-block { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
     background-color: #fafafa;
     float: left;
     width: 100%;
     padding: 40px 0 70px;
 
     .block-container {
-        float: left;
         width: 100%;
         border-bottom: 1px solid #e1e1e1;
         padding-bottom: 40px;
@@ -1350,15 +1323,13 @@ section.two-column-two-image-block {
 
         .container {
 
-            .column {
-                .text-container {
-                    float: left;
+            .column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
+                .text-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     max-width: 530px;
                 }
 
                 h2 {
-                    float: left;
                     width: 100%;
                     color: #000;
                     text-transform: none;
@@ -1402,8 +1373,7 @@ section.two-column-two-image-block {
                     }
                 }
 
-                .text {
-                    float: left;
+                .text { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     max-width: 350px;
                     margin-bottom: 50px;
@@ -1413,7 +1383,6 @@ section.two-column-two-image-block {
                     }
 
                     p {
-                        float: left;
                         width: 100%;
                         color: #000;
                         font-size: 16px;
@@ -1881,14 +1850,13 @@ section.quote-slider-block {
                 padding-bottom: 80px;
             }
 
-            .quote-slide {
+            .quote-slide { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 float: left;
                 width: 100%;
                 text-align: center;
                 padding-top: 0px;
 
                 .quote-slide-container {
-                    float: left;
                     width: 100%;
                     text-align: center;
                 }
@@ -2553,7 +2521,7 @@ section.faq-block {
                 width: 100%;
             }
 
-            .faq-item {
+            .faq-item { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 float: left;
                 width: 100%;
                 border-bottom: 1px solid #e1e1e1;
@@ -2561,7 +2529,6 @@ section.faq-block {
                 color: #000;
 
                 .question {
-                    float: left;
                     width: 100%;
                     font-size: 24px;
                     line-height: 30px;
@@ -2598,7 +2565,6 @@ section.faq-block {
                 }
 
                 .answer {
-                    float: left;
                     width: 100%;
                     position: relative;
                     padding-right: 90px;
@@ -2637,21 +2603,18 @@ section.partner-with-us-block {
 
         .container {
             .column {
-                &.text-column {
+                &.text-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-right: 50px;
 
-                    .text-container {
-                        float: left;
+                    .text-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
                         max-width: 380px;
 
                         .text {
-                            float: left;
                             width: 100%;
                         }
 
                         h2 {
-                            float: left;
                             width: 100%;
                             p {
                                 font-size: 42px;
@@ -2682,8 +2645,7 @@ section.partner-with-us-block {
                             }
                         }
 
-                        .button-container {
-                            float: left;
+                        .button-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                             width: 100%;
                             position: relative;
                             z-index: 1;
@@ -2696,11 +2658,10 @@ section.partner-with-us-block {
                     }
                 }
 
-                &.image-column {
+                &.image-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-left: 50px;
 
                     .image-container {
-                        float: left;
                         width: 100%;
                         padding-top: 66.67%;
 
@@ -3370,7 +3331,7 @@ section.quote-slider-new {
             margin-bottom: 20px;
             position: relative;
 
-            .progress-bar {
+            .progress-bar { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 float: left;
                 width: 100% !important;
                 height: 1px;
@@ -3391,7 +3352,6 @@ section.quote-slider-new {
 
                 .progress-inner {
                     width: 20%;
-                    float: left;
                     height: 1px;
                     background-image: linear-gradient(to right, #9A9A9A, #9A9A9A);
                     background-repeat: no-repeat;
@@ -3441,7 +3401,7 @@ section.quote-slider-new {
             float: left;
             width: 100%;
 
-            .quote-thumbnail {
+            .quote-thumbnail { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 cursor: pointer;
                 filter: grayscale(1);
 
@@ -3450,7 +3410,6 @@ section.quote-slider-new {
                 }
 
                 .thumbnail-container {
-                    float: left;
                     width: 105px;
                     height: 42px;
 
@@ -4071,7 +4030,7 @@ section.partner-form {
                         }
                     }
 
-                    .image-arrow-container {
+                    .image-arrow-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         float: left;
                         width: 100%;
                         margin-bottom: 70px;
@@ -4083,7 +4042,6 @@ section.partner-form {
                         }
 
                         .image-container {
-                            float: left;
                             width: 100%;
                             padding-top: 66%;
 
@@ -4094,7 +4052,7 @@ section.partner-form {
                                 }
                             }
 
-                            .arrow-container {
+                            .arrow-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                                 position: absolute;
                                 width: 50px;
                                 height: 90px;
@@ -4257,7 +4215,7 @@ section.two-column-switch-module {
                 margin-bottom: 26px;
             }
 
-            .title-container {
+            .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 float: left;
                 width: 100%;
                 text-align: left;
@@ -4268,7 +4226,6 @@ section.two-column-switch-module {
                 }
 
                 h2 {
-                    float: left;
                     width: 100%;
                     text-align: left;
                     margin-bottom: 0px;
@@ -4387,7 +4344,6 @@ section.two-column-switch-module {
                     align-items: center;
 
                     .column {
-                        float: left;
                         width: 50%;
 
                         &.text-list-column {
@@ -4534,12 +4490,11 @@ section.testimonials-slider-block {
                 width: 100%;
                 position: relative;
 
-                .testimonials-slide {
+                .testimonials-slide { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     float: left;
                     width: 100%;
 
                     .column-container {
-                        float: left;
                         width: 100%;
                         display: flex;
                         // align-items: center;
@@ -4562,7 +4517,7 @@ section.testimonials-slider-block {
                                 }
                             }
 
-                            &.text-column {
+                            &.text-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                                 color: #000;
                                 padding-right: 80px;
                                 
@@ -4572,7 +4527,6 @@ section.testimonials-slider-block {
                                 }
 
                                 .quote-marks {
-                                    float: left;
                                     width: 100%;
                                     height: 37px;
                                     background-image: url('../images/q1.png');
@@ -4583,7 +4537,6 @@ section.testimonials-slider-block {
                                 }
 
                                 .testimonial {
-                                    float: left;
                                     width: 100%;
                                     margin-bottom: 40px;
                                     font-size: 20px;
@@ -4598,7 +4551,6 @@ section.testimonials-slider-block {
                                 }
 
                                 .testimonial-title {
-                                    float: left;
                                     width: 100%;
                                     margin-bottom: 100px;
                                     font-size: 16px;

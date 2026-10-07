@@ -1542,7 +1542,7 @@ input.hs-input {
 					float: left;
 					width: auto;
 
-					label {
+					label { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 						float: left;
 						width: auto;
 						padding: 0px;
@@ -1553,13 +1553,11 @@ input.hs-input {
 						input {
 							height: auto !important;
 							line-height: auto !important;
-							float: left;
 							width: auto !important;
 							border: 1px solid #000 !important;
 						}
 
 						span {
-							float: left;
 							width: auto;
 						}
 					}

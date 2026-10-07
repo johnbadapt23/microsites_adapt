@@ -306,7 +306,7 @@ section.agenda-item {
         }
 
 
-        .company-container {
+        .company-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             margin-bottom: 20px;
@@ -327,7 +327,6 @@ section.agenda-item {
             span.company {
                 color: #000;
                 font-weight: bold;
-                float: left;
                 width: 100%;
 
                 &:nth-of-type(2n) {
@@ -414,14 +413,13 @@ section.agenda-item {
             }
         }
 
-        .agenda-description {
+        .agenda-description { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             position: relative;
             padding-bottom: 20px;
 
             .text {
-                float: left;
                 width: 100%;
                 position: relative;
 
@@ -544,7 +542,7 @@ section.agenda-item {
             }
 
             .content-container {
-                .company-container {
+                .company-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     float: left;
                     width: 100%;
                     margin-bottom: 20px;
@@ -565,7 +563,6 @@ section.agenda-item {
                     span.company {
                         color: #000;
                         font-weight: bold;
-                        float: left;
                         width: 100%;
 
                         &:nth-of-type(2n) {

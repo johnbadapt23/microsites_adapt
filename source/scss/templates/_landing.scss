@@ -251,7 +251,7 @@ section.two-column-services.landing-video-intro {
                         }
                     }
 
-                    .title {
+                    .title { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         float: left;
                         width: 100%;
                         margin-bottom: 12px;
@@ -265,7 +265,6 @@ section.two-column-services.landing-video-intro {
 
                         p {
                             margin-bottom: 0px;
-                            float: left;
                             width: 100%;
                             color: #000;
                             font-weight: 400;
@@ -459,7 +458,6 @@ section.two-column-services.landing-form-intro {
                 @media (max-width:1023px) {
                     width: 100%;
                     max-width: 100%;
-                    float: left;
                 }
 
                 &.text-column {
@@ -469,20 +467,18 @@ section.two-column-services.landing-form-intro {
                         padding-right: 0px;
                     }
 
-                    .text-content-inner {
+                    .text-content-inner { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
                         float: left;
                         max-width: 445px;                        
                     }
 
                     .pre-title {
-                        float: left;
                         width: 100%;
                         margin-bottom: 24px;
                     }
 
-                    .title {
-                        float: left;
+                    .title { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
                         margin-bottom: 24px;
                         color: #000;
@@ -495,7 +491,6 @@ section.two-column-services.landing-form-intro {
 
                         p {
                             margin-bottom: 0px;
-                            float: left;
                             width: 100%;
                             color: #000;
                             font-weight: 300;
@@ -503,7 +498,6 @@ section.two-column-services.landing-form-intro {
                     }
 
                     .text {
-                        float: left;
                         width: 100%;
                         margin-bottom: 56px;
 
@@ -514,7 +508,6 @@ section.two-column-services.landing-form-intro {
                 }
 
                 .links-container {
-                    float: left;
                     width: 100%;
                     display: flex;
                     align-items: center;
@@ -522,13 +515,11 @@ section.two-column-services.landing-form-intro {
                     gap: 24px;
 
                     .std-button {
-                        float: left;
                         margin-left: 0px;
                         margin-top: 0px;
                     }
 
                     .text-link {
-                        float: left;
                         font-size: 18px;
 
                         @media (max-width:767px) {
@@ -670,7 +661,7 @@ section.about-block {
                 padding: 50px 20px;
             }
 
-            .top-corner-icon {
+            .top-corner-icon { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 position: absolute;
                 top: 25px;
                 right: 35px;
@@ -678,7 +669,6 @@ section.about-block {
 
                 img {
                     width: 100%;
-                    float: left;
                 }
             }
 
@@ -911,24 +901,21 @@ section.two-column-services.landing-two-column-slider {
                             }
                         }
 
-                        .slide {
+                        .slide { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                             @media (max-width:767px) {
                                 margin-right: 20px;
                             }
 
-                            .slider-inner {
-                                float: left;
+                            .slider-inner { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                                 width: 100%;
 
                                 .image-container {
-                                    float: left;
                                     width: 100%;
                                     padding-top: 56.25%;
                                     margin-bottom: 4px;
                                 }
 
                                 .caption-container {
-                                    float: left;
                                     width: 100%;
                                     font-size: 16px;
                                     line-height: 28px;
@@ -1218,7 +1205,7 @@ section.video-quote-slider-block {
     }
 
     .container {
-        .title-container {
+        .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             text-align: center;
@@ -1228,8 +1215,7 @@ section.video-quote-slider-block {
                 margin-bottom: 40px;
             }
     
-            h2 {
-                float: left;
+            h2 { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 100%;
                 margin-bottom: 0px;
     
@@ -1241,7 +1227,6 @@ section.video-quote-slider-block {
     
                 p {
                     margin-bottom: 0px;
-                    float: left;
                     width: 100%;
                     color: #fff;
                     font-weight: 300;
@@ -1452,7 +1437,7 @@ section.video-quote-slider-block {
                     }
                 }
 
-                &.video-column {
+                &.video-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 745px;
                     min-width: 745px;
 
@@ -1467,7 +1452,6 @@ section.video-quote-slider-block {
                     }
 
                     .video-container {
-                        float: left;
                         aspect-ratio: 16/9;
                         position: relative;
                         border-radius: 4px;
@@ -1836,7 +1820,7 @@ section.community-block.landing-community {
                 }
             }
 
-            .community-logo-ticker-container {
+            .community-logo-ticker-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: calc(100% - 200px);
                 padding: 32px 0;
 
@@ -1851,7 +1835,6 @@ section.community-block.landing-community {
                     left: 0px;
                     top: 0px;
                     transform: none;
-                    float: left;
                     width: 100%;
                     overflow: hidden;
                     display: flex;
@@ -1937,7 +1920,7 @@ section.sponsor-block {
 
     .container {      
 
-        .top-block {
+        .top-block { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             text-align: left;
@@ -1949,7 +1932,6 @@ section.sponsor-block {
             }
 
             h2 {
-                float: left;
                 width: 100%;
                 margin-bottom: 0px;
 
@@ -1969,7 +1951,7 @@ section.sponsor-block {
             }
         }
 
-        .table-block {
+        .table-block { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
 
@@ -1990,7 +1972,6 @@ section.sponsor-block {
             }
 
             .table-row {
-                float: left;
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -1998,7 +1979,6 @@ section.sponsor-block {
 
                 .title-column {
                     width: 300px;
-                    float: left;
                     padding: 12px 20px;
                 }
 
@@ -2013,13 +1993,11 @@ section.sponsor-block {
 
                 .column {
                     width: calc(25% - 75px);
-                    float: left;
                     text-align: center;
                 }
             }
 
-            .table-content {
-                float: left;
+            .table-content { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 100%;
 
                 .table-title {
@@ -2139,14 +2117,12 @@ section.sponsor-block {
             }
 
             .sponsors-slider-container {
-                float: left;
                 width: 100%;
                 display: flex;
                 flex-direction: column;                
                 gap: 16px;
 
                 .slide {
-                    float: left;
                     width: 100%;
                     margin-right: 0px;
                     border: 1px solid #E4E4E4;
@@ -2238,7 +2214,6 @@ section.sponsor-block {
                             padding: 6px 0;
 
                             .title-column {
-                                float: left;
                                 width: calc(100% - 24px);
                                 text-align: left;
                                 padding-right: 36px;
@@ -2261,7 +2236,6 @@ section.sponsor-block {
                             }
 
                             .answer-column {
-                                float: left;
                                 width: 24px;
                                 text-align: center;
                                 font-size: 14px;
@@ -2408,13 +2382,12 @@ section.sponsor-block {
             }
 
             @media (max-width:767px) {
-                .button-container {
+                .button-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     float: left;
                     width: 100%;
                     padding: 0 20px;
 
                     .std-button {
-                        float: left;
                         width: 100%;
                     }
                 }
@@ -2745,7 +2718,7 @@ section.delegate-block {
             }
         }
 
-        .delegate-slide-container {
+        .delegate-slide-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             margin-top: 20px;  
@@ -2803,29 +2776,26 @@ section.delegate-block {
             }
 
             .delegate-slides {
-                float: left;
                 width: 100%;
 
-                .delegate-slide {
+                .delegate-slide { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     margin: 0 10px;                    
                     position: relative;
                     padding: 30px 0;
                     transition: all .3s ease;
 
-                    .slide-inner {
+                    .slide-inner { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         background-color: #f8f8f8;
                         border-radius: 10px;
                         padding: 20px;
                         width: 100%;
                         height: 100%;
                         top: 0;
-                        float: left;
                         position: relative;
                         transition: all .3s ease;
 
                         .logo-container {
                             width: 100%;
-                            float: left;
                             position: relative;
                             height: 100px;
                             overflow: hidden;
@@ -2842,13 +2812,11 @@ section.delegate-block {
                             }
                         }
 
-                        .text-container {
-                            float: left;
+                        .text-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                             width: 100%;
                             text-align: center;
 
                             .slide-text {
-                                float: left;
                                 width: 100%;
                                 text-align: center;
                                 font-size: 16px;
@@ -3004,7 +2972,7 @@ section.why-become {
     }
 
     .container {
-        .title-container {
+        .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             text-align: center;
@@ -3014,8 +2982,7 @@ section.why-become {
                 margin-bottom: 40px;
             }
 
-            h2 {
-                float: left;
+            h2 { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 100%;
                 margin-bottom: 0px;
 
@@ -3027,7 +2994,6 @@ section.why-become {
             
                 p {
                     margin-bottom: 0px;
-                    float: left;
                     width: 100%;
                     color: #000;
                     font-weight: 300;
@@ -3049,7 +3015,6 @@ section.why-become {
 
 
             .why-become-text-column {
-                float: left;
                 width: calc(50% - 15px);
 
                 @media (max-width:767px) {
@@ -3176,7 +3141,6 @@ section.why-become {
             }
 
             .why-become-image-container {
-                float: right;
                 width: 50%;
 
                 @media (max-width:767px) {
@@ -3191,7 +3155,7 @@ section.why-become {
                     border-radius: 4px;
 
 
-                    .why-become-image {
+                    .why-become-image { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         position: absolute;
                         inset: 0; // stretch to container
                         opacity: 0;
@@ -3221,7 +3185,6 @@ section.why-become {
                         }
 
                         .image-container {
-                            float: left;
                             width: 100%;
                             aspect-ratio: 16/9;
                             border-radius: 4px;

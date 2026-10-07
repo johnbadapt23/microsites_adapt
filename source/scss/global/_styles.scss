@@ -183,7 +183,6 @@ span.text {
 
 .labelXXLarge,
 .labelXXL {
-	float: left;
 	width: 100%;
 	font-size: 28px;
 	font-weight: 500;
@@ -478,7 +477,6 @@ a.std-button,
 	line-height: 65px;
 	border-radius:0px;
 	border:1px solid #fff;
-	float:left;
 	color:#fff;
 	text-transform:uppercase;
 	font-size: 12px;
@@ -816,9 +814,8 @@ a.std-button,
 	@include transition(all, 300ms, ease);
 }
 
-.button-container-black-before {
+.button-container-black-before { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 	position: relative;
-	float: left;
 	width: 100%;
 
 	&:before {
@@ -856,7 +853,7 @@ a.std-button,
 	}
 }
 
-.form-popup-button-container.std-button.with-red-button {
+.form-popup-button-container.std-button.with-red-button { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 	a {
 		background-color: $color-red;
 		border-color: $color-red;
@@ -1467,7 +1464,6 @@ a.logoBlockLink {
 }
 
 .inner {
-	float: left;
 	width: 100%;
 	padding: 0px 40px 0 40px;
 
