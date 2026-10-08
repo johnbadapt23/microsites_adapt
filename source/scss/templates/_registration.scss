@@ -336,13 +336,12 @@ section.webinar-article {
     .container {
         .column {
 
-            &.first-column {
+            &.first-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 @include responsive(767) {
                     padding-top: 35px;
                 }
 
                 .webinar-subtitle {
-                    float: left;
                     width: 100%;
                     font-weight: 700;
                     margin-bottom: 40px;
@@ -354,7 +353,6 @@ section.webinar-article {
                 }
 
                 .content {
-                    float: left;
                     width: 100%;
                     margin-bottom: 40px;
                     color: #000;
@@ -370,10 +368,9 @@ section.webinar-article {
                 }
             }
 
-            &.second-column {
+            &.second-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 
                 .register-container {
-                    float: left;
                     width: 100%;
                     display: block;
                     position: relative;
@@ -2249,7 +2246,6 @@ section.registration-two-column-block {
 }
 
 section.location-block {
-    float: left;
     width: 100%;
     padding: 50px 0;
     background-color: $color-background-black;
@@ -2387,7 +2383,7 @@ section.location-block {
                 }
             }
 
-            &.image-column {
+            &.image-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 position: relative;
                 height: 100%;
                 float: left;
@@ -2414,7 +2410,6 @@ section.location-block {
                 }
 
                 .portrait-image-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-                    float: left;
                     width: 50%;
                     position: relative;
                     height: 100%;
@@ -2431,7 +2426,7 @@ section.location-block {
                     }
                 }
 
-                .square-image-container {
+                .square-image-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 50%;
                     position: absolute;
                     bottom: 0px;
@@ -2447,7 +2442,6 @@ section.location-block {
                     }
 
                     .image-container {
-                        float: left;
                         width: 100%;
                         padding-top: 100%;
                     }
@@ -2483,7 +2477,7 @@ section.location-block {
         opacity: 0;
     }
 
-    .mfp-content {
+    .mfp-content { display: inline-flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .mfp-close {
             color: #fff;
 
@@ -2542,7 +2536,6 @@ section.location-block {
         }
 
         .speaker-popup-container {
-            float: left;
             width: 100%;
             display: flex;
 
@@ -2554,7 +2547,7 @@ section.location-block {
                 float: left;
                 text-align: left;
 
-                &.image-column {
+                &.image-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 45%;
                     background-color: #fff;
                     padding: 50px 75px;
@@ -2568,7 +2561,6 @@ section.location-block {
                     }
 
                     .image-container {
-                        float: left;
                         width: 150px;
                         height: 200px;
                         position: relative;
@@ -2594,7 +2586,6 @@ section.location-block {
                         font-size: 24px;
                         line-height: 30px;
                         font-weight: 600 !important;
-                        float: left;
                         width: 100%;
                         position: relative;
                         margin-bottom: 20px;
@@ -2614,7 +2605,6 @@ section.location-block {
                     }
 
                     p {
-                        float: left;
                         width: 100%;
                         color: #000;
                         font-size: 14px;
@@ -2634,7 +2624,7 @@ section.location-block {
 
                 }
 
-                &.about-column {
+                &.about-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 55%;
                     background-color: #121212;
                     padding: 50px 75px;
@@ -2700,7 +2690,6 @@ section.location-block {
                     }
 
                     .about {
-                        float: left;
                         width: 100%;
                         position: relative;
 

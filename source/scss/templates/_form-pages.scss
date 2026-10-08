@@ -1,5 +1,4 @@
 section.form-section {
-    float: left;
     width: 100%;
     background-color: #fff;
     padding: 40px 0;
@@ -197,7 +196,7 @@ section.form-section {
                 margin-bottom: 20px;
 
                 .text-inner {
-                    display: block;
+                    display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     margin: 0 auto;
                     width: 100%;
                     max-width: 500px;
@@ -205,7 +204,6 @@ section.form-section {
                     h3 {
                         color: #000;
                         font-family: $font-base;
-                        float: left;
                         width: 100%;
                         text-align: center;
                         font-size: 24px;
@@ -214,7 +212,6 @@ section.form-section {
                     }
 
                     .text-container {
-                        float: left;
                         width: 100%;
                         text-align: center;
 

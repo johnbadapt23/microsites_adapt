@@ -222,7 +222,7 @@ section.two-column-services.landing-video-intro {
                     float: left;
                 }
 
-                &.text-column {
+                &.text-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-right: 140px;
 
                     @media (max-width:1200px) {
@@ -234,13 +234,11 @@ section.two-column-services.landing-video-intro {
                         margin-bottom: 16px;
                     }
 
-                    .text-content-inner {
+                    .text-content-inner { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
-                        float: left;
                     }
 
                     .pre-title {
-                        float: left;
                         width: 100%;
                         margin-bottom: 16px;
                         font-size: 18px;
@@ -252,7 +250,6 @@ section.two-column-services.landing-video-intro {
                     }
 
                     .title { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-                        float: left;
                         width: 100%;
                         margin-bottom: 12px;
                         color: #000;
@@ -272,14 +269,12 @@ section.two-column-services.landing-video-intro {
                     }
 
                     .text {
-                        float: left;
                         width: 100%;
                         margin-bottom: 20px;
                     }
                 }
 
                 .links-container {
-                    float: left;
                     width: 100%;
 
                     &.mobile {
@@ -346,9 +341,8 @@ section.two-column-services.landing-video-intro {
                     }
                 }
 
-                &.video-column {
+                &.video-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     .video-container {
-                        float: left;
                         padding-top: 56.25%;
                         position: relative;
 
@@ -427,7 +421,7 @@ section.two-column-services.landing-form-intro {
         padding: 64px 0 0;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         position: relative;
         height: 100%;
 
@@ -436,7 +430,6 @@ section.two-column-services.landing-form-intro {
         }
 
         .landing-form-intro-columns {
-            float: left;
             width: 100%;
             height: 100%;
             display: flex;
@@ -460,7 +453,7 @@ section.two-column-services.landing-form-intro {
                     max-width: 100%;
                 }
 
-                &.text-column {
+                &.text-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-right: 0px;                    
 
                     @media (max-width:1200px) {
@@ -469,7 +462,6 @@ section.two-column-services.landing-form-intro {
 
                     .text-content-inner { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
-                        float: left;
                         max-width: 445px;                        
                     }
 
@@ -645,9 +637,8 @@ section.about-block {
         padding: 40px 0 90px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .about-container {
-            float: left;
             width: 100%;
             background-color: #222222;
             padding: 60px 90px;
@@ -681,7 +672,7 @@ section.about-block {
                 float: left;
                 width: 100%;
 
-                .column {
+                .column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 
                     &:first-child {
                         padding-right: 100px;
@@ -718,7 +709,6 @@ section.about-block {
                     }
 
                     a.about-link {
-                        float: left;
                         padding-right: 28px;
                         font-weight: bold;
                         text-transform: none;
@@ -815,7 +805,7 @@ section.two-column-services.landing-two-column-slider {
                     width: 100%;
                 }
 
-                &.text-column {
+                &.text-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-right: 140px;
 
                     @media (max-width:1200px) {
@@ -828,18 +818,15 @@ section.two-column-services.landing-two-column-slider {
                         margin-bottom: 16px;
                     }
 
-                    .text-content-inner {
+                    .text-content-inner { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
-                        float: left;
                     }
 
-                    .title {
-                        float: left;
+                    .title { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
                         margin-bottom: 12px;
 
                         p {
-                            float: left;
                             width: 100%;
                             color: #000;
                             font-weight: 400;
@@ -851,8 +838,7 @@ section.two-column-services.landing-two-column-slider {
                         }
                     }
 
-                    .text {
-                        float: left;
+                    .text { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
                         margin-bottom: 20px;
                         font-size: 20px;
@@ -860,7 +846,6 @@ section.two-column-services.landing-two-column-slider {
                         color: #000;
 
                         p {
-                            float: left;
                             width: 100%;
                             font-size: 20px;
                             line-height: 28px;
@@ -880,7 +865,7 @@ section.two-column-services.landing-two-column-slider {
 
                 }
 
-                &.slider-column {
+                &.slider-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-top: 80px;
 
                     @media (max-width:767px) {
@@ -888,7 +873,6 @@ section.two-column-services.landing-two-column-slider {
                     }
 
                     .column-slider-container {
-                        float: left;
                         width: 100%;
 
                         @media (max-width:767px) {
@@ -1092,7 +1076,7 @@ section.video-quote-block {
                     width: 100%;
                 }
 
-                &.text-column {
+                &.text-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-top: 40px;
                     padding-right: 40px;
 
@@ -1107,7 +1091,6 @@ section.video-quote-block {
                     }
 
                     .quote {
-                        float: left;
                         width: 100%;
                         margin-bottom: 12px;
                         font-weight: 500;
@@ -1119,7 +1102,6 @@ section.video-quote-block {
                     }
 
                     .quoter {
-                        float: left;
                         width: 100%;
                         margin-bottom: 40px;
                         font-size: 16px;
@@ -1130,7 +1112,6 @@ section.video-quote-block {
                     }
 
                     .text-link {
-                        float: left;
                         font-size: 18px;
 
                         @media (max-width: 767px) {
@@ -1139,9 +1120,8 @@ section.video-quote-block {
                     }
                 }
 
-                &.video-column {
+                &.video-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     .video-container {
-                        float: left;
                         padding-top: 56.25%;
                         position: relative;
 
@@ -1204,9 +1184,8 @@ section.video-quote-slider-block {
         padding: 80px 0;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
             text-align: center;
             margin-bottom: 80px;
@@ -1241,7 +1220,6 @@ section.video-quote-slider-block {
         }
 
         .video-quote-container {
-            float: left;
             width: 100%;
             display: flex;
             gap: 32px;
@@ -1515,7 +1493,6 @@ section.video-quote-slider-block {
 }
 
 section.community-block {
-    float: left;
     width: 100%;
     padding: 110px 0 84px;
 
@@ -1656,14 +1633,13 @@ section.community-block {
                         }
                     }
 
-                    .image-one {
+                    .image-one { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         float: left;
                         width: 100%;
                         margin-bottom: 0px;
                         position: relative;
 
                         img {
-                            float: left;
                             width: 100%;
                         }
 
@@ -1677,13 +1653,12 @@ section.community-block {
                     }
 
                     .image-two,
-                    .image-large {
+                    .image-large { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         float: left;
                         width: 100%;
                         position: relative;
 
                         img {
-                            float: left;
                             width: 100%;
                         }
                     }
@@ -2120,14 +2095,13 @@ section.sponsor-block {
                 flex-direction: column;                
                 gap: 16px;
 
-                .slide {
+                .slide { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     margin-right: 0px;
                     border: 1px solid #E4E4E4;
                     border-radius: 12px;
 
-                    .table {
-                        float: left;
+                    .table { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;                    
                         padding: 32px 24px;
                         color: #5F5F5F;
@@ -2136,7 +2110,6 @@ section.sponsor-block {
                             font-size: 24px;
                             line-height: 28px;
                             font-weight: 400;
-                            float: left;
                             width: 100%;
                             padding-bottom: 16px;
                             color: #5F5F5F;
@@ -2207,11 +2180,10 @@ section.sponsor-block {
                         }
 
                         .table-row {
-                            float: left;
                             width: 100%;
                             padding: 6px 0;
 
-                            .title-column {
+                            .title-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                                 width: calc(100% - 24px);
                                 text-align: left;
                                 padding-right: 36px;
@@ -2394,7 +2366,7 @@ section.sponsor-block {
     }
 }
 
-section.logo-ticker-tape {
+section.logo-ticker-tape { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
     padding: 25px 0px;
 
     .container {
@@ -2440,7 +2412,6 @@ section.logo-ticker-tape {
         left: 0px;
         top: 0px;
         transform: none;
-        float: left;
         width: 100%;
         overflow: hidden;
         display: flex;
@@ -2873,25 +2844,22 @@ section.video-introduction-partners {
 
     .container {
         .text-container-inner {
-            display: block;
+            display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             margin: 0 auto;
             max-width: 634px;
             width: 100%;
 
             .labelMedium {
-                float: left;
                 width: 100%;
                 margin-bottom: 24px;
             }
 
             h2 {
-                float: left;
                 width: 100%;
                 margin-bottom: 24px;
             }
 
             .p-large {
-                float: left;
                 width: 100%;
                 margin-bottom: 48px;
 
@@ -2901,7 +2869,6 @@ section.video-introduction-partners {
             }
 
             .p-small {
-                float: left;
                 width: 100%;
                 margin-bottom: 0;
             }
@@ -2962,9 +2929,8 @@ section.why-become {
         padding: 80px 0px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
             text-align: center;
             margin-bottom: 80px;
@@ -2993,7 +2959,6 @@ section.why-become {
         }
 
         .why-become-container {
-            float: left;
             width: 100%;
             display: flex;
             gap: 30px;
@@ -3005,15 +2970,14 @@ section.why-become {
             }
 
 
-            .why-become-text-column {
+            .why-become-text-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: calc(50% - 15px);
 
                 @media (max-width:767px) {
                     width: 100%;
                 }
 
-                .why-become-text-container {
-                    float: left;
+                .why-become-text-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     max-width: 525px;
                     border-bottom: 1px solid #E4E4E4;
@@ -3033,7 +2997,6 @@ section.why-become {
                     }
 
                     .title {
-                        float: left;
                         width: 100%;
                         font-size: 20px;
                         line-height: 28px;
@@ -3063,7 +3026,6 @@ section.why-become {
                     }
 
                     .switch-content {
-                        float: left;
                         width: 100%;
                         display: none;
                         overflow: hidden;
@@ -3131,7 +3093,7 @@ section.why-become {
                 }
             }
 
-            .why-become-image-container {
+            .why-become-image-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 width: 50%;
 
                 @media (max-width:767px) {
@@ -3139,7 +3101,6 @@ section.why-become {
                 }
 
                 .why-become-image-inner {
-                    float: left;
                     width: 100%;
                     position: relative;
                     aspect-ratio: 4/3;
@@ -3224,7 +3185,6 @@ section.why-become {
 }
 
 section.new-form-module {
-    float: left;
     width: 100%;
     padding: 120px 0;
 
@@ -3255,7 +3215,7 @@ section.new-form-module {
                 flex-direction: column;
             }
 
-            .column {
+            .column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 position: relative;
                 width: 50%;
 
@@ -3276,7 +3236,6 @@ section.new-form-module {
                 }
 
                 .form-embed {
-                    float: left;
                     width: 100%;
                     margin-top: -20px;
                     height: calc(100% + 40px);
@@ -3299,7 +3258,6 @@ section.new-form-module {
                 }
 
                 h2 {
-                    float: left;
                     width: 100%;
                     max-width: 425px;
                     margin-bottom: 24px;
@@ -3311,7 +3269,6 @@ section.new-form-module {
                 }
 
                 .text {
-                    float: left;
                     width: 100%;
                     margin-bottom: 0px;
 

@@ -9,11 +9,10 @@ section.customer-events-faqs {
         border-top: 1px solid #222;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         text-align: center;
 
         .faq-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
 
 
@@ -230,7 +229,6 @@ section.infinite-images {
 }
 
 section.ticketing {
-    float: left;
     width: 100%;
     padding: 60px 0;
 
@@ -238,9 +236,8 @@ section.ticketing {
         padding: 64px 0 40px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
             margin-bottom: 60px;
             position: relative;
@@ -453,7 +450,6 @@ section.ticketing {
 }
 
 section.ticketing-three-column-icon-text {
-    float: left;
     width: 100%;
     padding: 60px 0 112px;
 
@@ -518,7 +514,6 @@ section.ticketing-three-column-icon-text {
 }
 
 section.ticketing-three-column-number-text {
-    float: left;
     width: 100%;
     padding: 112px 0;
     background-color: #f8f8f8;
@@ -633,7 +628,6 @@ section.ticketing-three-column-number-text {
 }
 
 section.ticketing-two-column-icon {
-    float: left;
     width: 100%;
     padding: 112px 0 112px;
 

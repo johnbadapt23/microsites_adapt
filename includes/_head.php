@@ -20,7 +20,7 @@
 function theme_styles() {
 	$theme_uri = get_template_directory_uri();
 
-	wp_enqueue_style( 'adapt-main', $theme_uri . '/assets/css/main.min.css', array(), '1.13' );
+	wp_enqueue_style( 'adapt-main', $theme_uri . '/assets/css/main.min.css', array(), '1.14' );
 	wp_enqueue_style( 'adapt-skelet-icons', $theme_uri . '/assets/fonts/skelet-icons-master/style.css', array(), null );
 	wp_enqueue_style( 'adapt-google-fonts', 'https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap', array(), null );
 

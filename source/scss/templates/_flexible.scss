@@ -16,7 +16,7 @@ section.introduction-block {
         }
     }    
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         position: relative;
 
         @include responsive(1023) {
@@ -24,7 +24,6 @@ section.introduction-block {
         }
 
         .column-container {
-            float: left;
             display: flex;
             align-items: center;
             height: 100%;
@@ -284,11 +283,10 @@ section.half-text-half-image {
     position: relative;
     background-color: #fff;
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         position: relative;
 
         .column-container {
-            float: left;
             display: flex;
             align-items: center;
             height: 100%;            
@@ -578,9 +576,8 @@ section.speakers-block {
         padding: 40px 0px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .speakers-top { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
             position: relative;
             margin-bottom: 70px;
@@ -640,7 +637,6 @@ section.speakers-block {
         }
 
         .speakers-bottom {
-            float: left;
             width: 100%;
 
             .speaker.one-quarter { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
@@ -798,7 +794,6 @@ section.speakers-block {
         }
 
         .button-container {
-            float: left;
             width: 100%;
             margin-top: 80px;
             text-align: center;
@@ -1104,7 +1099,6 @@ section.speakers-block {
 
 section.logos-block {
     background-color: #fafafa;
-    float: left;
     width: 100%;
     padding: 52px 0px;
     text-align: center;
@@ -1276,7 +1270,6 @@ section.logos-block {
 
 section.two-column-two-image-block { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
     background-color: #fafafa;
-    float: left;
     width: 100%;
     padding: 40px 0 70px;
 
@@ -1454,7 +1447,6 @@ section.two-column-two-image-block { display: flex; flex-wrap: wrap; align-items
 }
 
 section.four-column-block {
-    float: left;
     width: 100%;
     background-color: #fff;
     color: #000;
@@ -1464,7 +1456,7 @@ section.four-column-block {
         padding: 40px 0px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .column {
             padding-right: 10px;
             padding-bottom: 20px;
@@ -1669,7 +1661,7 @@ section.content-slider {
                     }
                 }
 
-                .slide-inside {
+                .slide-inside { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     background-color: #fff;
                     padding: 30px;
                     @include transition(all, 500ms, ease);
@@ -1685,16 +1677,14 @@ section.content-slider {
                         font-weight: 300;
                         line-height: 30px;
                         color: #000;
-                        float: left;
                         width: 100%;
                     }
 
-                    span.text {
+                    span.text { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         font-size: 14px;
                         font-weight: 400;
                         line-height: 24px;
                         color: #fff;
-                        float: left;
                         width: 100%;
                         margin-bottom: 0px;
 
@@ -1703,7 +1693,6 @@ section.content-slider {
                             font-weight: 400;
                             line-height: 24px;
                             color: #fff;
-                            float: left;
                             width: 100%;
                             margin-bottom: 15px;
 
@@ -1719,7 +1708,6 @@ section.content-slider {
                         line-height: 16px;
                         letter-spacing: 0.36px;
                         color: $color-red;
-                        float: left;
                         width: 100%;
                         margin-bottom: 20px;
                     }
@@ -1841,9 +1829,8 @@ section.quote-slider-block {
         padding: 65px 0 65px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .quote-slider {
-            float: left;
             width: 100%;
 
             @media (max-width:767px) {
@@ -1982,7 +1969,6 @@ section.quote-slider-block {
 }
 
 section.partners-block {
-    float: left;
     width: 100%;
     background-color: #fff;
     padding: 70px 0 60px;
@@ -2000,7 +1986,7 @@ section.partners-block {
             }
         }
 
-        .level-container {
+        .level-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             float: left;
             width: 100%;
             padding: 60px 0 15px;
@@ -2015,7 +2001,6 @@ section.partners-block {
             }
 
             .level-title {
-                float: left;
                 width: 100%;
                 font-weight: bold;
                 font-size: 12px;
@@ -2031,7 +2016,6 @@ section.partners-block {
             }
 
             .partners-logo-container {
-                float: left;
                 width: 100%;
 
                 .partners-logo {
@@ -2425,7 +2409,6 @@ section.about-block {
 }
 
 section.speaker-top-block {
-    float: left;
     width: 100%;
     background-color: #fff;
     padding: 60px;
@@ -2434,7 +2417,7 @@ section.speaker-top-block {
         padding: 30px 0px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         position: relative;
         padding-right: 200px;
 
@@ -2456,14 +2439,12 @@ section.speaker-top-block {
         }
 
         h1 {
-            float: left;
             width: 100%;
             color: #000;
             margin-bottom: 10px;
         }
 
         .sub-title {
-            float: left;
             width: 100%;
             color: #000;
             font-size: 16px;
@@ -2587,8 +2568,7 @@ section.faq-block {
     }
 }
 
-section.partner-with-us-block {
-    float: left;
+section.partner-with-us-block { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
     width: 100%;
     padding: 150px 0;
     background-color: #000;
@@ -2598,7 +2578,6 @@ section.partner-with-us-block {
     }
 
     .block-container {
-        float: left;
         width: 100%;
 
         .container {
@@ -3270,7 +3249,7 @@ section.quote-slider-new {
         padding: 87px 0 110px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         .quote-slider-title {
             float: left;
             width: 100%;
@@ -3279,7 +3258,6 @@ section.quote-slider-new {
         }
 
         .quote-slider-module {
-            float: left;
             width: 100%;
             margin-bottom: 80px;
 
@@ -3325,14 +3303,12 @@ section.quote-slider-new {
             }
         }
 
-        .progress-container {
-            float: left;
+        .progress-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             width: 100%;
             margin-bottom: 20px;
             position: relative;
 
             .progress-bar { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-                float: left;
                 width: 100% !important;
                 height: 1px;
                 overflow: hidden;
@@ -3398,7 +3374,6 @@ section.quote-slider-new {
         }
 
         .quote-slider-thumbnails {
-            float: left;
             width: 100%;
 
             .quote-thumbnail { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
@@ -3934,7 +3909,6 @@ section.flex-two-column-text {
 }
 
 section.partner-form {
-    float: left;
     width: 100%;
     padding: 99px 0;
     background-color: #fff;
@@ -3973,7 +3947,7 @@ section.partner-form {
             }
 
             .column {
-                &.text-content-column {
+                &.text-content-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-left: 50px;
                     padding-right: 90px;
 
@@ -3984,7 +3958,6 @@ section.partner-form {
                     }
 
                     .form-module-title {
-                        float: left;
                         width: 100%;
                         margin-bottom: 24px;
 
@@ -4014,7 +3987,6 @@ section.partner-form {
                     }
 
                     .text {
-                        float: left;
                         width: 100%;
                         font-size: 20px;
                         line-height: 28px;
@@ -4031,7 +4003,6 @@ section.partner-form {
                     }
 
                     .image-arrow-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-                        float: left;
                         width: 100%;
                         margin-bottom: 70px;
                         padding-right: 50px;
@@ -4078,7 +4049,6 @@ section.partner-form {
                     }
 
                     .bottom-container {
-                        float: left;
                         width: 100%;
 
                         @media (max-width: 1023px) {
@@ -4154,7 +4124,7 @@ section.partner-form {
 
                 }
 
-                &.form-column {
+                &.form-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     padding-left: 45px;
 
                     @media (max-width: 1300px) {
@@ -4172,7 +4142,6 @@ section.partner-form {
                     }
 
                     .form-container {
-                        float: left;
                         width: 100%;
                     }
 
@@ -4199,13 +4168,12 @@ section.two-column-switch-module {
         padding: 64px 0 40px;
     }
 
-    .container {
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
         @media (max-width:767px) {
             padding: 0px;
         }
 
-        .title-switch-container {
-            float: left;
+        .title-switch-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             width: 100%;
             text-align: center;
             border-bottom: 1px solid $color-light-grey;
@@ -4216,7 +4184,6 @@ section.two-column-switch-module {
             }
 
             .title-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-                float: left;
                 width: 100%;
                 text-align: left;
                 margin-bottom: 48px;
@@ -4233,7 +4200,6 @@ section.two-column-switch-module {
             }
 
             .switcher-container {
-                float: left;
                 width: 100%;
                 text-align: left;
 
@@ -4304,12 +4270,10 @@ section.two-column-switch-module {
             }
         }
 
-        .module-container {
-            float: left;
+        .module-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             width: 100%;
 
             .switch-module {
-                float: left;
                 width: 100%;
                 display: none;
                 padding: 80px;
@@ -4360,7 +4324,7 @@ section.two-column-switch-module {
                             }
                         }
 
-                        &.image-column {
+                        &.image-column { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                             width: calc(50% + 40px);
                             padding-top: 0px;
 
@@ -4375,7 +4339,6 @@ section.two-column-switch-module {
 
                             img {
                                 width: 100%;
-                                float: left;
                             }
                         }
 
@@ -4467,9 +4430,8 @@ section.testimonials-slider-block {
     padding: 50px 0 60px;
     background-color: #fff;
 
-    .container {
-        .testimonials-slider-container {
-            float: left;
+    .container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
+        .testimonials-slider-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
             width: 100%;
             padding: 80px;            
             border-top-left-radius: 36px;
@@ -4486,7 +4448,6 @@ section.testimonials-slider-block {
             }
 
             .testimonials-slider {
-                float: left;
                 width: 100%;
                 position: relative;
 

@@ -246,7 +246,7 @@ section.partners-cards-module {
                 display: block;
             }
 
-            .card {
+            .card { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                 // float: left;
                 width: calc(33.33% - 21.33px);
                 margin-left: 32px;
@@ -271,7 +271,6 @@ section.partners-cards-module {
                 }
 
                 .icon-container {
-                    float: left;
                     width: 100%;
                     margin-bottom: 78px;
 
@@ -304,18 +303,15 @@ section.partners-cards-module {
                     }
                 }
 
-                .content-container {
-                    float: left;
+                .content-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                     width: 100%;
                     position: relative;
                     text-align: left;
 
-                    .content-container-inner {
-                        float: left;
+                    .content-container-inner { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
                         width: 100%;
 
                         h4 {
-                            float: left;
                             width: 100%;
                             font-size: 20px;
                             line-height: 28px;
@@ -331,7 +327,6 @@ section.partners-cards-module {
                         }
 
                         .card-text {
-                            float: left;
                             width: 100%;
                             color: #fff;
                             font-size: 16px;

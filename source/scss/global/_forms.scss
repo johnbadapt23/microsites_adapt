@@ -1521,23 +1521,20 @@ input.hs-input {
 			}
 		}
 
-		div.input {
+		div.input { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 			float: left;
 			width: 100%;
 			text-align: left;
 
 			ul[role="checkbox"],
-			ul.inputs-list {
-				float: left;
+			ul.inputs-list { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 				width: 100%;
 				text-align: left;
 
-				li {
-					float: left;
+				li { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
 					width: auto;
 
 					label { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-						float: left;
 						width: auto;
 						padding: 0px;
 						top: 0px;
@@ -1717,7 +1714,6 @@ input.hs-input {
 
 			textarea {
 				width: 100% !important;
-				float: left;
 				position: relative;
 				background: none;
 				padding-right: 16px;
