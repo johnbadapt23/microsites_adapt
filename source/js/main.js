@@ -781,7 +781,7 @@
 		// Read more
 
 		$('.agenda-description').each(function() {
-			paragraphCount = $(this).children('.text').children('p').size();
+			paragraphCount = $(this).children('.text').children('p').length;
 			$(this).children('.read-more-overlay').hide();
 			$(this).children('.text').children('p').not(":first").hide();
 			$(this).children('.text').children('ul').hide();
