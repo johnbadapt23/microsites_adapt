@@ -20,12 +20,11 @@
 <link rel="mask-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="theme-color" content="#000000">
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="preconnect" href="https://js.hs-scripts.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDss6XUuPFsJgunJJ6dZZjzuR9d39WtjRU"></script> -->
 
 <?php get_template_part( 'templates/partials/_icons' ); ?>
 <?php wp_head(); ?>
@@ -45,8 +44,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'AW-769682308');
 </script>
-<?php if( get_field( 'site_schema_code', 'options' )) { ?>
-    <?php echo get_field( 'site_schema_code', 'options' ); ?>
+<?php $site_schema_code = get_field( 'site_schema_code', 'options' ); ?>
+<?php if ( $site_schema_code ) { ?>
+    <?php echo $site_schema_code; ?>
 <?php } ?>
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async src="//js.hs-scripts.com/8336221.js"></script>
