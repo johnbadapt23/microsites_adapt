@@ -33,5 +33,5 @@ function theme_styles() {
 // theme_scripts
 function theme_scripts() {
 	// jQuery is bundled into main.min.js (see source/gulp/paths.js).
-	wp_enqueue_script( 'adapt-main', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.5', array( 'strategy' => 'defer', 'in_footer' => true ) );
+	wp_enqueue_script( 'adapt-main', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.6', array( 'strategy' => 'defer', 'in_footer' => true ) );
 }
