@@ -8,8 +8,14 @@ footer {
     }
 
     .container {
+        // On the landing templates the container is an inline-block at this width.
+        // overflow keeps its baseline on the bottom edge, as it was when the
+        // children floated, so the footer height is unchanged.
+        @media (max-width:767px) {
+            overflow: hidden;
+        }
+
         .footer-column-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
             margin-bottom: 40px;
             .column {
@@ -107,9 +113,13 @@ footer {
                 &.details-column {                    
                     text-align: left;
 
+                    > a:has(> img.logo) {
+                        display: block;
+                    }
+
                     img.logo {
                         width: 100px;
-                        float: left;
+                        display: block;
                         margin-bottom: 20px;
                     }
 
@@ -117,7 +127,7 @@ footer {
                     a.mail-link,
                     a.phone-link {
                         color: #fff;
-                        float: left;
+                        display: block;
                         width: 100%;
                         font-size: 14px;
                         line-height: 24px;
@@ -132,12 +142,10 @@ footer {
                         a.mail-link,
                         a.phone-link {
                             width: 100%;
-                            float: left;
                         }
                     }
 
                     .social-links { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-                        float: left;
                         width: 100%;
                         margin-top: 30px;
 
@@ -169,7 +177,6 @@ footer {
         }
 
         .footer-microsites { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
             margin-bottom: 40px;
             padding-top: 30px;

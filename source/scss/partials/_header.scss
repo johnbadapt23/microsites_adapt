@@ -12,6 +12,12 @@ header {
     }
 
     .container {
+        &:has(> .headerRight) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            align-content: flex-start;
+        }
 
         // @media (max-width:1250px) {
         //     padding-right: 0px;
@@ -71,8 +77,8 @@ header {
 
 
         .headerRight { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: right;
-            width: auto;
+            margin-left: auto;
+            width: fit-content;
             text-align: right;
 
             @media (max-width:1750px) {
