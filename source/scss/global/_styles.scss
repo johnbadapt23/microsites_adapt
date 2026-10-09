@@ -2399,9 +2399,21 @@ input.hs-input {
 	color: #fff;
 }
 
+.top-block:has(> .one-half),
+.content-top:has(> .one-half),
+.container:has(> .one-half) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: flex-start;
+
+	> .one-half {
+		flex-shrink: 0;
+	}
+}
+
 .one-half {
 	width: 50%;
-	float: left;
 
 	@include responsive(767) {
 		width: 100%;
@@ -2479,6 +2491,23 @@ input.hs-input {
 .slick-slider {
 	touch-action: auto;
 	-ms-touch-action: auto;
+}
+
+// Slick lays its slides out with floats (vendor slick.css). Horizontal tracks are
+// laid out with flex instead; the vertical mode keeps the vendor layout.
+.slick-slider:not(.slick-vertical) .slick-track {
+	display: flex;
+	align-items: flex-start;
+
+	&::before,
+	&::after {
+		display: none;
+	}
+
+	.slick-slide {
+		float: none;
+		flex-shrink: 0;
+	}
 }
 
 .site-button {

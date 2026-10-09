@@ -2068,8 +2068,12 @@ section.location-block {
     .container {
         .column {
             &.text-column {
-                float: right;
+                margin-left: auto;
                 padding-left: 70px;
+
+                @media (min-width:768px) {
+                    order: 1;
+                }
 
                 @media (max-width:767px) {
                     padding-left: 0px;

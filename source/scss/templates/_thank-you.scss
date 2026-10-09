@@ -28,7 +28,11 @@ section.thank-you-banner {
                 padding-left: 90px;
                 position: relative;
                 z-index: 1;
-                float: right;
+                margin-left: auto;
+
+                @media (min-width:1024px) {
+                    order: 1;
+                }
 
                 @include responsive(1023) {
                     width: 100%;
@@ -359,14 +363,17 @@ section.download-module {
                 padding: 0 20px;
             }
             &.image-column {
-                float:right;
+                margin-left: auto;
                 width: calc(50% - 100px);
+
+                @media (min-width:1024px) {
+                    order: 1;
+                }
                 background-color: $color-red;
                 padding-right: 40px;
 
                 @include responsive(1023) {
                     width: 100%;
-                    float: left;
                     padding-right: 0px;
                     padding-top: 40px;
                 }
