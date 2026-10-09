@@ -22,7 +22,6 @@ footer {
                 .footer-column-title {
                     color: $color-darkGrey-new;
                     text-transform: uppercase;
-                    float: left;
                     width: 100%;
                     font-size: 12px;
                     font-weight: bold;
@@ -32,7 +31,6 @@ footer {
                 }
 
                 .footer-link-container {
-                    float: left;
                     width: 100%;
                     text-align: left;
                 }
@@ -167,7 +165,7 @@ footer {
                         }
                     }
                 }
-             &:has(> span.registered) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
+             &:has(> .footer-column-title) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; }  &:has(> .footer-link-container) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; }  &:has(> span.registered) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
         }
 
         .footer-microsites { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
