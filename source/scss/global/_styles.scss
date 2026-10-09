@@ -1831,7 +1831,6 @@ input.hs-input {
 
 	label {
 		color: $color-darkGrey-new !important;
-		float: left;
 		width: 100%;
 		margin-bottom: 8px;
 		margin-top: 5px;
@@ -1842,7 +1841,8 @@ input.hs-input {
 		background-color: #fff;
 		top: 14px;
 		position: relative;
-		width: auto !important;
+		display: block;
+		width: fit-content !important;
 		padding: 0 10px;
 		left: 7px;
 		z-index: 5;

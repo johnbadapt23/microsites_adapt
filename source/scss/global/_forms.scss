@@ -1078,6 +1078,18 @@ input.hs-input {
 .hs-form {
 	fieldset {
 		max-width: 100% !important;
+
+		&:has(> .hs-form-field) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			align-content: flex-start;
+
+			> .hs-form-field {
+				flex-shrink: 0;
+				width: 100%;
+			}
+		}
 	 &:has(> .hs-main-font-element.hs-richtext, > .hs-main-font-element.hs-richtext) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; }  &:has(> .hs_dietary_requirements, > .hs_dietary_requirements_, > .hs_home_office_delivery_address, > .hs_dietary_requirements, > .hs_dietary_requirements_, > .hs_home_office_delivery_address) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
 
 	.hs-main-font-element.hs-richtext {
@@ -1102,7 +1114,6 @@ input.hs-input {
 
 	label {
 		color: $color-darkGrey-new !important;
-		float: left;
 		width: 100%;
 		margin-bottom: 8px;
 		font-size: 12px;
@@ -1112,7 +1123,8 @@ input.hs-input {
 		background-color: #fff;
 		top: 14px;
 		position: relative;
-		width: auto !important;
+		display: block;
+		width: fit-content !important;
 		padding: 0 10px;
 		left: 7px;
 		z-index: 5;
@@ -1347,6 +1359,8 @@ input.hs-input {
 		}
 
 		label {
+			position: relative;
+			float: left;
 			padding: 0px;
 			left: 0px;
 			top: 0px;
@@ -1406,6 +1420,7 @@ input.hs-input {
 			background-color: transparent;
 			top: auto;
 			position: relative;
+			float: left;
 			padding: 0px;
 			left: auto;
 			z-index: 5;
@@ -1416,7 +1431,6 @@ input.hs-input {
 
 	label {
 		color: $color-darkGrey-new !important;
-		float: left;
 		width: 100%;
 		margin-bottom: 8px;
 		margin-top: 5px;
@@ -1427,7 +1441,8 @@ input.hs-input {
 		background-color: #fff;
 		top: 14px;
 		position: relative;
-		width: auto !important;
+		display: block;
+		width: fit-content !important;
 		padding: 0 10px;
 		left: 7px;
 		z-index: 5;
@@ -1462,6 +1477,7 @@ input.hs-input {
 			background-color: transparent;
 			top: auto;
 			position: relative;
+			float: left;
 			padding: 0px;
 			left: auto;
 			z-index: 5;
@@ -1496,6 +1512,7 @@ input.hs-input {
 			background-color: transparent;
 			top: auto;
 			position: relative;
+			float: left;
 			padding: 0px;
 			left: auto;
 			z-index: 5;
