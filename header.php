@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="<?php bloginfo('charset'); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <?php // <title> is now rendered by WordPress core via add_theme_support('title-tag')
       // in includes/_setup.php, hooked into wp_head() below - gives proper
