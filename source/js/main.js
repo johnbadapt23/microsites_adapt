@@ -7,8 +7,6 @@
 		var aboutContainerPs = null;
 
 		// STANDARD
-		@@include('includes/_maps.js')
-
 		match();
 		outsideContainer();
 		aos();
