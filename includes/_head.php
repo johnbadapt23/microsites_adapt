@@ -20,7 +20,7 @@
 function theme_styles() {
 	$theme_uri = get_template_directory_uri();
 
-	wp_enqueue_style( 'adapt-main', $theme_uri . '/assets/css/main.min.css', array(), '1.14' );
+	wp_enqueue_style( 'adapt-main', $theme_uri . '/assets/css/main.min.css', array(), '1.15' );
 	wp_enqueue_style( 'adapt-skelet-icons', $theme_uri . '/assets/fonts/skelet-icons-master/style.css', array(), null );
 	wp_enqueue_style( 'adapt-google-fonts', 'https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap', array(), null );
 
@@ -33,5 +33,5 @@ function theme_styles() {
 // theme_scripts
 function theme_scripts() {
 	// jQuery is bundled into main.min.js (see source/gulp/paths.js).
-	wp_enqueue_script( 'adapt-main', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.6', array( 'strategy' => 'defer', 'in_footer' => true ) );
+	wp_enqueue_script( 'adapt-main', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.7', array( 'strategy' => 'defer', 'in_footer' => true ) );
 }
