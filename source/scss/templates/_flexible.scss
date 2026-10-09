@@ -102,7 +102,6 @@ section.introduction-block {
                     margin-bottom: 45px;
         
                     p {
-                        float: left;
                         width: 100%;                        
                         color: #fff;                        
         
@@ -110,7 +109,7 @@ section.introduction-block {
                             max-width: 100%;
                         }
                     }
-                }
+                 &:has(> p) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
         
                 .button-container {
                     width: 100%;

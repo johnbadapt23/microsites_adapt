@@ -106,7 +106,6 @@ section.customer-events-faqs {
 
                             p {
                                 color: #9a9a9a;
-                                float: left;
                                 width: 100%;
 
                                 a {
@@ -115,7 +114,7 @@ section.customer-events-faqs {
                                 }
                             }                           
 
-                        }
+                         &:has(> p) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
                     }
                 }
 
@@ -312,10 +311,9 @@ section.ticketing {
                 .card-top,
                 .card-bottom {
                     max-width: 350px;
-                }
+                 &:has(> .icon-container-outer) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; }  &:has(> h3) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; }  &:has(> .text) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
 
                 .icon-container-outer {
-                    float: left;
                     width: 100%;
                     margin-bottom: 16px;
 
@@ -326,7 +324,6 @@ section.ticketing {
                 }
 
                 h3 {
-                    float: left;
                     width: 100%;
                     color: #000;
                     margin-bottom: 16px;
@@ -370,7 +367,6 @@ section.ticketing {
                 }
 
                 .text {
-                    float: left;
                     width: 100%;
                     margin-bottom: 40px;
                 }

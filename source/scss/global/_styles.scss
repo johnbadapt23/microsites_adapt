@@ -1827,7 +1827,7 @@ input.hs-input {
 		@media (max-width:480px) {
 			margin-right: 0px!important;
 		}
-	}
+	 &:has(> span.select2) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
 
 	label {
 		color: $color-darkGrey-new !important;
@@ -2462,16 +2462,15 @@ input.hs-input {
 
                     .hbspt-form ,
                     .hs-form {
-                        float: left;
                         width: 100%!important;
 
                         fieldset {
                             max-width: 100%!important;
 
 
-                        }
-                    }
-                }
+                         &:has(> .hs-main-font-element.hs-richtext, > .hs-main-font-element.hs-richtext) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
+                     &:has(> .hbspt-form, > .hs-form) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
+                 &:has(> .hbspt-form, > .hs-form) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
             }
         }
     }

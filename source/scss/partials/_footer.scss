@@ -69,7 +69,6 @@ footer {
                 }
 
                 span.registered {
-                    float: left;
                     width: 100%;
                     font-size: 14px;
                     line-height: 24px;
@@ -168,7 +167,7 @@ footer {
                         }
                     }
                 }
-            }
+             &:has(> span.registered) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
         }
 
         .footer-microsites { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;

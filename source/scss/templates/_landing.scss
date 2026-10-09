@@ -664,7 +664,6 @@ section.about-block {
             }
 
             .logo {
-                float: left;
                 margin-bottom: 40px;
             }
 
@@ -686,7 +685,7 @@ section.about-block {
                         @media (max-width:767px) {
                             padding-right: 0px;
                         }
-                    }
+                     &:has(> .text, > p) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
 
                     &:last-child {
                         padding-left: 100px;
@@ -698,15 +697,14 @@ section.about-block {
                         @media (max-width:767px) {
                             padding-left: 0px;
                         }
-                    }
+                     &:has(> .text, > p) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
 
                     .text,
                     .text p {
                         font-size: 18px;
                         line-height: 28px;
-                        float: left;
                         width: 100%;
-                    }
+                     &:has(> .text, > p) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
 
                     a.about-link {
                         padding-right: 28px;
@@ -771,7 +769,7 @@ section.about-block {
                     bottom: -80px;
                 }
             }
-        }
+         &:has(> .logo) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
     }
 }
 
@@ -1916,12 +1914,11 @@ section.sponsor-block {
             
                 p {
                     margin-bottom: 0px;
-                    float: left;
                     width: 100%;
                     color: #000;
                     font-weight: 300;
                 }
-            }
+             &:has(> p) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
         }
 
         .table-block { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;

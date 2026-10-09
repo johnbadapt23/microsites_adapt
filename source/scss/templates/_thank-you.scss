@@ -523,7 +523,7 @@ section.steps-module {
 			.column {
 				&.text-column {
 					position: relative;
-				}
+				 &:has(> .step-number) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; }  &:has(> .step-detail) { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; } }
 
                 &.image-column {
                     text-align: center;
@@ -606,7 +606,6 @@ section.steps-module {
 					text-align: center;
 					line-height: 28px;
 					position: relative;
-					float: left;
 					width: 54px;
 					border: 1px solid #000;
 					border-radius: 4px;
@@ -620,7 +619,6 @@ section.steps-module {
 				}
 
 				.step-detail { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-					float: left;
 					width: calc(100% - 54px);
 					padding-left: 40px;
                     position: relative;
