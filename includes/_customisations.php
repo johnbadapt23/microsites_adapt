@@ -1,37 +1,7 @@
 <?php
 
-// theme_pagination
-function custom_theme_pagination() {
-	$prev_arrow = is_rtl() ? '&gt;' : '&lt;';
-	$next_arrow = is_rtl() ? '&lt;' : '&gt;';
-
-	global $wp_query;
-	$total = $wp_query->max_num_pages;
-	$big = 999999999;
-	if( $total > 1 )  {
-		 if( !$current_page = get_query_var('paged') )
-			 $current_page = 1;
-		 if( get_option('permalink_structure') ) {
-			 $format = 'page/%#%/';
-		 } else {
-			 $format = '&paged=%#%';
-		 }
-		echo '<span class="current">PAGE </span>' . paginate_links(array(
-			'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format'		=> $format,
-			'current'		=> max( 1, get_query_var('paged') ),
-			'total' 		=> $total,
-			'mid_size'		=> 3,
-			'type' 			=> '',//list
-			'prev_text'		=> $prev_arrow,
-			'next_text'		=> $next_arrow,
-		));
-	}
-}
-
 // custom_excerpt_link
 function custom_excerpt_link($more){
-    global $post;
     return '...';
 }
 
@@ -64,22 +34,6 @@ function custom_wp_nav_menu($var) {
 		'horizontal'
 		)
 	) : '';
-}
-
-function custom_current_to_active($text){
-	/*$replace = array(
-		'current_page_item' => 'active',
-		'current_page_parent' => 'active',
-		'current_page_ancestor' => 'active',
-		'menu-item-has-children' => 'sub',
-	);
-	$text = str_replace(array_keys($replace), $replace, $text);*/
-	return $text;
-}
-
-function custom_strip_empty_classes($menu) {
-    //$menu = preg_replace('/ class=""| class="sub-menu"/','',$menu);
-    return $menu;
 }
 
 function custom_nav_id_filter( $id, $item ) {
@@ -143,13 +97,6 @@ function custom_add_query_vars_filter( $vars ){
 	return $vars;
 }
 
-// start session
-function custom_start_session() {
-    if(!session_id()) {
-        session_start();
-    }
-}
-
 // disable emojicons
 function custom_disable_wp_emojicons() {
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
@@ -187,24 +134,6 @@ function custom_remove_menus(){
   //remove_menu_page( 'options-general.php' );        //Setting
 }
 
-// menu account links
-function custom_account_links( $items, $args ) {
-   if (is_user_logged_in() && $args->theme_location == 'main-menu') {
-	   $items .= '<li id="my-account"><a href="'. get_permalink( wc_get_page_id( 'myaccount' ) ) .'">My Account</a></li>';
-       $items .= '<li id="cart"><a href="'. get_permalink( wc_get_page_id( 'checkout' ) ) .'">Cart</a></li>';
-       $items .= '<li id="logout"><a href="'. get_permalink( wc_get_page_id( 'logout' ) ) .'">Log Out</a></li>';
-   } else {
-       $items .= '<li id="login"><a href="' . get_permalink( wc_get_page_id( 'myaccount' ) ) . '">Log In</a></li>';
-       $items .= '<li id="register"><a href="' . get_permalink( wc_get_page_id( 'myaccount' ) ) . '">Register</a></li>';
-   }
-   return $items;
-}
-
-
-// gravityforms error message
-function custom_form_error_message( $message, $form ) {
-    return "<div class='validation_error'>Looks like one or more fields are missing.</div>";
-}
 
 // change logo on wp login
 function custom_wp_login_logo() {
@@ -229,23 +158,6 @@ function custom_footer_admin() {
 // remove wp version footer
 function custom_remove_footer() {
     remove_filter( 'update_footer', 'core_update_footer' );
-}
-
-// remove default jquery migrate
-function custom_remove_jquery_migrate( &$scripts) {
-    if(!is_admin()) {
-        $scripts->remove( 'jquery');
-        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.11.1' );
-    }
-}
-
-// remove default jquery
-function custom_remove_jquery() {
-   if (!is_admin()) {
-      //wp_deregister_script('jquery');
-      //wp_register_script('jquery', '', false, '1.8.3');
-      //wp_enqueue_script('jquery');
-   }
 }
 
 // disable json api
@@ -292,11 +204,3 @@ function custom_acf_init() {
 }
 
 add_action('acf/init', 'custom_acf_init');
-
-/* add_action( 'ninja_forms_display_after_fields', 'custom_enquiry_value' );
-function custom_enquiry_value($formid){
-	if ($formid == 9) {
-?>
-	<input type="hidden" name="ninja_forms_field_10" value="<?php echo get_sub_field('enquiry_email');?>">
-<?php
-}} */

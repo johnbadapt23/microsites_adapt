@@ -1,17 +1,22 @@
 <?php
 
 // Includes
-require('includes/_hooks.php');
-require('includes/_setup.php');
-require('includes/_head.php');
-require('includes/_seo.php');
-require('includes/_microsites.php');
-require('includes/_menu.php');
-require('includes/_widgets.php');
-require('includes/_shortcodes.php');
-require('includes/_functions.php');
-require('includes/_customisations.php');
-require('includes/_instagram.php');
+$adapt_includes = array(
+	'_hooks',
+	'_setup',
+	'_head',
+	'_seo',
+	'_microsites',
+	'_menu',
+	'_functions',
+	'_customisations',
+);
+
+foreach ( $adapt_includes as $adapt_include ) {
+	require_once get_template_directory() . '/includes/' . $adapt_include . '.php';
+}
+
+unset( $adapt_includes, $adapt_include );
 
 
 function cc_mime_types($mimes) {

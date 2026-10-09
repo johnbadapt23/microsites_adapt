@@ -30,27 +30,4 @@ function theme_nav($name){
 	);
 }
 
-// theme_nav
-function theme_nav_mobile($name){
-	wp_nav_menu(
-		array(
-			'theme_location'  => $name . '-menu',
-			'container'       => '',
-			'container_class' => false,
-			'container_id'    => '',
-			'menu_class'      => $name . '-menu',
-			'menu_id'         => '',
-			'echo'            => true,
-			'fallback_cb'     => 'wp_page_menu',
-			'before'          => '',
-			'after'           => '',
-			'link_before'     => '',
-			'link_after'      => '',
-			'items_wrap'      => '<ul>%3$s</ul>',
-			'depth'           => 0,
-			'walker'          => ''
-		)
-	);
-}
-
 ?>
