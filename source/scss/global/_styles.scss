@@ -2289,7 +2289,7 @@ input.hs-input {
 .image-container {
     position: relative;
     width: 100%;
-    float: left;
+    display: block;
 
     .bg-container {
         position: absolute;
