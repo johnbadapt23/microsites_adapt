@@ -1988,7 +1988,6 @@ section.partners-block {
         }
 
         .level-container { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start;
-            float: left;
             width: 100%;
             padding: 60px 0 15px;
             border-bottom: 1px solid #e1e1e1;
@@ -2044,7 +2043,7 @@ section.partners-block {
         }
 
         .button-container {
-            float: left;
+            display: block;
             width: 100%;
             text-align: center;
             margin-top: 50px;
